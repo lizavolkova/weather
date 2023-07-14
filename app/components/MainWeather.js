@@ -1,45 +1,61 @@
-export default function MainWeather() {
+import {getImage} from "../utils/backgroundPhotos";
+import {getIcon} from "../utils/getIcon";
+import Hourly from "./Hourly";
+import WeatherCard from "./WeatherCard";
+const weatherID = 800;
+
+export default function MainWeather({current, hourly, daily, alerts}) {
+
+    const today = daily[0];
+
     return (
-        <div className="h-[calc(100vh-300px)] flex flex-col justify-between m-6">
+        <div className="h-[calc(100vh-400px)] flex flex-col justify-between p-6" >
             <div className="text-right">July 13, 2023 | 13:45</div>
 
             <div>
-                <div className="text-right">
-                    <div className="text-3xl">Lorem impsum something about the weather</div>
-                    <div className="flex justify-end">
+                <div className="flex flex-col items-end">
+                    <div className="flex flex-col">
+                        <div className="self-end"><img src={getIcon(current?.weather)} width="100" height="100"/></div>
+                        <div className="text-9xl self-end">{Math.floor(current?.temp)}°</div>
+                        <div className="text-4xl self-end">{current?.weather[0]?.main}</div>
+                    </div>
+
+                    <div className="flex">
                         <div className="flex flex-col">
-                            <span>Morning</span>
-                            <div>28°</div>
-                            <div>ICON</div>
+                            <WeatherCard time="morning" temp={today?.temp?.morn}/>
                         </div>
                         <div className="flex flex-col">
-                            <span>Afternoon</span>
-                            <div>28°</div>
-                            <div>ICON</div>
+                            <WeatherCard time="afternoon" temp={today?.temp?.day}/>
                         </div>
                         <div className="flex flex-col">
-                            <span>Evening</span>
-                            <div>28°</div>
-                            <div>ICON</div>
+                            <WeatherCard time="evening" temp={today?.temp?.eve}/>
                         </div>
                     </div>
 
-                    <div className="bg-yellow-600 m-2 text-center rounded-md">Alert</div>
+
                 </div>
+
+                {alerts && <div className="bg-yellow-600 m-2 text-center rounded-md">Alert</div>}
+
                 <hr/>
-                <div>
-                    Hourly
-                    <ul>
-                        <li>
-                            <div className="bg-green-600 w-24 flex flex-col">
-                                <span>9:00</span>
-                                <hr/>
-                                <div>ICON</div>
-                                <span>Party Cloudy</span>
-                                <div>28°</div>
+                <div className="flex">
+                    {hourly && hourly.map((weather,i)=> {
+                        const date = new Date(weather?.dt * 1000);
+                        const time = `${date.getHours()}:00`;
+                        const description = weather?.weather[0]?.main;
+                        const icon = getIcon(weather?.weather);
+
+                        return (
+                            <div key={i}>
+                                {i < 6 ?
+                                    <div >
+                                        <WeatherCard time={time} temp={weather?.temp} description={description} icon={icon}/>
+                                    </div>
+                                :
+                                null}
                             </div>
-                        </li>
-                    </ul>
+                        )
+                    })}
                 </div>
             </div>
 

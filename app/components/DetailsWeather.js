@@ -3,7 +3,7 @@ export default function DetailsWeather() {
     return (
 
         <div>
-            <Image src="/Capture.PNG" width="1347" height="635" />
+            <Image src="/Capture.PNG" width="1347" height="635" alt="" />
         </div>
 
     )

@@ -3,7 +3,7 @@ export default function AirQuality() {
     return (
 
         <div>
-            <Image src="/aqi.PNG" width="322" height="275" />
+            <Image src="/aqi.PNG" width="322" height="275" alt=""/>
         </div>
 
     )
