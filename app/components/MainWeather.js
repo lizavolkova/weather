@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
 import {getImage} from "../utils/backgroundPhotos";
 import {getIcon} from "../utils/getIcon";
 import Hourly from "./Hourly";
 import WeatherCard from "./WeatherCard";
+import Modal from "./Atoms/Modal";
 const weatherID = 800;
+import {getDay} from "../utils/getDay";
+import {getMonth} from "../utils/getMonth";
 
 export default function MainWeather({current, hourly, daily, alerts}) {
-
+    const [showAlertModal, setShowAlertModal] = useState(false);
     const today = daily[0];
 
     return (
@@ -35,7 +39,24 @@ export default function MainWeather({current, hourly, daily, alerts}) {
 
                 </div>
 
-                {alerts && <div className="bg-yellow-600 m-2 text-center rounded-md">Alert</div>}
+                {alerts && alerts.map(alert => {
+                    const startDate = new Date(alert.start * 1000);
+                    const endDate = new Date(alert.end * 1000);
+
+                    return (
+                        <div key={alert.start}>
+                            <div className="bg-yellow-600 m-2 p-2 text-center rounded-md cursor-pointer" onClick={() => setShowAlertModal(true)}>{alert.event}</div>
+                            <Modal showModal={showAlertModal} setShowModal={() => setShowAlertModal(false)} header="Weather Alert: Location">
+                                <div className="font-bold">{alert.event}</div>
+                                <div className="text-slate-400 mb-4">{`${getMonth(alert.start)} ${startDate.getDate()} ${startDate.getHours()}:${startDate.getMinutes()} - ${getMonth(alert.start)} ${endDate.getDate()} ${endDate.getHours()}:${endDate.getMinutes()}`}</div>
+                                <p>{alert.description}</p>
+                                <div className="text-xs mt-4">{alert.sender_name}</div>
+
+                            </Modal>
+                        </div>
+
+                    )
+                })}
 
                 <hr/>
                 <div className="flex">
