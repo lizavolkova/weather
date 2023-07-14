@@ -11,7 +11,7 @@ import CardStyle from './Atoms/CardStyle';
 
 const TimeCard = ({time, temp}) => {
     return (
-        <CardStyle classes="w-32 flex-col">
+        <CardStyle classes="w-32 flex-col bg-opacity-25 bg-black">
             <span>{time}</span>
             <hr/>
             <div>{Math.floor(temp)}°</div>
@@ -24,7 +24,7 @@ export default function MainWeather({current, hourly, daily, alerts}) {
     const today = daily[0];
 
     return (
-        <div className="h-[calc(100vh-400px)] flex flex-col justify-between p-6" >
+        <div className="h-[calc(100vh-300px)] flex flex-col justify-between p-6" >
             <div className="text-right">July 13, 2023 | 13:45</div>
 
             <div>
@@ -32,7 +32,7 @@ export default function MainWeather({current, hourly, daily, alerts}) {
                     <div className="flex flex-col">
                         <div className="self-end"><img src={getIcon(current?.weather)} width="100" height="100"/></div>
                         <div className="text-9xl self-end">{Math.floor(current?.temp)}°</div>
-                        <div className="text-4xl self-end">{current?.weather[0]?.main}</div>
+                        <div className="text-4xl self-end capitalize">{current?.weather[0]?.description}</div>
                     </div>
 
                     <div className="flex">

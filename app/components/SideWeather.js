@@ -21,7 +21,7 @@ export default function SideWeather({current, daily, hourly}) {
     return (
         <div className="m-6 flex flex-col justify-between">
             <div className="pb-10">
-                <div className="mb-4">New York, NY</div>
+                <div className="mb-20">New York, NY</div>
                 <div className="flex">
                     <Card title="Feels like" value="25°" icon="/icons/thermometer.png"/>
                     <Card title="Humidity" value="60%" icon="/icons/humidity.png"/>

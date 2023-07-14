@@ -12,16 +12,18 @@ export default function DailyWeatherCard({date, description, max, min, icon, tem
     const time = `${day.getHours()}:00`;
     return (
         <CardStyle>
-            <div className="flex-none p-2">
-                <span>{time}</span>
+            <div className="flex-none p-2 text-left self-center">
+                <div className="">{time}</div>
+            </div>
+
+            <div className="flex flex-auto">
+                <Image src={icon} width="75" height="50"/>
+                <div className="self-center"><WeatherDescription text={description}/></div>
 
 
             </div>
-            <div className="flex flex-auto flex-col">
-                <img src={icon} width="25" height="25"/>
-                <span>{Math.floor(temp)}</span>
-                <WeatherDescription text={description}/>
-            </div>
+            <div className="text-left text-2xl self-center pr-8">{Math.floor(temp)}°</div>
+
             <div className="flex text-center border-l-2 border-slate-400 pl-2">
                 <div className="flex justify-center items-center p-2">
                     <Image className="max-w-[20px]" src="/icons/humidity.png" width="512" height="512" alt=""/>

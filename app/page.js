@@ -6,9 +6,12 @@ import SideWeather from "./components/SideWeather";
 import DetailsWeather from "./components/DetailsWeather";
 import AirQuality from "./components/AirQuality";
 
+import { FastAverageColor } from 'fast-average-color';
+
 export default function Home() {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
+    const [bgColor, setBgColor] = useState("#000");
 
 
     useEffect ( ()=> {
@@ -28,8 +31,8 @@ export default function Home() {
             console.log(data)
         }
 
-        //fetchRealData();
-        fetchData();
+        fetchRealData();
+        //fetchData();
 
     }, []);
 
@@ -37,36 +40,47 @@ export default function Home() {
     const timeOfDay = current?.icon?.slice(-1);
     const bgImage = `/weather-photos/${timeOfDay}/${current?.main}.jpg`;
 
+
+    const fac = new FastAverageColor();
+
+    fac.getColorAsync(bgImage)
+        .then(color => {
+            setBgColor(color.rgba);
+        })
+        .catch(e => {
+            console.log(e);
+        });
+
   return (
 
       <>
           {isLoading ? (
              <div>LOADING</div>
           ) : (
-              <main className="flex min-h-screen flex-col items-center p-12 bg-cover backdrop-blur-3xl" style={{backgroundImage: `url(${bgImage})`}}>
+              <main className="flex min-h-screen flex-col items-center p-12 bg-cover backdrop-blur-3xl" style={{backgroundColor: bgColor}}>
 
                   <CardWrapper background={bgImage}>
                       <div className="w-3/5">
                           <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={data.alerts}/>
                       </div>
-                      <div className="backdrop-blur-md border-l-2 border-slate-400 w-2/3">
+                      <div className="backdrop-blur-md bg-opacity-25 bg-black border-l-2 border-slate-400 w-2/3">
                           <SideWeather current={data.current} daily={data.daily} hourly={data.hourly}/>
                       </div>
 
                   </CardWrapper>
 
-                  <CardWrapper>
-                      <div className="w-2/3 bg-yellow-600">
-                          <DetailsWeather/>
-                      </div>
-                      <div className="w-1/3 bg-green-600">
-                          <AirQuality/>
-                      </div>
-                  </CardWrapper>
+                  {/*<CardWrapper>*/}
+                  {/*    <div className="w-2/3 bg-yellow-600">*/}
+                  {/*        <DetailsWeather/>*/}
+                  {/*    </div>*/}
+                  {/*    <div className="w-1/3 bg-green-600">*/}
+                  {/*        <AirQuality/>*/}
+                  {/*    </div>*/}
+                  {/*</CardWrapper>*/}
 
-                  <CardWrapper>
-                      RADAR
-                  </CardWrapper>
+                  {/*<CardWrapper>*/}
+                  {/*    RADAR*/}
+                  {/*</CardWrapper>*/}
               </main>
           )}
       </>
