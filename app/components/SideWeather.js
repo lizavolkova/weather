@@ -17,7 +17,7 @@ const Card = ({title, icon, value}) => {
     )
 }
 
-export default function DailyWeather({current, daily}) {
+export default function SideWeather({current, daily, hourly}) {
     return (
         <div className="m-6 flex flex-col justify-between">
             <div className="pb-10">
@@ -34,21 +34,24 @@ export default function DailyWeather({current, daily}) {
             <hr/>
 
             <div className="flex">
-                <div className="w-1/3">8 day</div>
+                <div className="w-1/3">Hourly</div>
 
             </div>
-            <div className="">
+            <div className="overflow-y-scroll max-h-[38rem]">
                 <ul>
                     {
-                        daily.map(weather => {
+                        hourly.map(weather => {
                             const description = weather.weather[0].description;
                             const max = weather.temp.max;
                             const min = weather.temp.min;
                             const icon = getIcon(weather?.weather);
+                            const temp = weather.temp;
+                            const humidity = weather.humidity;
+                            const pop = weather.pop;
 
                             return (
                                 <li className="" key={weather.dt}>
-                                    <DailyWeatherCard description={description} max={max} min={min} date={weather.dt} icon={icon}/>
+                                    <DailyWeatherCard description={description} max={max} min={min} date={weather.dt} icon={icon} temp={temp} humidity={humidity} pop={pop}/>
                                 </li>
                             )
                         })

@@ -1,17 +1,33 @@
 import {getImage} from "../utils/backgroundPhotos";
 import WeatherDescription from "../components/Atoms/WeatherDescription"
 const weatherID = 800;
+import {getDay} from "../utils/getDay";
+import {getMonth} from "../utils/getMonth";
+import CardStyle from "./Atoms/CardStyle";
 
+export default function WeatherCard({date, time, temp, description,icon}) {
+    const day = new Date(date * 1000);
 
-export default function WeatherCard({time, temp, description,icon}) {
 
     return (
-        <div className="backdrop-blur-md border-2 border-sky-500 rounded-xl w-24 m-2 p-4 flex flex-col text-center">
-            <span className="">{time}</span>
+        <CardStyle classes="w-32 flex-col">
+            <span>{`${getDay(date)}, ${getMonth(date)} ${day.getDate()}`}</span>
             <hr/>
             {icon && <div><img className="mx-auto" src={icon} width="50" height="50"/></div>}
-            <div>{Math.floor(parseInt(temp))}°</div>
+            <div>{Math.floor(temp.day)}°</div>
             <WeatherDescription text={description}/>
-        </div>
+            <div>
+                <span>{Math.floor(temp.min)}° | </span>
+                <span>{Math.floor(temp.max)}°</span>
+            </div>
+        </CardStyle>
     )
 }
+
+// <div className="backdrop-blur-md border-2 border-sky-500 rounded-xl w-24 m-2 p-4 flex flex-col text-center">
+//     <span className="">{time}</span>
+//     <hr/>
+//     {icon && <div><img className="mx-auto" src={icon} width="50" height="50"/></div>}
+//     <div>{Math.floor(parseInt(temp))}°</div>
+//     <WeatherDescription text={description}/>
+// </div>

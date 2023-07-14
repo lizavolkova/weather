@@ -7,6 +7,17 @@ import Modal from "./Atoms/Modal";
 const weatherID = 800;
 import {getDay} from "../utils/getDay";
 import {getMonth} from "../utils/getMonth";
+import CardStyle from './Atoms/CardStyle';
+
+const TimeCard = ({time, temp}) => {
+    return (
+        <CardStyle classes="w-32 flex-col">
+            <span>{time}</span>
+            <hr/>
+            <div>{Math.floor(temp)}°</div>
+        </CardStyle>
+    )
+}
 
 export default function MainWeather({current, hourly, daily, alerts}) {
     const [showAlertModal, setShowAlertModal] = useState(false);
@@ -26,13 +37,13 @@ export default function MainWeather({current, hourly, daily, alerts}) {
 
                     <div className="flex">
                         <div className="flex flex-col">
-                            <WeatherCard time="morning" temp={today?.temp?.morn}/>
+                            <TimeCard time="morning" temp={today?.temp?.morn}/>
                         </div>
                         <div className="flex flex-col">
-                            <WeatherCard time="afternoon" temp={today?.temp?.day}/>
+                            <TimeCard time="afternoon" temp={today?.temp?.day}/>
                         </div>
                         <div className="flex flex-col">
-                            <WeatherCard time="evening" temp={today?.temp?.eve}/>
+                            <TimeCard time="evening" temp={today?.temp?.eve}/>
                         </div>
                     </div>
 
@@ -59,8 +70,10 @@ export default function MainWeather({current, hourly, daily, alerts}) {
                 })}
 
                 <hr/>
+                8 Day Forecast
                 <div className="flex">
-                    {hourly && hourly.map((weather,i)=> {
+
+                    {daily && daily.map((weather,i)=> {
                         const date = new Date(weather?.dt * 1000);
                         const time = `${date.getHours()}:00`;
                         const description = weather?.weather[0]?.main;
@@ -70,7 +83,7 @@ export default function MainWeather({current, hourly, daily, alerts}) {
                             <div key={i}>
                                 {i < 6 ?
                                     <div >
-                                        <WeatherCard time={time} temp={weather?.temp} description={description} icon={icon}/>
+                                        <WeatherCard date={weather?.dt} time={time} temp={weather?.temp} description={description} icon={icon}/>
                                     </div>
                                 :
                                 null}

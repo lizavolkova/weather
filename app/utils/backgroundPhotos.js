@@ -9,6 +9,7 @@ const images = [
     }
 ]
 
-export const getImage = (name) => {
+export const getImage = (weather) => {
+
     return images.find((image) => name === image.name).image;
 }
