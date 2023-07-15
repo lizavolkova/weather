@@ -22,10 +22,11 @@ export default function SideWeather({current, daily, hourly}) {
     const today = daily[0];
     const test = getTimeWeather(current, hourly);
 
+
     return (
         <div className="m-6 flex flex-col justify-between">
             <div className="pb-10">
-                <div className="mb-20">New York, NY</div>
+                <div className="mb-20">Ossining, NY</div>
                 <div className="flex justify-between">
                     {test && test.map(weather => {
                         return (

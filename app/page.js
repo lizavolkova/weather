@@ -9,6 +9,7 @@ import AirQuality from "./components/AirQuality";
 import { FastAverageColor } from 'fast-average-color';
 import {Map} from "./components/Map";
 
+
 export default function Home() {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -18,11 +19,15 @@ export default function Home() {
 
     useEffect ( ()=> {
         async function fetchRealData() {
-            const res = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=41.18856&lon=-73.83745&units=metric&appid=74b1cba4c20bb5cc22ee5c639d0e0919")
-            const data = await res.json();
-            setData(data);
-            setIsLoading(false);
-            console.log(data)
+            try {
+                const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=41.18856&lon=-73.83745&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+                const data = await res.json();
+                setData(data);
+                setIsLoading(false);
+            } catch(err) {
+                console.error(err)
+                setIsLoading(true);
+            }
         }
 
 
@@ -31,7 +36,6 @@ export default function Home() {
             const data = await res.json();
             setData(data);
             setIsLoading(false);
-            console.log(data)
         }
 
         async function fetchAlerts() {
@@ -40,8 +44,8 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        fetchRealData();
-        //fetchData();
+        //fetchRealData();
+        fetchData();
         fetchAlerts()
 
     }, []);
@@ -61,6 +65,7 @@ export default function Home() {
         });
 
   return (
+
 
       <>
           {isLoading ? (
