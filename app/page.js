@@ -20,6 +20,7 @@ export default function Home() {
             const data = await res.json();
             setData(data);
             setIsLoading(false);
+            console.log(data)
         }
 
 
@@ -31,15 +32,14 @@ export default function Home() {
             console.log(data)
         }
 
-        fetchRealData();
-        //fetchData();
+        //fetchRealData();
+        fetchData();
 
     }, []);
 
     const current = data?.current?.weather[0];
     const timeOfDay = current?.icon?.slice(-1);
     const bgImage = `/weather-photos/${timeOfDay}/${current?.main}.jpg`;
-
 
     const fac = new FastAverageColor();
 
@@ -59,14 +59,13 @@ export default function Home() {
           ) : (
               <main className="flex min-h-screen flex-col items-center p-12 bg-cover backdrop-blur-3xl" style={{backgroundColor: bgColor}}>
 
-                  <CardWrapper background={bgImage}>
-                      <div className="w-3/5">
+                  <CardWrapper background={bgImage} classes="flex-col md:flex-row ">
+                      <div className="w-full md:w-1/2 lg:w-3/5">
                           <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={data.alerts}/>
                       </div>
-                      <div className="backdrop-blur-md bg-opacity-25 bg-black border-l-2 border-slate-400 w-2/3">
+                      <div className="backdrop-blur-md bg-opacity-25 bg-black border-l rounded-r-lg border-slate-400 w-full md:w-1/2 md:w-2/3">
                           <SideWeather current={data.current} daily={data.daily} hourly={data.hourly}/>
                       </div>
-
                   </CardWrapper>
 
                   {/*<CardWrapper>*/}
