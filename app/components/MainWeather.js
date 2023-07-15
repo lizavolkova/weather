@@ -11,6 +11,7 @@ import Image from 'next/image'
 import IconThermometerHalf from '../components/icons/IconThermometerHalf'
 import IconWiHumidity from "./icons/IconWiHumidity";
 import IconUmbrella from "./icons/IconUmbrella";
+import Alerts from "./Alerts";
 
 const Card = ({title, icon, value, iconClass}) => {
     return(
@@ -53,30 +54,14 @@ export default function MainWeather({current, hourly, daily, alerts}) {
 
                 </div>
 
-                {alerts && alerts.map(alert => {
-                    const startDate = new Date(alert.start * 1000);
-                    const endDate = new Date(alert.end * 1000);
-
-                    return (
-                        <div key={alert.start}>
-                            <div className="bg-yellow-600 m-2 p-2 text-center rounded-md cursor-pointer" onClick={() => setShowAlertModal(true)}>{alert.event}</div>
-                            <Modal showModal={showAlertModal} setShowModal={() => setShowAlertModal(false)} header="Weather Alert: Location">
-                                <div className="font-bold">{alert.event}</div>
-                                <div className="text-slate-400 mb-4">{`${getMonth(alert.start)} ${startDate.getDate()} ${startDate.getHours()}:${startDate.getMinutes()} - ${getMonth(alert.start)} ${endDate.getDate()} ${endDate.getHours()}:${endDate.getMinutes()}`}</div>
-                                <p>{alert.description}</p>
-                                <div className="text-xs mt-4">{alert.sender_name}</div>
-
-                            </Modal>
-                        </div>
-
-                    )
-                })}
+                {alerts && <Alerts alerts={alerts}/>}
 
                 <hr/>
                 8 Day Forecast
                 <div className="flex overflow-auto">
 
                     {daily && daily.map((weather,i)=> {
+
                         const date = new Date(weather?.dt * 1000);
                         const time = `${date.getHours()}:00`;
                         const description = weather?.weather[0]?.main;
