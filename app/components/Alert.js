@@ -21,11 +21,11 @@ export default function Alert({alert}) {
     const {properties} = alert;
     const endDate = new Date(properties.ends);
     return (
-        <div key={alert.start}>
+        <div >
             <div className={`${bgColor(properties.severity)} m-2 p-2 text-center rounded-md cursor-pointer`} onClick={() => setShowAlertModal(true)}>{properties.event}</div>
             <Modal showModal={showAlertModal} setShowModal={() => setShowAlertModal(false)} header={`Weather Alert: ${properties.event}`}>
                 {properties.parameters.NWSheadline.map(headline => {
-                    return <div>{headline}</div>
+                    return <div key={headline}>{headline}</div>
                 })}
                 <p>Until time</p>
                 <p className="font-bold">Affected Area</p>

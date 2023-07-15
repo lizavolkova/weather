@@ -30,7 +30,7 @@ export default function SideWeather({current, daily, hourly}) {
                 <div className="flex justify-between">
                     {test && test.map(weather => {
                         return (
-                            <div className="flex flex-col">
+                            <div className="flex flex-col" key={weather.time}>
                                 <TimeCard time={weather.time} temp={weather.weather.temp} feel={weather.weather.feels_like} icon={weather.weather.weather[0].icon} />
                             </div>
                         )
