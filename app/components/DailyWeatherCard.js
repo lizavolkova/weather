@@ -9,7 +9,7 @@ import CardStyle from './Atoms/CardStyle';
 
 const MiniData = ({text, value}) => {
     return (
-        <div className="text-sm flex justify-between">
+        <div className="text-xs flex justify-between ">
             <span className="capitalize text-slate-400">{text}</span>
             <span>{value}</span>
         </div>
@@ -32,9 +32,9 @@ export default function DailyWeatherCard({date, description, icon, temp, humidit
 
 
             </div>
-            <div className="text-left text-3xl self-center pr-8">{Math.floor(temp)}°</div>
+            <div className="text-left text-3xl self-center pr-8 ">{Math.floor(temp)}°</div>
 
-            <div className="flex flex-col text-left border-l-2 border-slate-400 pl-2">
+            <div className="flex flex-col text-left border-l-2 border-slate-400 pl-2 min-w-[140px] justify-around">
                 <MiniData text="feels like" value={`${Math.floor(feel)}°`}/>
                 <MiniData text="humidity" value={`${Math.floor(humidity)}%`}/>
                 <MiniData text="percipitation" value={`${pop*100}%`}/>

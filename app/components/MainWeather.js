@@ -9,13 +9,16 @@ import {getDay} from "../utils/getDay";
 import {getMonth} from "../utils/getMonth";
 import CardStyle from './Atoms/CardStyle';
 import Image from 'next/image'
+import IconThermometerHalf from '../components/icons/IconThermometerHalf'
+import IconWiHumidity from "./icons/IconWiHumidity";
+import IconUmbrella from "./icons/IconUmbrella";
 
-const Card = ({title, icon, value}) => {
+const Card = ({title, icon, value, iconClass}) => {
     return(
         <div className="flex flex-col pb-4 ml-12">
-            <div className="text-slate-100 capitalize pb-4 ml-2">{title}</div>
+            <div className="text-slate-100 capitalize pb-4 ml-1">{title}</div>
             <div className="h-full flex">
-                <Image className="w-[32px] fill-white" src={icon} width="800" height="800" alt=""/>
+                <div className={`${iconClass} self-center`}>{icon}</div>
                 <div className="text-2xl self-center">{value}</div>
             </div>
         </div>
@@ -23,8 +26,6 @@ const Card = ({title, icon, value}) => {
 }
 export default function MainWeather({current, hourly, daily, alerts}) {
     const [showAlertModal, setShowAlertModal] = useState(false);
-    const today = daily[0];
-
     const day = new Date(current.dt * 1000);
 
     return (
@@ -41,9 +42,9 @@ export default function MainWeather({current, hourly, daily, alerts}) {
 
 
                         <div className="flex mt-12">
-                            <Card title="Feels like" value="25°" icon="/icons/temperature.svg"/>
-                            <Card title="Humidity" value="60%" icon="/icons/humidity.svg"/>
-                            <Card title="Percipitaion" value="60%" icon="/icons/umbrella.svg"/>
+                            <Card title="Feels like" value="25°" icon={<IconThermometerHalf/>} iconClass="text-xl"/>
+                            <Card title="Humidity" value="60%" icon={<IconWiHumidity />} iconClass="text-3xl" />
+                            <Card title="precipitation" value="60%" icon={<IconUmbrella />} iconClass="text-xl p-2" />
                         </div>
 
 
