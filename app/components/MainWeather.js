@@ -7,7 +7,6 @@ import Modal from "./Atoms/Modal";
 const weatherID = 800;
 import {getDay} from "../utils/getDay";
 import {getMonth} from "../utils/getMonth";
-import CardStyle from './Atoms/CardStyle';
 import Image from 'next/image'
 import IconThermometerHalf from '../components/icons/IconThermometerHalf'
 import IconWiHumidity from "./icons/IconWiHumidity";
@@ -16,7 +15,7 @@ import IconUmbrella from "./icons/IconUmbrella";
 const Card = ({title, icon, value, iconClass}) => {
     return(
         <div className="flex flex-col pb-4 ml-12">
-            <div className="text-slate-100 capitalize pb-4 ml-1">{title}</div>
+            <div className="text-slate-100 capitalize pb-4 ml-1 drop-shadow-2xl">{title}</div>
             <div className="h-full flex">
                 <div className={`${iconClass} self-center`}>{icon}</div>
                 <div className="text-2xl self-center">{value}</div>
@@ -29,7 +28,7 @@ export default function MainWeather({current, hourly, daily, alerts}) {
     const day = new Date(current.dt * 1000);
 
     return (
-        <div className=" flex flex-col justify-between p-6" >
+        <div className=" flex flex-col justify-between p-6 bg-black bg-opacity-25 w-full" >
             <div className="text-right">{`${getDay(current.dt).substring(0, 3)} ${getMonth(current.dt)} ${day.getDate()}`} | {`${day.getHours()}:${day.getMinutes()}`}</div>
 
             <div>
