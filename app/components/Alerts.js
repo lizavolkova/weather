@@ -24,8 +24,6 @@ export default function Alerts({alerts}) {
                 {alerts && alerts.map(alert => {
                     const {properties} = alert;
                     const endDate = new Date(properties.ends);
-                    console.log(endDate)
-                    console.log(properties.severity)
 
                     return (
                         <div key={alert.start}>

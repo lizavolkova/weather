@@ -7,6 +7,7 @@ import DetailsWeather from "./components/DetailsWeather";
 import AirQuality from "./components/AirQuality";
 
 import { FastAverageColor } from 'fast-average-color';
+import {Map} from "./components/Map";
 
 export default function Home() {
     const [data, setData] = useState();
@@ -39,8 +40,8 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        //fetchRealData();
-        fetchData();
+        fetchRealData();
+        //fetchData();
         fetchAlerts()
 
     }, []);
@@ -74,6 +75,10 @@ export default function Home() {
                       <div className="backdrop-blur-md bg-opacity-25 bg-black border-l rounded-r-lg border-slate-400 w-full md:w-1/2 md:w-2/3">
                           <SideWeather current={data.current} daily={data.daily} hourly={data.hourly}/>
                       </div>
+                  </CardWrapper>
+
+                  <CardWrapper>
+                      <Map/>
                   </CardWrapper>
 
                   {/*<CardWrapper>*/}

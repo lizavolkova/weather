@@ -37,7 +37,8 @@ export default function MainWeather({current, hourly, daily, alerts}) {
                     <div className="flex flex-col">
                         <div className="self-end"><Image src={getIcon(current?.weather)} width="200" height="100" alt=""/></div>
                         <div className="text-9xl self-end">{Math.floor(current?.temp)}°</div>
-                        <div className="text-4xl self-end capitalize">{current?.weather[0]?.description}</div>
+                        <div className="text-4xl text-slate-200 self-end capitalize">{current?.weather[0]?.description}</div>
+                        <div className="text-2xl text-slate-300 self-end capitalize">High: {Math.floor(daily[0].temp.max)}° | Low: {Math.floor(daily[0].temp.min)}° </div>
                     </div>
 
 
