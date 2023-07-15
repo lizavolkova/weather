@@ -52,7 +52,7 @@ export default function Home() {
 
     const current = data?.current?.weather[0];
     const timeOfDay = current?.icon?.slice(-1);
-    const bgImage = `/weather-photos/${timeOfDay}/${current?.main}.jpg`;
+    const bgImage = `/weather-photos/${timeOfDay}/${current?.main.toLowerCase()}.jpg`;
 
     const fac = new FastAverageColor();
 
