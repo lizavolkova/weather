@@ -44,8 +44,8 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        //fetchRealData();
-        fetchData();
+        fetchRealData();
+        //fetchData();
         fetchAlerts()
 
     }, []);
