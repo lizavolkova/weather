@@ -12,6 +12,12 @@ import Temperature from "./Atoms/Temperature";
 import {getDate} from "../utils/getDate";
 import CardStyle from "./Atoms/CardStyle";
 import {getTime} from "../utils/getTime";
+import IconWind from "./icons/IconWind";
+import IconSunset from "./icons/IconSunset";
+import IconSunrise from "./icons/IconSunrise";
+import IconWiMoonrise from "./icons/IconWiMoonrise";
+import IconMoonset from "./icons/IconMoonset";
+import IconSun from "./icons/IconSun";
 
 
 const Card = ({title, icon, value, iconClass}) => {
@@ -29,8 +35,8 @@ const Card = ({title, icon, value, iconClass}) => {
 const DailyIconAttribute = ({icon, title, value}) => {
     return (
         <div className="w-1/2">
-            <div className="text-xs">{title}</div>
-            <div className="text-slate-200">{value}</div>
+            <div className="text-xs items-center flex"><span className="inline-block pr-2 text-sm">{icon}</span>{title}</div>
+            <div className="text-slate-200 pl-6">{value}</div>
         </div>
     )
 };
@@ -104,7 +110,7 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                 <CardStyle classes="text-left">
                     {detailedForecast?.map((weather,t) => {
                         const todayWeather = daily[selectedDay];
-                        const timeOfDay = t == 0 ? 'day' : 'night';
+                        const timeOfDay = weather.isDayTime ? 'day' : 'night';
                         const precipitation = weather.probabilityOfPrecipitation?.value ? weather.probabilityOfPrecipitation?.value : todayWeather?.pop * 100;
 
                         return (
@@ -118,9 +124,9 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                                             <img className="mx-auto" src="http://localhost:3000/_next/image?url=http%3A%2F%2Fopenweathermap.org%2Fimg%2Fwn%2F10d%402x.png&w=640&q=75" width="50" height="50" alt=""/>
                                         </div>
                                         <div>
-                                            <div>P {precipitation}%</div>
-                                            <div>H {weather.relativeHumidity?.value}%</div>
-                                            <div>{t == 0 ? `UVI ${todayWeather.uvi}` : `&nbsp;`}</div>
+                                            <div className="flex items-center"><IconUmbrella /> <span className="pl-2">{precipitation}%</span></div>
+                                            <div className="flex items-center"><IconWiHumidity /> <span className="pl-2">{weather.relativeHumidity?.value}%</span></div>
+                                            <div>{weather.isDaytime === true ? <div className="flex items-center"><IconSun /> <span className="pl-2">{todayWeather.uvi}</span></div> : <span>&nbsp;</span>}</div>
                                         </div>
                                     </div>
                                     <div className="pb-8 text-sm pt-6">
@@ -132,23 +138,29 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                                 {weather.number && <div
                                     className="flex flex-col border rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
                                     <div className="border-b flex p-2">
-                                        <DailyIconAttribute title="Feels like" value={<Temperature
-                                            temp={todayWeather.feels_like[timeOfDay]}/>}/>
+                                        <DailyIconAttribute title="Feels like"
+                                                            value={<Temperature temp={todayWeather.feels_like[timeOfDay]}/>}
+                                                            icon={<IconThermometerHalf/>}/>
                                         <DailyIconAttribute title={`Wind ${weather.windDirection}`}
-                                                            value={weather.windSpeed}/>
+                                                            value={weather.windSpeed}
+                                        icon={<IconWind />}/>
                                     </div>
-                                    {t == 0 &&
+                                    {weather.isDaytime === true &&
                                     <div className="flex  m-2">
                                         <DailyIconAttribute title="Sunrise"
+                                                            icon={<IconSunrise/>}
                                                             value={getTime(getDate(todayWeather.sunrise))}/>
                                         <DailyIconAttribute title="Sunset"
+                                                            icon={<IconSunset />}
                                                             value={getTime(getDate(todayWeather.sunset))}/>
                                     </div>}
-                                    {t == 1 &&
+                                    {weather.isDaytime === false &&
                                     <div className="flex  m-2">
                                         <DailyIconAttribute title="Moonrise"
+                                                            icon={<IconWiMoonrise/>}
                                                             value={getTime(getDate(todayWeather.moonrise))}/>
                                         <DailyIconAttribute title="Moonset"
+                                                            icon={<IconMoonset/>}
                                                             value={getTime(getDate(todayWeather.moonset))}/>
                                     </div>
                                     }

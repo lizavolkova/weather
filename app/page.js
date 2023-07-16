@@ -36,7 +36,8 @@ export default function Home() {
                 const data = await res.json();
 
                 const dailyData = data?.properties?.periods
-                if (!dailyData.isDayTime) {
+                if (dailyData[0].isDaytime === false) {
+
                     dailyData.splice(1, 0, {});
                 }
                 setNoaaData(dailyData);
