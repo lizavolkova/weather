@@ -1,11 +1,8 @@
-import {getImage} from "../utils/backgroundPhotos";
-import {getIcon} from "../utils/getIcon";
-import {getDay} from "../utils/getDay";
-import {getMonth} from "../utils/getMonth";
 import WeatherDescription from "./Atoms/WeatherDescription";
 import Image from "next/image";
-const weatherID = 800;
 import CardStyle from './Atoms/CardStyle';
+import Temperature from "./Atoms/Temperature";
+import {getDate} from "../utils/getDate";
 
 const MiniData = ({text, value}) => {
     return (
@@ -17,7 +14,7 @@ const MiniData = ({text, value}) => {
 }
 
 export default function HourlyWeatherCard({date, description, icon, temp, humidity, pop, feel}) {
-    const day = new Date(date * 1000);
+    const day = getDate(date);
     const time = `${day.getHours()}:00`;
 
     return (
@@ -30,7 +27,7 @@ export default function HourlyWeatherCard({date, description, icon, temp, humidi
                 <Image src={icon} width="75" height="50" alt=""/>
                 <div className="self-center"><WeatherDescription text={description}/></div>
             </div>
-            <div className="text-left text-3xl self-center pr-2 md:pr-8 ">{Math.floor(temp)}°</div>
+            <div className="text-left text-3xl self-center pr-2 md:pr-8 "><Temperature temp={temp} /></div>
 
             <div className="flex flex-col text-left border-l-2 border-slate-400 pl-2 min-w-[140px] justify-around">
                 <MiniData text="feels like" value={`${Math.floor(feel)}°`}/>

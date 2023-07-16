@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
-import {getImage} from "../utils/backgroundPhotos";
 import {getIcon} from "../utils/getIcon";
 import WeatherCard from "./WeatherCard";
-import Modal from "./Atoms/Modal";
-const weatherID = 800;
 import {getDay} from "../utils/getDay";
 import {getMonth} from "../utils/getMonth";
 import Image from 'next/image'
@@ -11,6 +7,8 @@ import IconThermometerHalf from '../components/icons/IconThermometerHalf'
 import IconWiHumidity from "./icons/IconWiHumidity";
 import IconUmbrella from "./icons/IconUmbrella";
 import Alert from "./Alert";
+import Temperature from "./Atoms/Temperature";
+import {getDate} from "../utils/getDate";
 
 const Card = ({title, icon, value, iconClass}) => {
     return(
@@ -24,7 +22,7 @@ const Card = ({title, icon, value, iconClass}) => {
     )
 }
 export default function MainWeather({current, daily, alerts}) {
-    const day = new Date(current.dt * 1000);
+    const day = getDate(current.dt);
 
     return (
         <div className=" flex flex-col justify-between p-6 bg-black bg-opacity-25 w-full" >
@@ -34,7 +32,7 @@ export default function MainWeather({current, daily, alerts}) {
                 <div className="flex flex-col items-end">
                     <div className="flex flex-col">
                         <div className="self-end"><Image src={getIcon(current?.weather)} width="200" height="100" alt=""/></div>
-                        <div className="text-9xl self-end">{Math.floor(current?.temp)}°</div>
+                        <div className="text-9xl self-end"><Temperature temp={current.temp} /></div>
                         <div className="text-4xl text-slate-200 self-end capitalize">{current?.weather[0]?.description}</div>
                         <div className="text-2xl text-slate-300 self-end capitalize">High: {Math.floor(daily[0].temp.max)}° | Low: {Math.floor(daily[0].temp.min)}° </div>
                     </div>
@@ -57,7 +55,7 @@ export default function MainWeather({current, daily, alerts}) {
 
                     {daily && daily.map((weather,i)=> {
 
-                        const date = new Date(weather?.dt * 1000);
+                        const date = getDate(weather?.dt);
                         const time = `${date.getHours()}:00`;
                         const description = weather?.weather[0]?.main;
                         const icon = getIcon(weather?.weather);

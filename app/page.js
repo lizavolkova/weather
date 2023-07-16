@@ -9,7 +9,6 @@ import AirQuality from "./components/AirQuality";
 import { FastAverageColor } from 'fast-average-color';
 import {Map} from "./components/Map";
 
-
 export default function Home() {
     const [data, setData] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -44,8 +43,8 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        fetchRealData();
-        //fetchData();
+        //fetchRealData();
+        fetchData();
         fetchAlerts()
 
     }, []);

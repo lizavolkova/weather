@@ -3,6 +3,7 @@ import Modal from "./Atoms/Modal";
 const weatherID = 800;
 import {getDay} from "../utils/getDay";
 import {getMonth} from "../utils/getMonth";
+import {getDate} from "../utils/getDate";
 const bgColor = (severity) => {
     switch(severity) {
         case ("Severe" || "Extreme"):
@@ -16,7 +17,8 @@ export default function Alert({alert}) {
     console.log(alert)
     const [showAlertModal, setShowAlertModal] = useState(false);
     const {properties} = alert;
-    const endDate = new Date(properties.ends);
+    const endDate = getDate(properties.ends);
+
     return (
         <div >
             <div className={`${bgColor(properties.severity)} m-2 p-2 text-center rounded-md cursor-pointer`} onClick={() => setShowAlertModal(true)}>{properties.event}</div>

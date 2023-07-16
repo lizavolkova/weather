@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import HourlyWeatherCard from "./HourlyWeatherCard";
 import {getIcon} from "../utils/getIcon";
-import CardStyle from "./Atoms/CardStyle";
 import {getTimeWeather} from '../utils/getTimeWeather';
+import Temperature from "./Atoms/Temperature";
 
 const TimeCard = ({time, temp, icon, feel}) => {
 
@@ -11,17 +11,15 @@ const TimeCard = ({time, temp, icon, feel}) => {
             <span className="text-slate-100 capitalize">{time}</span>
             <div className="flex">
                 <div className="self-center"><Image src={`http://openweathermap.org/img/wn/${icon}@2x.png`} width="80" height="80" alt=""/></div>
-                <div className="text-2xl self-center">{Math.floor(temp)}°</div>
+                <div className="text-2xl self-center"><Temperature temp={temp} /></div>
             </div>
-            <div className="text-xs text-slate-200">Feels like {Math.floor(feel)}°</div>
+            <div className="text-xs text-slate-200">Feels like <Temperature temp={feel}/></div>
         </div>
     )
 }
 
 export default function SideWeather({current, daily, hourly}) {
-    const today = daily[0];
     const test = getTimeWeather(current, hourly);
-
 
     return (
         <div className="m-2 md:m-6 flex flex-col justify-between">

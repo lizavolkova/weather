@@ -1,5 +1,7 @@
+import {getDate} from "./getDate";
+
 export const getTimeWeather = (current, hourly) => {
-    const date = new Date(current.dt * 1000);
+    const date = getDate(current.dt);
 
     const now = hourly[0];
     const first = hourly[6];
