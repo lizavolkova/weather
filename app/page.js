@@ -53,6 +53,8 @@ export default function Home() {
             const res = await fetch('https://api.weather.gov/alerts/active?point=41.18856,-73.83745');
             const data = await res.json();
             setAlerts(data.features);
+            setIsLoading(false);
+
         }
 
         fetchRealData();

@@ -11,6 +11,7 @@ import Alert from "./Alert";
 import Temperature from "./Atoms/Temperature";
 import {getDate} from "../utils/getDate";
 import CardStyle from "./Atoms/CardStyle";
+import {getTime} from "../utils/getTime";
 
 
 const Card = ({title, icon, value, iconClass}) => {
@@ -26,24 +27,32 @@ const Card = ({title, icon, value, iconClass}) => {
 };
 
 const DailyIconAttribute = ({icon, title, value}) => {
-    return <div className="w-1/2">{title}<br/>{value}</div>
+    return (
+        <div className="w-1/2">
+            <div className="text-xs">{title}</div>
+            <div className="text-slate-200">{value}</div>
+        </div>
+    )
 };
 
 export default function MainWeather({current, daily, alerts, noaaData}) {
     const [detailedForecast, setDetailedForecast] = useState([]);
+    const [selectedDay, setSelectedDay] = useState(null);
     const day = getDate(current.dt);
-
-
-
 
     const importantAlerts = alerts.filter(alert => alert.properties.severity === "Severe" ||  alert.properties.severity === "Extreme");
     const otherAlerts     = alerts.filter(alert => alert.properties.severity != "Severe" &&  alert.properties.severity != "Extreme")
     const sortedAlerts = [...importantAlerts, ...otherAlerts];
 
-    console.log(daily);
     const definaNoaaPairs = (i) => {
-        const noaaPairs = noaaData.flatMap((_, i, a) => i % 2 ? [] : [a.slice(i, i + 2)]);
-        setDetailedForecast(noaaPairs[i])
+        if (selectedDay == i) {
+            setSelectedDay(null)
+        } else {
+            const noaaPairs = noaaData.flatMap((_, i, a) => i % 2 ? [] : [a.slice(i, i + 2)]);
+            setDetailedForecast(noaaPairs[i])
+            setSelectedDay(i);
+        }
+
     }
     return (
         <div className=" flex flex-col justify-between md:p-6 bg-black bg-opacity-25 w-full" >
@@ -90,9 +99,13 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                 </div>
 
 
-                {detailedForecast?.length > 0 &&
+                {selectedDay != null &&
                 <CardStyle classes="text-left">
-                    {detailedForecast?.map(weather => {
+                    {detailedForecast?.map((weather,t) => {
+                        const todayWeather = daily[selectedDay];
+                        const timeOfDay = t == 0 ? 'day' : 'night';
+                        const precipitation = weather.probabilityOfPrecipitation.value ? weather.probabilityOfPrecipitation.value : todayWeather.pop * 100;
+
                         return (
                             <div className="w-1/2 p-4 flex flex-col justify-between" key={weather.number}>
                                 <div className="flex flex-col ">
@@ -103,25 +116,33 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                                             <img className="mx-auto" src="http://localhost:3000/_next/image?url=http%3A%2F%2Fopenweathermap.org%2Fimg%2Fwn%2F10d%402x.png&w=640&q=75" width="50" height="50" alt=""/>
                                         </div>
                                         <div>
-                                            <div>P {weather.probabilityOfPrecipitation.value}</div>
+                                            <div>P {precipitation}%</div>
                                             <div>H {weather.relativeHumidity.value}%</div>
+                                            <div>{t == 0 ? `UVI ${todayWeather.uvi}` : `&nbsp;`}</div>
                                         </div>
                                     </div>
-                                    <div className="pb-12 text-sm">
+                                    <div className="pb-8 text-sm pt-6">
                                         {weather.detailedForecast}
                                     </div>
                                 </div>
 
 
                                 <div className="flex flex-col border rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
-                                    <div className="border-b flex m-2">
-                                        <DailyIconAttribute title="Feels like" value="25"/>
+                                    <div className="border-b flex p-2">
+                                        <DailyIconAttribute title="Feels like" value={<Temperature temp={todayWeather.feels_like[timeOfDay]}/>}/>
                                         <DailyIconAttribute title={`Wind ${weather.windDirection}`} value={weather.windSpeed}/>
                                     </div>
+                                    {t == 0 &&
                                     <div className="flex  m-2">
-                                        <DailyIconAttribute title="Sunrise" value="time"/>
-                                        <DailyIconAttribute title="Sunset" value="time"/>
+                                        <DailyIconAttribute title="Sunrise" value={getTime(getDate(todayWeather.sunrise))}/>
+                                        <DailyIconAttribute title="Sunset" value={getTime(getDate(todayWeather.sunset))}/>
+                                    </div>}
+                                    {t == 1 &&
+                                    <div className="flex  m-2">
+                                        <DailyIconAttribute title="Moonrise" value={getTime(getDate(todayWeather.moonrise))}/>
+                                        <DailyIconAttribute title="Moonset" value={getTime(getDate(todayWeather.moonset))}/>
                                     </div>
+                                    }
 
                                 </div>
                             </div>

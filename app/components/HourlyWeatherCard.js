@@ -3,6 +3,7 @@ import Image from "next/image";
 import CardStyle from './Atoms/CardStyle';
 import Temperature from "./Atoms/Temperature";
 import {getDate} from "../utils/getDate";
+import {getTime} from "../utils/getTime";
 
 const MiniData = ({text, value}) => {
     return (
@@ -20,7 +21,7 @@ export default function HourlyWeatherCard({date, description, icon, temp, humidi
     return (
         <CardStyle>
             <div className="flex-none p-2 text-left self-center">
-                <div className="">{time}</div>
+                <div className="">{getTime(day)}</div>
             </div>
 
             <div className="flex flex-auto flex-col md:flex-row">
