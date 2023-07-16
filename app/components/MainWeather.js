@@ -123,11 +123,6 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                                             <div className="text-3xl"><Temperature temp={weather.temperature} /></div>
                                             <img className="mx-auto" src="http://localhost:3000/_next/image?url=http%3A%2F%2Fopenweathermap.org%2Fimg%2Fwn%2F10d%402x.png&w=640&q=75" width="50" height="50" alt=""/>
                                         </div>
-                                        <div>
-                                            <div className="flex items-center"><IconUmbrella /> <span className="pl-2">{precipitation}%</span></div>
-                                            <div className="flex items-center"><IconWiHumidity /> <span className="pl-2">{weather.relativeHumidity?.value}%</span></div>
-                                            <div>{weather.isDaytime === true ? <div className="flex items-center"><IconSun /> <span className="pl-2">{todayWeather.uvi}</span></div> : <span>&nbsp;</span>}</div>
-                                        </div>
                                     </div>
                                     <div className="pb-8 text-sm pt-6">
                                         {weather.detailedForecast}
@@ -137,7 +132,15 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
 
                                 {weather.number && <div
                                     className="flex flex-col border rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
-                                    <div className="border-b flex p-2">
+                                    <div className="border-b flex p-3">
+                                        <DailyIconAttribute title="Humidity"
+                                                            value={`${weather.relativeHumidity?.value}%`}
+                                                            icon={<IconWiHumidity/>}/>
+                                        <DailyIconAttribute title={`Precipitation`}
+                                                            value={`${precipitation}%`}
+                                                            icon={<IconUmbrella />}/>
+                                    </div>
+                                    <div className="border-b flex p-3">
                                         <DailyIconAttribute title="Feels like"
                                                             value={<Temperature temp={todayWeather.feels_like[timeOfDay]}/>}
                                                             icon={<IconThermometerHalf/>}/>
@@ -146,7 +149,7 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                                         icon={<IconWind />}/>
                                     </div>
                                     {weather.isDaytime === true &&
-                                    <div className="flex  m-2">
+                                    <div className="flex  m-3">
                                         <DailyIconAttribute title="Sunrise"
                                                             icon={<IconSunrise/>}
                                                             value={getTime(getDate(todayWeather.sunrise))}/>
@@ -155,7 +158,7 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                                                             value={getTime(getDate(todayWeather.sunset))}/>
                                     </div>}
                                     {weather.isDaytime === false &&
-                                    <div className="flex  m-2">
+                                    <div className="flex  m-3">
                                         <DailyIconAttribute title="Moonrise"
                                                             icon={<IconWiMoonrise/>}
                                                             value={getTime(getDate(todayWeather.moonrise))}/>
