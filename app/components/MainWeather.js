@@ -23,10 +23,16 @@ const Card = ({title, icon, value, iconClass}) => {
 }
 export default function MainWeather({current, daily, alerts}) {
     const day = getDate(current.dt);
+    console.log(current)
+
+    const importantAlerts = alerts.filter(alert => alert.properties.severity === "Severe" ||  alert.properties.severity === "Extreme");
+    const otherAlerts     = alerts.filter(alert => alert.properties.severity != "Severe" &&  alert.properties.severity != "Extreme")
+    const sortedAlerts = [...importantAlerts, ...otherAlerts];
+
 
     return (
         <div className=" flex flex-col justify-between p-6 bg-black bg-opacity-25 w-full" >
-            <div className="text-right">{`${getDay(current.dt).substring(0, 3)} ${getMonth(current.dt)} ${day.getDate()}`} | {`${day.getHours()}:${day.getMinutes()}`}</div>
+            <div className="text-right">{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`} | {`${day.getHours()}:${day.getMinutes()}`}</div>
 
             <div>
                 <div className="flex flex-col items-end">
@@ -39,13 +45,12 @@ export default function MainWeather({current, daily, alerts}) {
 
 
                         <div className="flex mt-12">
-                            <Card title="Feels like" value="25°" icon={<IconThermometerHalf/>} iconClass="text-xl"/>
-                            <Card title="Humidity" value="60%" icon={<IconWiHumidity />} iconClass="text-3xl" />
-                            <Card title="precipitation" value="60%" icon={<IconUmbrella />} iconClass="text-xl p-2" />
+                            <Card title="Feels like" value={`${Math.floor(current.feels_like)}°`} icon={<IconThermometerHalf/>} iconClass="text-xl"/>
+                            <Card title="Humidity" value={`${current.humidity}%`} icon={<IconWiHumidity />} iconClass="text-3xl" />
                         </div>
                 </div>
 
-                {alerts && alerts.map(alert => {
+                {sortedAlerts && sortedAlerts.map(alert => {
                     return <Alert alert={alert} key={alert.id}/>
                 })}
 

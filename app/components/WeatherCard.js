@@ -10,7 +10,7 @@ export default function WeatherCard({date, time, temp, description,icon}) {
 
     return (
         <CardStyle classes="w-[150px] flex-col bg-opacity-25 bg-black">
-            <span className="text-slate-400 text-xs">{`${getDay(date).substring(0, 3)} ${getMonth(date)} ${day.getDate()}`}</span>
+            <span className="text-slate-400 text-xs">{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`}</span>
 
             {icon && <div><img className="mx-auto" src={icon} width="50" height="50" alt=""/></div>}
             <div className="text-3xl"><Temperature temp={temp.day}/></div>
