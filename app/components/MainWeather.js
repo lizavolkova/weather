@@ -93,9 +93,8 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                 {detailedForecast?.length > 0 &&
                 <CardStyle classes="text-left">
                     {detailedForecast?.map(weather => {
-                        console.log(weather)
                         return (
-                            <div className="w-1/2 p-4 flex flex-col justify-between">
+                            <div className="w-1/2 p-4 flex flex-col justify-between" key={weather.number}>
                                 <div className="flex flex-col ">
                                     <div className="text-slate-400">{weather.name}</div>
                                     <div className="flex justify-between">
