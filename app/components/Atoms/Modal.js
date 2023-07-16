@@ -14,7 +14,7 @@ const Modal = ({ children, header, showModal, setShowModal}) => {
                         onClick={() => setShowModal(false)}
                     ></div>
                 </div>
-                <div className={`fixed flex flex-col items-center bg-white px-4 py-0 transition-opacity absolute md:static top-0 md:top-auto md:pb-8 w-full md:w-[50%] z-10 ${showModal ? "opacity-100" : "opacity-0"}`}>
+                <div className={`fixed flex flex-col items-center bg-white px-4 py-0 transition-opacity absolute md:static top-0 md:top-[25%] md:pb-8 w-full md:w-[50%] z-10 ${showModal ? "opacity-100" : "opacity-0"}`}>
                     <div className="flex border-b-2 border-slate-300 w-full py-2 my-2 justify-between">
                         <div className="text-black font-bold">{header}</div>
 

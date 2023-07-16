@@ -14,6 +14,7 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [bgColor, setBgColor] = useState("#000");
     const [alerts, setAlerts] = useState([]);
+    const [noaaData, setNoaaData] = useState([]);
 
 
     useEffect ( ()=> {
@@ -29,6 +30,17 @@ export default function Home() {
             }
         }
 
+        async function fetchNoaaforecast() {
+            try {
+                const res = await fetch('https://api.weather.gov/gridpoints/OKX/36,57/forecast?units=si')
+                const data = await res.json();
+                setNoaaData(data?.properties?.periods);
+                setIsLoading(false);
+            } catch (err) {
+                console.error(err);
+                setIsLoading(true);
+            }
+        }
 
         async function fetchData() {
             const res = await fetch("http://localhost:3000/api/data")
@@ -46,6 +58,7 @@ export default function Home() {
         fetchRealData();
         //fetchData();
         fetchAlerts()
+        fetchNoaaforecast();
 
     }, []);
 
@@ -74,7 +87,7 @@ export default function Home() {
 
                   <CardWrapper background={bgImage} classes="flex-col md:flex-row ">
                       <div className="w-full md:w-1/2 lg:w-3/5 flex">
-                          <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts}/>
+                          <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData}/>
                       </div>
                       <div className="backdrop-blur-md bg-opacity-25 bg-black md:border-l md:rounded-r-lg border-slate-400 w-full md:w-1/2 md:w-2/3">
                           <SideWeather current={data.current} daily={data.daily} hourly={data.hourly}/>
