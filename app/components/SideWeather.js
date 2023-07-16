@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import DailyWeatherCard from "./DailyWeatherCard";
+import HourlyWeatherCard from "./HourlyWeatherCard";
 import {getIcon} from "../utils/getIcon";
 import CardStyle from "./Atoms/CardStyle";
 import {getTimeWeather} from '../utils/getTimeWeather';
@@ -24,9 +24,9 @@ export default function SideWeather({current, daily, hourly}) {
 
 
     return (
-        <div className="m-6 flex flex-col justify-between">
+        <div className="m-2 md:m-6 flex flex-col justify-between">
             <div className="pb-10">
-                <div className="mb-20">Ossining, NY</div>
+                <div className="mb-2 md:mb-20">Ossining, NY</div>
                 <div className="flex justify-between">
                     {test && test.map(weather => {
                         return (
@@ -54,7 +54,7 @@ export default function SideWeather({current, daily, hourly}) {
 
                             return (
                                 <li className="" key={weather.dt}>
-                                    <DailyWeatherCard description={description} date={weather.dt} icon={icon} temp={weather.temp} humidity={weather.humidity} pop={weather.pop} feel={weather.feels_like}/>
+                                    <HourlyWeatherCard description={description} date={weather.dt} icon={icon} temp={weather.temp} humidity={weather.humidity} pop={weather.pop} feel={weather.feels_like}/>
                                 </li>
                             )
                         })

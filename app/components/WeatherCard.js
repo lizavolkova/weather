@@ -8,7 +8,6 @@ import CardStyle from "./Atoms/CardStyle";
 export default function WeatherCard({date, time, temp, description,icon}) {
     const day = new Date(date * 1000);
 
-
     return (
         <CardStyle classes="w-[150px] flex-col bg-opacity-25 bg-black">
             <span className="text-slate-400 text-xs">{`${getDay(date).substring(0, 3)} ${getMonth(date)} ${day.getDate()}`}</span>
@@ -23,11 +22,3 @@ export default function WeatherCard({date, time, temp, description,icon}) {
         </CardStyle>
     )
 }
-
-// <div className="backdrop-blur-md border-2 border-sky-500 rounded-xl w-24 m-2 p-4 flex flex-col text-center">
-//     <span className="">{time}</span>
-//     <hr/>
-//     {icon && <div><img className="mx-auto" src={icon} width="50" height="50"/></div>}
-//     <div>{Math.floor(parseInt(temp))}°</div>
-//     <WeatherDescription text={description}/>
-// </div>

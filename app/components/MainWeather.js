@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {getImage} from "../utils/backgroundPhotos";
 import {getIcon} from "../utils/getIcon";
-import Hourly from "./Hourly";
 import WeatherCard from "./WeatherCard";
 import Modal from "./Atoms/Modal";
 const weatherID = 800;
@@ -24,8 +23,7 @@ const Card = ({title, icon, value, iconClass}) => {
         </div>
     )
 }
-export default function MainWeather({current, hourly, daily, alerts}) {
-    const [showAlertModal, setShowAlertModal] = useState(false);
+export default function MainWeather({current, daily, alerts}) {
     const day = new Date(current.dt * 1000);
 
     return (
@@ -47,12 +45,6 @@ export default function MainWeather({current, hourly, daily, alerts}) {
                             <Card title="Humidity" value="60%" icon={<IconWiHumidity />} iconClass="text-3xl" />
                             <Card title="precipitation" value="60%" icon={<IconUmbrella />} iconClass="text-xl p-2" />
                         </div>
-
-
-
-
-
-
                 </div>
 
                 {alerts && alerts.map(alert => {

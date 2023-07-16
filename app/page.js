@@ -44,8 +44,8 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        fetchRealData();
-        //fetchData();
+        //fetchRealData();
+        fetchData();
         fetchAlerts()
 
     }, []);
@@ -71,13 +71,13 @@ export default function Home() {
           {isLoading ? (
              <div>LOADING</div>
           ) : (
-              <main className="flex min-h-screen flex-col items-center p-12 bg-cover backdrop-blur-3xl" style={{backgroundColor: bgColor}}>
+              <main className="flex min-h-screen flex-col items-center p-0 md:p-12 bg-cover backdrop-blur-3xl" style={{backgroundColor: bgColor}}>
 
                   <CardWrapper background={bgImage} classes="flex-col md:flex-row ">
                       <div className="w-full md:w-1/2 lg:w-3/5 flex">
                           <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts}/>
                       </div>
-                      <div className="backdrop-blur-md bg-opacity-25 bg-black border-l rounded-r-lg border-slate-400 w-full md:w-1/2 md:w-2/3">
+                      <div className="backdrop-blur-md bg-opacity-25 bg-black md:border-l md:rounded-r-lg border-slate-400 w-full md:w-1/2 md:w-2/3">
                           <SideWeather current={data.current} daily={data.daily} hourly={data.hourly}/>
                       </div>
                   </CardWrapper>
