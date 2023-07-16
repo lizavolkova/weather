@@ -1,0 +1,432 @@
+{
+  "@context": [
+    "https://geojson.org/geojson-ld/geojson-context.jsonld",
+    {
+      "@version": "1.1",
+      "wx": "https://api.weather.gov/ontology#",
+      "geo": "http://www.opengis.net/ont/geosparql#",
+      "unit": "http://codes.wmo.int/common/unit/",
+      "@vocab": "https://api.weather.gov/ontology#"
+    }
+  ],
+  "type": "Feature",
+  "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          -73.840260499999999,
+          41.1932282
+        ],
+        [
+          -73.844782600000002,
+          41.171597499999997
+        ],
+        [
+          -73.816054100000002,
+          41.168192999999995
+        ],
+        [
+          -73.811526200000003,
+          41.189823399999995
+        ],
+        [
+          -73.840260499999999,
+          41.1932282
+        ]
+      ]
+    ]
+  },
+  "properties": {
+    "updated": "2023-07-16T22:01:27+00:00",
+    "units": "si",
+    "forecastGenerator": "BaselineForecastGenerator",
+    "generatedAt": "2023-07-16T22:08:03+00:00",
+    "updateTime": "2023-07-16T22:01:27+00:00",
+    "validTimes": "2023-07-16T16:00:00+00:00/P7DT9H",
+    "elevation": {
+      "unitCode": "wmoUnit:m",
+      "value": 152.09520000000001
+    },
+    "periods": [
+      {
+        "number": 1,
+        "name": "Tonight",
+        "startTime": "2023-07-16T18:00:00-04:00",
+        "endTime": "2023-07-17T06:00:00-04:00",
+        "isDaytime": false,
+        "temperature": 20,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 50
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 23.333333333333332
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 100
+        },
+        "windSpeed": "4 to 11 km/h",
+        "windDirection": "SW",
+        "icon": "https://api.weather.gov/icons/land/night/tsra_sct,50/bkn?size=medium",
+        "shortForecast": "Chance Showers And Thunderstorms then Mostly Cloudy",
+        "detailedForecast": "A chance of showers and thunderstorms before 11pm. Mostly cloudy, with a low around 20. Southwest wind 4 to 11 km/h. Chance of precipitation is 50%. New rainfall amounts less than 0.5 cm possible."
+      },
+      {
+        "number": 2,
+        "name": "Monday",
+        "startTime": "2023-07-17T06:00:00-04:00",
+        "endTime": "2023-07-17T18:00:00-04:00",
+        "isDaytime": true,
+        "temperature": 31,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": null
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 21.111111111111111
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 100
+        },
+        "windSpeed": "6 to 11 km/h",
+        "windDirection": "W",
+        "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+        "shortForecast": "Mostly Sunny",
+        "detailedForecast": "Mostly sunny, with a high near 31. West wind 6 to 11 km/h."
+      },
+      {
+        "number": 3,
+        "name": "Monday Night",
+        "startTime": "2023-07-17T18:00:00-04:00",
+        "endTime": "2023-07-18T06:00:00-04:00",
+        "isDaytime": false,
+        "temperature": 21,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": null
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 20.555555555555557
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 100
+        },
+        "windSpeed": "6 to 11 km/h",
+        "windDirection": "S",
+        "icon": "https://api.weather.gov/icons/land/night/haze?size=medium",
+        "shortForecast": "Haze",
+        "detailedForecast": "Haze after 8pm. Partly cloudy, with a low around 21. South wind 6 to 11 km/h."
+      },
+      {
+        "number": 4,
+        "name": "Tuesday",
+        "startTime": "2023-07-18T06:00:00-04:00",
+        "endTime": "2023-07-18T18:00:00-04:00",
+        "isDaytime": true,
+        "temperature": 31,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 60
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 20.555555555555557
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 90
+        },
+        "windSpeed": "4 to 17 km/h",
+        "windDirection": "SE",
+        "icon": "https://api.weather.gov/icons/land/day/tsra_sct,30/tsra_sct,60?size=medium",
+        "shortForecast": "Haze",
+        "detailedForecast": "Haze before 8am, then haze and a chance of showers and thunderstorms between 8am and 2pm, then haze and showers and thunderstorms likely. Partly sunny, with a high near 31. Southeast wind 4 to 17 km/h. Chance of precipitation is 60%. New rainfall amounts less than 0.5 cm possible."
+      },
+      {
+        "number": 5,
+        "name": "Tuesday Night",
+        "startTime": "2023-07-18T18:00:00-04:00",
+        "endTime": "2023-07-19T06:00:00-04:00",
+        "isDaytime": false,
+        "temperature": 18,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 40
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 20.555555555555557
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 97
+        },
+        "windSpeed": "7 to 15 km/h",
+        "windDirection": "W",
+        "icon": "https://api.weather.gov/icons/land/night/tsra_hi,40/sct?size=medium",
+        "shortForecast": "Chance Showers And Thunderstorms then Partly Cloudy",
+        "detailedForecast": "A chance of showers and thunderstorms before midnight. Partly cloudy, with a low around 18. West wind 7 to 15 km/h. Chance of precipitation is 40%. New rainfall amounts less than 0.5 cm possible."
+      },
+      {
+        "number": 6,
+        "name": "Wednesday",
+        "startTime": "2023-07-19T06:00:00-04:00",
+        "endTime": "2023-07-19T18:00:00-04:00",
+        "isDaytime": true,
+        "temperature": 29,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": null
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 18.333333333333332
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 93
+        },
+        "windSpeed": "9 km/h",
+        "windDirection": "NW",
+        "icon": "https://api.weather.gov/icons/land/day/sct/rain_showers?size=medium",
+        "shortForecast": "Mostly Sunny then Slight Chance Rain Showers",
+        "detailedForecast": "A slight chance of rain showers after 2pm. Mostly sunny, with a high near 29."
+      },
+      {
+        "number": 7,
+        "name": "Wednesday Night",
+        "startTime": "2023-07-19T18:00:00-04:00",
+        "endTime": "2023-07-20T06:00:00-04:00",
+        "isDaytime": false,
+        "temperature": 19,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 30
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 18.888888888888889
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 90
+        },
+        "windSpeed": "7 km/h",
+        "windDirection": "NE",
+        "icon": "https://api.weather.gov/icons/land/night/rain_showers,30/rain_showers?size=medium",
+        "shortForecast": "Chance Rain Showers",
+        "detailedForecast": "A chance of rain showers. Mostly cloudy, with a low around 19. Chance of precipitation is 30%."
+      },
+      {
+        "number": 8,
+        "name": "Thursday",
+        "startTime": "2023-07-20T06:00:00-04:00",
+        "endTime": "2023-07-20T18:00:00-04:00",
+        "isDaytime": true,
+        "temperature": 29,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 40
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 20
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 90
+        },
+        "windSpeed": "6 to 11 km/h",
+        "windDirection": "E",
+        "icon": "https://api.weather.gov/icons/land/day/rain_showers/tsra_hi,40?size=medium",
+        "shortForecast": "Slight Chance Rain Showers then Chance Showers And Thunderstorms",
+        "detailedForecast": "A slight chance of rain showers before 2pm, then a chance of showers and thunderstorms. Partly sunny, with a high near 29. Chance of precipitation is 40%."
+      },
+      {
+        "number": 9,
+        "name": "Thursday Night",
+        "startTime": "2023-07-20T18:00:00-04:00",
+        "endTime": "2023-07-21T06:00:00-04:00",
+        "isDaytime": false,
+        "temperature": 19,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 30
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 20
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 93
+        },
+        "windSpeed": "11 km/h",
+        "windDirection": "SE",
+        "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30?size=medium",
+        "shortForecast": "Chance Showers And Thunderstorms",
+        "detailedForecast": "A chance of showers and thunderstorms. Partly cloudy, with a low around 19. Chance of precipitation is 30%."
+      },
+      {
+        "number": 10,
+        "name": "Friday",
+        "startTime": "2023-07-21T06:00:00-04:00",
+        "endTime": "2023-07-21T18:00:00-04:00",
+        "isDaytime": true,
+        "temperature": 28,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 40
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 19.444444444444443
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 93
+        },
+        "windSpeed": "11 km/h",
+        "windDirection": "SE",
+        "icon": "https://api.weather.gov/icons/land/day/tsra_hi/tsra_hi,40?size=medium",
+        "shortForecast": "Chance Showers And Thunderstorms",
+        "detailedForecast": "A chance of showers and thunderstorms. Partly sunny, with a high near 28. Chance of precipitation is 40%."
+      },
+      {
+        "number": 11,
+        "name": "Friday Night",
+        "startTime": "2023-07-21T18:00:00-04:00",
+        "endTime": "2023-07-22T06:00:00-04:00",
+        "isDaytime": false,
+        "temperature": 19,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 30
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 20
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 93
+        },
+        "windSpeed": "9 to 17 km/h",
+        "windDirection": "SW",
+        "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30?size=medium",
+        "shortForecast": "Chance Showers And Thunderstorms",
+        "detailedForecast": "A chance of showers and thunderstorms between 8pm and 2am. Mostly cloudy, with a low around 19. Chance of precipitation is 30%."
+      },
+      {
+        "number": 12,
+        "name": "Saturday",
+        "startTime": "2023-07-22T06:00:00-04:00",
+        "endTime": "2023-07-22T18:00:00-04:00",
+        "isDaytime": true,
+        "temperature": 28,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 30
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 20
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 93
+        },
+        "windSpeed": "9 to 17 km/h",
+        "windDirection": "NW",
+        "icon": "https://api.weather.gov/icons/land/day/rain_showers/tsra_hi,30?size=medium",
+        "shortForecast": "Chance Showers And Thunderstorms",
+        "detailedForecast": "A slight chance of rain showers between 8am and 2pm, then a chance of showers and thunderstorms. Partly sunny, with a high near 28. Chance of precipitation is 30%."
+      },
+      {
+        "number": 13,
+        "name": "Saturday Night",
+        "startTime": "2023-07-22T18:00:00-04:00",
+        "endTime": "2023-07-23T06:00:00-04:00",
+        "isDaytime": false,
+        "temperature": 17,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": 30
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 19.444444444444443
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 93
+        },
+        "windSpeed": "11 to 17 km/h",
+        "windDirection": "NW",
+        "icon": "https://api.weather.gov/icons/land/night/tsra_hi,30/sct?size=medium",
+        "shortForecast": "Chance Showers And Thunderstorms then Partly Cloudy",
+        "detailedForecast": "A chance of showers and thunderstorms before midnight. Partly cloudy, with a low around 17. Chance of precipitation is 30%."
+      },
+      {
+        "number": 14,
+        "name": "Sunday",
+        "startTime": "2023-07-23T06:00:00-04:00",
+        "endTime": "2023-07-23T18:00:00-04:00",
+        "isDaytime": true,
+        "temperature": 28,
+        "temperatureUnit": "C",
+        "temperatureTrend": null,
+        "probabilityOfPrecipitation": {
+          "unitCode": "wmoUnit:percent",
+          "value": null
+        },
+        "dewpoint": {
+          "unitCode": "wmoUnit:degC",
+          "value": 18.333333333333332
+        },
+        "relativeHumidity": {
+          "unitCode": "wmoUnit:percent",
+          "value": 93
+        },
+        "windSpeed": "15 km/h",
+        "windDirection": "NW",
+        "icon": "https://api.weather.gov/icons/land/day/sct?size=medium",
+        "shortForecast": "Mostly Sunny",
+        "detailedForecast": "Mostly sunny, with a high near 28."
+      }
+    ]
+  }
+}

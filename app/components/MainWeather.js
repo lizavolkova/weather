@@ -48,6 +48,7 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
         if (selectedDay == i) {
             setSelectedDay(null)
         } else {
+
             const noaaPairs = noaaData.flatMap((_, i, a) => i % 2 ? [] : [a.slice(i, i + 2)]);
             setDetailedForecast(noaaPairs[i])
             setSelectedDay(i);
@@ -104,11 +105,12 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                     {detailedForecast?.map((weather,t) => {
                         const todayWeather = daily[selectedDay];
                         const timeOfDay = t == 0 ? 'day' : 'night';
-                        const precipitation = weather.probabilityOfPrecipitation.value ? weather.probabilityOfPrecipitation.value : todayWeather.pop * 100;
+                        const precipitation = weather.probabilityOfPrecipitation?.value ? weather.probabilityOfPrecipitation?.value : todayWeather?.pop * 100;
 
                         return (
                             <div className="w-1/2 p-4 flex flex-col justify-between" key={weather.number}>
-                                <div className="flex flex-col ">
+
+                                {weather.number && <div className="flex flex-col ">
                                     <div className="text-slate-400">{weather.name}</div>
                                     <div className="flex justify-between">
                                         <div className="flex">
@@ -117,34 +119,42 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                                         </div>
                                         <div>
                                             <div>P {precipitation}%</div>
-                                            <div>H {weather.relativeHumidity.value}%</div>
+                                            <div>H {weather.relativeHumidity?.value}%</div>
                                             <div>{t == 0 ? `UVI ${todayWeather.uvi}` : `&nbsp;`}</div>
                                         </div>
                                     </div>
                                     <div className="pb-8 text-sm pt-6">
                                         {weather.detailedForecast}
                                     </div>
-                                </div>
+                                </div>}
 
 
-                                <div className="flex flex-col border rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
+                                {weather.number && <div
+                                    className="flex flex-col border rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
                                     <div className="border-b flex p-2">
-                                        <DailyIconAttribute title="Feels like" value={<Temperature temp={todayWeather.feels_like[timeOfDay]}/>}/>
-                                        <DailyIconAttribute title={`Wind ${weather.windDirection}`} value={weather.windSpeed}/>
+                                        <DailyIconAttribute title="Feels like" value={<Temperature
+                                            temp={todayWeather.feels_like[timeOfDay]}/>}/>
+                                        <DailyIconAttribute title={`Wind ${weather.windDirection}`}
+                                                            value={weather.windSpeed}/>
                                     </div>
                                     {t == 0 &&
                                     <div className="flex  m-2">
-                                        <DailyIconAttribute title="Sunrise" value={getTime(getDate(todayWeather.sunrise))}/>
-                                        <DailyIconAttribute title="Sunset" value={getTime(getDate(todayWeather.sunset))}/>
+                                        <DailyIconAttribute title="Sunrise"
+                                                            value={getTime(getDate(todayWeather.sunrise))}/>
+                                        <DailyIconAttribute title="Sunset"
+                                                            value={getTime(getDate(todayWeather.sunset))}/>
                                     </div>}
                                     {t == 1 &&
                                     <div className="flex  m-2">
-                                        <DailyIconAttribute title="Moonrise" value={getTime(getDate(todayWeather.moonrise))}/>
-                                        <DailyIconAttribute title="Moonset" value={getTime(getDate(todayWeather.moonset))}/>
+                                        <DailyIconAttribute title="Moonrise"
+                                                            value={getTime(getDate(todayWeather.moonrise))}/>
+                                        <DailyIconAttribute title="Moonset"
+                                                            value={getTime(getDate(todayWeather.moonset))}/>
                                     </div>
                                     }
 
                                 </div>
+                                }
                             </div>
                         )
                     })}
