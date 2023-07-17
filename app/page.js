@@ -10,6 +10,8 @@ import { FastAverageColor } from 'fast-average-color';
 import {Map} from "./components/Map";
 import HourlyWeather from "./components/HourlyWeather";
 import DailyWeather from "./components/DailyWeather";
+import HourlyWeatherUpdated from "./components/HourlyWeatherUpdates";
+import SliderDetails from "./components/Atoms/SliderDetails";
 
 export default function Home() {
     const [data, setData] = useState();
@@ -25,7 +27,8 @@ export default function Home() {
             try {
                 const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=41.18856&lon=-73.83745&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
                 const data = await res.json();
-                const air = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+                //const air = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+                const air = await fetch('http://api.airvisual.com/v2/nearest_city?lat=41.18856&lon=-73.83745&key=d8ee91ef-955d-4554-9a57-d3ee73d2fbfe');
                 const airData = await air.json();
                 setData(data);
                 setAirPollution(airData);
@@ -55,10 +58,11 @@ export default function Home() {
         async function fetchData() {
             const res = await fetch("http://localhost:3000/api/data")
             const data = await res.json();
-            const air = await fetch('http://localhost:3000/api/pollution')
+            const air = await fetch('http://localhost:3000/api/pollution');
             const airData = await air.json();
+            console.log(airData)
 
-            setAirPollution(airData);
+            setAirPollution(airData.data);
             setData(data);
             setIsLoading(false);
         }
@@ -115,15 +119,18 @@ export default function Home() {
                   <CardWrapper classes="flex flex-col " background={bgImage} bgColor={bgColor}>
                       <div className="backdrop-blur md:rounded-lg ">
                           <DailyWeather daily={data.daily} noaaData={noaaData}/>
-
                       </div>
 
                   </CardWrapper>
 
                   <CardWrapper bgColor={bgColor}>
-                      <div style={{backgroundColor: bgColor}}>
-                          <div className=""><HourlyWeather hourly={data.hourly}/></div>
-                      </div>
+                     <SliderDetails arr={data.daily}/>
+                      {/*<div>*/}
+                      {/*    <HourlyWeatherUpdated hourly={data.hourly}/>*/}
+                      {/*</div>*/}
+                      {/*<div style={{backgroundColor: bgColor}}>*/}
+                      {/*    <div className=""><HourlyWeather hourly={data.hourly}/></div>*/}
+                      {/*</div>*/}
                   </CardWrapper>
 
                   {/*<CardWrapper>*/}

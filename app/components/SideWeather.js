@@ -56,7 +56,7 @@ const TimeCard = ({time, temp, icon, feel}) => {
 
 export default function SideWeather({current, airPollution, hourly}) {
     const test = getTimeWeather(current, hourly);
-
+    console.log(airPollution.current)
     return (
         <>
             <div className="mb-2 flex p-6">Ossining, NY</div>
@@ -71,7 +71,7 @@ export default function SideWeather({current, airPollution, hourly}) {
                     <hr />
                     <div className="flex justify-between mb-32 pt-8">
                         <Card title="UVI" value={`${current.uvi}°`} icon={<IconSun/>} iconClass="text-xl" range={[0,2,7]}/>
-                        <Card title="AQI" value={`${airPollution.list[0].main.aqi}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,2,4]} />
+                        <Card title="AQI" value={`${airPollution.current.pollution.aqius}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,50,150]} />
                         <Card title="Pressure" value={`${current.pressure}hPa`} icon={<IconArrowsCollapse />} iconClass="text-3xl" />
                     </div>
 

@@ -1,24 +1,33 @@
 {
-  "coord": {
-    "lon": -73.8375,
-    "lat": 41.1886
-  },
-  "list": [
-    {
-      "main": {
-        "aqi": 1
+  "status": "success",
+  "data": {
+    "city": "Ossining",
+    "state": "New York",
+    "country": "USA",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -73.86152,
+        41.16287
+      ]
+    },
+    "current": {
+      "pollution": {
+        "ts": "2023-07-17T19:00:00.000Z",
+        "aqius": 127,
+        "mainus": "p2",
+        "aqicn": 64,
+        "maincn": "p2"
       },
-      "components": {
-        "co": 307.08,
-        "no": 0,
-        "no2": 7.88,
-        "o3": 29.68,
-        "so2": 1.01,
-        "pm2_5": 5.68,
-        "pm10": 6.33,
-        "nh3": 0.09
-      },
-      "dt": 1689558419
+      "weather": {
+        "ts": "2023-07-17T19:00:00.000Z",
+        "tp": 31,
+        "pr": 1015,
+        "hu": 63,
+        "ws": 3.6,
+        "wd": 160,
+        "ic": "02d"
+      }
     }
-  ]
+  }
 }
