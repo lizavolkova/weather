@@ -3,6 +3,42 @@ import HourlyWeatherCard from "./HourlyWeatherCard";
 import {getIcon} from "../utils/getIcon";
 import {getTimeWeather} from '../utils/getTimeWeather';
 import Temperature from "./Atoms/Temperature";
+import HourlyWeather from "./HourlyWeather";
+import IconThermometerHalf from "./icons/IconThermometerHalf";
+import IconWiHumidity from "./icons/IconWiHumidity";
+import React from "react";
+import IconWind from "./icons/IconWind";
+import IconSun from "./icons/IconSun";
+import IconBxLeaf from "./icons/IconBxLeaf";
+import IconArrowsCollapse from "./icons/IconArrowsCollapse";
+
+const Card = ({title, icon, value, units, iconClass, range=[]}) => {
+    let color;
+    switch (true) {
+        case (parseInt(value) <= range[1]):
+            color = 'text-lime-300';
+            break;
+        case (parseInt(value) >= range[2]):
+            color = 'text-red-300';
+            break;
+        case (parseInt(value) > range[1] && parseInt(value) < range[2]):
+            color = 'text-yellow-300';
+            break;
+        default:
+            color = 'text-white';
+            break;
+    }
+
+    return(
+        <div className="flex flex-col pb-4">
+            <div className="text-slate-100 capitalize pb-4 ml-1 drop-shadow-2xl text-xs text-slate-300">{title}</div>
+            <div className="h-full flex">
+                <div className={`${iconClass} self-center text-lg pr-1 ${color}`}>{icon}</div>
+                <div className={`text-md self-center ${color}`}>{value}{units}</div>
+            </div>
+        </div>
+    )
+};
 
 const TimeCard = ({time, temp, icon, feel}) => {
 
@@ -18,49 +54,42 @@ const TimeCard = ({time, temp, icon, feel}) => {
     )
 }
 
-export default function SideWeather({current, daily, hourly}) {
+export default function SideWeather({current, airPollution, hourly}) {
     const test = getTimeWeather(current, hourly);
 
     return (
-        <div className="m-2 md:m-6 flex flex-col justify-between">
-            <div className="pb-10">
-                <div className="mb-2 md:mb-20">Ossining, NY</div>
-                <div className="flex justify-between">
-                    {test && test.map(weather => {
-                        return (
-                            <div className="flex flex-col" key={weather.time}>
-                                <TimeCard time={weather.time} temp={weather.weather.temp} feel={weather.weather.feels_like} icon={weather.weather.weather[0].icon} />
-                            </div>
-                        )
-                    })}
+        <>
+            <div className="mb-2 flex p-6">Ossining, NY</div>
+            <div className="px-8 pb-8 flex flex-col justify-between w-full">
+                <div className="flex flex-col">
+
+                    <div className="flex justify-between">
+                        <Card title="Feels like" value={`${Math.floor(current.feels_like)}°`} icon={<IconThermometerHalf/>} iconClass="text-xl"/>
+                        <Card title="Humidity" value={`${current.humidity}`} units="%" icon={<IconWiHumidity />} iconClass="text-3xl" range={[0,55,65]}/>
+                        <Card title="Wind" value={`${current.wind_speed}m/s`} icon={<IconWind />} iconClass="text-3xl" />
+                    </div>
+                    <hr />
+                    <div className="flex justify-between mb-32 pt-8">
+                        <Card title="UVI" value={`${current.uvi}°`} icon={<IconSun/>} iconClass="text-xl" range={[0,2,7]}/>
+                        <Card title="AQI" value={`${airPollution.list[0].main.aqi}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,2,4]} />
+                        <Card title="Pressure" value={`${current.pressure}hPa`} icon={<IconArrowsCollapse />} iconClass="text-3xl" />
+                    </div>
+
+
+                    <div className="flex justify-between">
+                        {test && test.map(weather => {
+                            return (
+                                <div className="flex flex-col" key={weather.time}>
+                                    <TimeCard time={weather.time} temp={weather.weather.temp} feel={weather.weather.feels_like} icon={weather.weather.weather[0].icon} />
+                                </div>
+                            )
+                        })}
+                    </div>
+
 
                 </div>
             </div>
-
-            <hr/>
-
-            <div className="flex">
-                <div className="w-1/3">Hourly</div>
-
-            </div>
-            <div className="overflow-y-scroll max-h-[38rem]">
-                <ul>
-                    {
-                        hourly.map(weather => {
-                            const description = weather.weather[0].description;
-                            const icon = getIcon(weather?.weather);
-
-                            return (
-                                <li className="" key={weather.dt}>
-                                    <HourlyWeatherCard description={description} date={weather.dt} icon={icon} temp={weather.temp} humidity={weather.humidity} pop={weather.pop} feel={weather.feels_like}/>
-                                </li>
-                            )
-                        })
-                    }
-
-                </ul>
-            </div>
-        </div>
+        </>
 
     )
 }

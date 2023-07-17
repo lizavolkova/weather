@@ -8,9 +8,12 @@ import AirQuality from "./components/AirQuality";
 
 import { FastAverageColor } from 'fast-average-color';
 import {Map} from "./components/Map";
+import HourlyWeather from "./components/HourlyWeather";
+import DailyWeather from "./components/DailyWeather";
 
 export default function Home() {
     const [data, setData] = useState();
+    const [airPollution, setAirPollution] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [bgColor, setBgColor] = useState("#000");
     const [alerts, setAlerts] = useState([]);
@@ -22,7 +25,10 @@ export default function Home() {
             try {
                 const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=41.18856&lon=-73.83745&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
                 const data = await res.json();
+                const air = await fetch(`http://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+                const airData = await air.json();
                 setData(data);
+                setAirPollution(airData);
                 setIsLoading(false);
             } catch(err) {
                 console.error(err)
@@ -49,6 +55,10 @@ export default function Home() {
         async function fetchData() {
             const res = await fetch("http://localhost:3000/api/data")
             const data = await res.json();
+            const air = await fetch('http://localhost:3000/api/pollution')
+            const airData = await air.json();
+
+            setAirPollution(airData);
             setData(data);
             setIsLoading(false);
         }
@@ -59,9 +69,9 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        fetchRealData();
+        //fetchRealData();
         fetchNoaaforecast();
-        //fetchData();
+        fetchData();
         fetchAlerts()
 
 
@@ -69,7 +79,10 @@ export default function Home() {
 
     const current = data?.current?.weather[0];
     const timeOfDay = current?.icon?.slice(-1);
-    const bgImage = `/weather-photos/${timeOfDay}/${current?.main.toLowerCase()}.jpg`;
+    const weatherImage = data?.current?.weather[0].main.toLowerCase() === 'clouds' && data?.current?.clouds < 50 ? 'clouds-part' : current?.main.toLowerCase();
+    const bgImage = `/weather-photos/${timeOfDay}/${weatherImage}.jpg`;
+
+
 
     const fac = new FastAverageColor();
 
@@ -90,17 +103,27 @@ export default function Home() {
           ) : (
               <main className="flex min-h-screen flex-col items-center p-0 md:p-12 bg-cover backdrop-blur-3xl" style={{backgroundColor: bgColor}}>
 
-                  <CardWrapper background={bgImage} classes="flex-col md:flex-row ">
-                      <div className="w-full md:w-1/2 lg:w-3/5 flex">
+                  <CardWrapper background={bgImage} classes="flex-col md:flex-row " bgColor={bgColor}>
+                      <div className="w-full md:w-3/5 flex">
                           {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData}/>}
                       </div>
-                      <div className="backdrop-blur-md bg-opacity-25 bg-black md:border-l md:rounded-r-lg border-slate-400 w-full md:w-1/2 md:w-2/3">
-                          <SideWeather current={data.current} daily={data.daily} hourly={data.hourly}/>
+                      <div className="backdrop-blur-md flex flex-col  justify-between bg-opacity-25 bg-black md:border-l md:rounded-r-lg border-slate-400 w-full md:w-2/5">
+                          <SideWeather current={data.current} daily={data.daily} hourly={data.hourly} airPollution={airPollution}/>
                       </div>
                   </CardWrapper>
 
-                  <CardWrapper>
-                      <Map/>
+                  <CardWrapper classes="flex flex-col " background={bgImage} bgColor={bgColor}>
+                      <div className="backdrop-blur md:rounded-lg ">
+                          <DailyWeather daily={data.daily} noaaData={noaaData}/>
+
+                      </div>
+
+                  </CardWrapper>
+
+                  <CardWrapper bgColor={bgColor}>
+                      <div style={{backgroundColor: bgColor}}>
+                          <div className=""><HourlyWeather hourly={data.hourly}/></div>
+                      </div>
                   </CardWrapper>
 
                   {/*<CardWrapper>*/}
