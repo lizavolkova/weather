@@ -28,7 +28,7 @@ export default function Home() {
                 const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=41.18856&lon=-73.83745&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
                 const data = await res.json();
                 //const air = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
-                const air = await fetch(`http://api.airvisual.com/v2/nearest_city?lat=41.18856&lon=-73.83745&key=${process.env.NEXT_PUBLIC_AIR_VISUAL_API_KEY}`);
+                const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=41.18856&lon=-73.83745&key=${process.env.NEXT_PUBLIC_AIR_VISUAL_API_KEY}`);
                 const airData = await air.json();
                 setData(data);
                 setAirPollution(airData.data);
