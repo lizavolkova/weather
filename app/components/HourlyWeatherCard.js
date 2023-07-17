@@ -16,7 +16,6 @@ const MiniData = ({text, value}) => {
 
 export default function HourlyWeatherCard({date, description, icon, temp, humidity, pop, feel}) {
     const day = getDate(date);
-    const time = `${day.getHours()}:00`;
 
     return (
         <CardStyle>
