@@ -36,3 +36,16 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+.slick-next {
+  right: 0 !important;
+}
+
+.slick-prev {
+  left: 0 !important;
+  z-index: 100;
+}
+
+.slick-list {
+  padding-left: 19px !important;
+}

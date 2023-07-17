@@ -13,6 +13,8 @@ import {getTime} from "../utils/getTime";
 import IconSunset from "./icons/IconSunset";
 import IconWiMoonrise from "./icons/IconWiMoonrise";
 import IconMoonset from "./icons/IconMoonset";
+import Slider from "react-slick";
+
 
 const DailyIconAttribute = ({icon, title, value}) => {
     return (
@@ -28,6 +30,14 @@ export default function DailyWeather({daily, noaaData}) {
     const [detailedForecast, setDetailedForecast] = useState([]);
     const [selectedDay, setSelectedDay] = useState(null);
 
+    const sliderSettings = {
+        dots: false,
+        infinite: false,
+        speed: 500,
+        slidesToShow: 5,
+        slidesToScroll: 2
+    };
+
     const definaNoaaPairs = (i) => {
         if (selectedDay == i) {
             setSelectedDay(null)
@@ -42,8 +52,8 @@ export default function DailyWeather({daily, noaaData}) {
     return(
         <div className="p-2 ">
             <div className="p-2 uppercase ml-1">8 Day Forecast</div>
-            <div className="flex overflow-auto justify-between overflow-x-scroll">
-
+            <div className="h-[200px] w-full">
+                <Slider {...sliderSettings}>
                 {daily && daily.map((weather,i)=> {
 
                     const date = getDate(weather?.dt);
@@ -58,6 +68,7 @@ export default function DailyWeather({daily, noaaData}) {
 
                     )
                 })}
+                </Slider>
             </div>
 
             {selectedDay != null &&
