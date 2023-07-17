@@ -73,9 +73,9 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        fetchRealData();
+        //fetchRealData();
         fetchNoaaforecast();
-        //fetchData();
+        fetchData();
         fetchAlerts()
 
 
@@ -136,17 +136,18 @@ export default function Home() {
                       {/*</div>*/}
                   </CardWrapper>
 
-                  {/*<CardWrapper>*/}
-                  {/*    <div className="w-2/3 bg-yellow-600">*/}
-                  {/*        <DetailsWeather/>*/}
-                  {/*    </div>*/}
-                  {/*    <div className="w-1/3 bg-green-600">*/}
-                  {/*        <AirQuality/>*/}
-                  {/*    </div>*/}
-                  {/*</CardWrapper>*/}
+                  <CardWrapper>
+
+                      <div className="w-1/3 bg-green-600">
+                          <AirQuality/>
+                      </div>
+                  </CardWrapper>
 
                   {/*<CardWrapper>*/}
                   {/*    RADAR*/}
+                  {/*    <div className="w-2/3 bg-yellow-600">*/}
+                  {/*        <DetailsWeather/>*/}
+                  {/*    </div>*/}
                   {/*</CardWrapper>*/}
               </main>
           )}

@@ -16,6 +16,8 @@ import IconSunset from "./icons/IconSunset";
 import IconWiMoonrise from "./icons/IconWiMoonrise";
 import IconMoonset from "./icons/IconMoonset";
 import IconSun from "./icons/IconSun";
+import {getDay} from "../utils/getDay";
+import {getMonth} from "../utils/getMonth";
 
 const DailyIconAttribute = ({icon, title, value}) => {
     return (
@@ -43,10 +45,12 @@ export default function HourlyWeather({children, arr}) {
         slidesToShow: 12,
         slidesToScroll: 4,
         responsive: [
+
             {
                 breakpoint: 640,
                 settings: {
-                    slidesToShow: 5
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
                 }
             },
             {
@@ -87,8 +91,9 @@ export default function HourlyWeather({children, arr}) {
                             <CardStyle classes={`w-[100px] flex-col ${selectedEl === i ? 'bg-black bg-opacity-25' : ''}`}>
                                 <div className="flex flex-col justify-between items-center">
                                     <div>{getTime(day)}</div>
+                                    <div className=" text-slate-400 text-center" style={{fontSize: '0.50rem'}}>{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`}</div>
                                     <div><Image src={icon} width="75" height="50" alt=""/></div>
-                                    <div className="self-center text-center text-xs text-slate-400 capitalize min-h-[50px]">{description}</div>
+                                    <div className="self-center text-center text-xs text-slate-300 capitalize min-h-[50px]">{description}</div>
                                     <div className="text-3xl "><Temperature temp={weather.temp} /></div>
                                     <div className="text-xs text-slate-300 flex justify-center"><IconUmbrella /><span className="pl-1">{Math.floor(weather.pop*100)}%</span></div>
                                 </div>
@@ -110,7 +115,7 @@ export default function HourlyWeather({children, arr}) {
                                         value={`${detailsData.humidity}%`}
                                         icon={<IconWiHumidity/>}/>
                     <DailyIconAttribute title={`Precipitation`}
-                                        value={`${detailsData.pop * 100}%`}
+                                        value={`${Math.floor(detailsData.pop * 100)}%`}
                                         icon={<IconUmbrella />}/>
                 </div>
                 <div className="flex p-3">

@@ -59,8 +59,7 @@ export default function SideWeather({current, airPollution, hourly}) {
 
     return (
         <>
-            <div className="mb-2 flex p-6">Ossining, NY</div>
-            <div className="px-8 pb-8 flex flex-col justify-between w-full">
+            <div className="pt-8 md:pt-0 px-8 pb-8 flex flex-col justify-between w-full">
                 <div className="flex flex-col">
 
                     <div className="flex justify-between">
@@ -69,7 +68,7 @@ export default function SideWeather({current, airPollution, hourly}) {
                         <Card title="Wind" value={`${current.wind_speed}m/s`} icon={<IconWind />} iconClass="text-3xl" />
                     </div>
                     <hr />
-                    <div className="flex justify-between mb-32 pt-8">
+                    <div className="flex justify-between mb-8 md:mb-32 pt-8">
                         <Card title="UVI" value={`${current.uvi}°`} icon={<IconSun/>} iconClass="text-xl" range={[0,2,7]}/>
                         <Card title="AQI" value={`${airPollution.current.pollution.aqius}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,50,150]} />
                         <Card title="Pressure" value={`${current.pressure}hPa`} icon={<IconArrowsCollapse />} iconClass="text-3xl" />
