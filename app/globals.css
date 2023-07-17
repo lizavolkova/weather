@@ -49,3 +49,16 @@ html {
 .slick-list {
   padding-left: 19px !important;
 }
+
+.slick-track
+{
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+}
+
+.slick-slide
+{
+  height: auto !important;
+}

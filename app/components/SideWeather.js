@@ -3,7 +3,7 @@ import HourlyWeatherCard from "./HourlyWeatherCard";
 import {getIcon} from "../utils/getIcon";
 import {getTimeWeather} from '../utils/getTimeWeather';
 import Temperature from "./Atoms/Temperature";
-import HourlyWeather from "./HourlyWeather";
+import HourlyWeatherVertical from "./HourlyWeatherVertical";
 import IconThermometerHalf from "./icons/IconThermometerHalf";
 import IconWiHumidity from "./icons/IconWiHumidity";
 import React from "react";
@@ -56,7 +56,7 @@ const TimeCard = ({time, temp, icon, feel}) => {
 
 export default function SideWeather({current, airPollution, hourly}) {
     const test = getTimeWeather(current, hourly);
-    console.log(airPollution.current)
+
     return (
         <>
             <div className="mb-2 flex p-6">Ossining, NY</div>

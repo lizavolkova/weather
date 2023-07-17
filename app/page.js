@@ -8,10 +8,10 @@ import AirQuality from "./components/AirQuality";
 
 import { FastAverageColor } from 'fast-average-color';
 import {Map} from "./components/Map";
-import HourlyWeather from "./components/HourlyWeather";
+import HourlyWeatherVertical from "./components/HourlyWeatherVertical";
 import DailyWeather from "./components/DailyWeather";
-import HourlyWeatherUpdated from "./components/HourlyWeatherUpdates";
 import SliderDetails from "./components/Atoms/SliderDetails";
+import HourlyWeather from "./components/HourlyWeather";
 
 export default function Home() {
     const [data, setData] = useState();
@@ -28,10 +28,10 @@ export default function Home() {
                 const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=41.18856&lon=-73.83745&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
                 const data = await res.json();
                 //const air = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
-                const air = await fetch('http://api.airvisual.com/v2/nearest_city?lat=41.18856&lon=-73.83745&key=d8ee91ef-955d-4554-9a57-d3ee73d2fbfe');
+                const air = await fetch(`http://api.airvisual.com/v2/nearest_city?lat=41.18856&lon=-73.83745&key=${process.env.NEXT_PUBLIC_AIR_VISUAL_API_KEY}`);
                 const airData = await air.json();
                 setData(data);
-                setAirPollution(airData);
+                setAirPollution(airData.data);
                 setIsLoading(false);
             } catch(err) {
                 console.error(err)
@@ -73,9 +73,9 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        //fetchRealData();
+        fetchRealData();
         fetchNoaaforecast();
-        fetchData();
+        //fetchData();
         fetchAlerts()
 
 
@@ -123,8 +123,11 @@ export default function Home() {
 
                   </CardWrapper>
 
-                  <CardWrapper bgColor={bgColor}>
-                     <SliderDetails arr={data.daily}/>
+                  <CardWrapper bgColor={bgColor} background={bgImage} >
+                      <div className="w-full backdrop-blur md:rounded-lg">
+                          <HourlyWeather arr={data.hourly}/>
+                      </div>
+
                       {/*<div>*/}
                       {/*    <HourlyWeatherUpdated hourly={data.hourly}/>*/}
                       {/*</div>*/}
