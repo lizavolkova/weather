@@ -34,8 +34,33 @@ export default function DailyWeather({daily, noaaData}) {
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 5,
-        slidesToScroll: 2
+        slidesToShow: 7,
+        responsive: [
+            {
+                breakpoint: 640,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 4
+                }
+            },
+            {
+                breakpoint: 1280,
+                settings: {
+                    slidesToShow: 6
+                }
+            }
+        ]
     };
 
     const definaNoaaPairs = (i) => {
