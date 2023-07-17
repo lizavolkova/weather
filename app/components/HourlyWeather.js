@@ -71,7 +71,7 @@ export default function HourlyWeather({children, arr}) {
     };
 
     const detailsData = arr[selectedEl];
-    
+
     return (
         <div className="w-full min-w-[200px] p-4">
             <div>HOURLY</div>
