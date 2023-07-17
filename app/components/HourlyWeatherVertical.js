@@ -3,12 +3,12 @@ import {getIcon} from "../utils/getIcon";
 import HourlyWeatherCard from "./HourlyWeatherCard";
 
 export default function HourlyWeatherVertical({hourly}) {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(true);
     const classes = open ? 'overflow-auto h-auto' : 'h-[237px] overflow-hidden';
 
     return (
         <div className={`p-3 ${classes}`}>
-            <div className="uppercase p-2 cursor-pointer" onClick={() => setOpen(!open)}>Hourly</div>
+            <div className="uppercase p-2 cursor-pointer" >Hourly</div>
             <ul className="">
                 {
                     hourly.map(weather => {
