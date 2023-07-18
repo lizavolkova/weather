@@ -46,7 +46,6 @@ const TimeCard = ({time, temp, icon, feel}) => {
     return (
         <div className="text-center md:text-left flex justify-between">
             <div>
-                <span className="text-slate-100 capitalize">{time}</span>
                 <div className="flex">
                     <div className="self-center"><Image src={`http://openweathermap.org/img/wn/${icon}@2x.png`} width="80" height="80" alt=""/></div>
                     <div className="text-2xl self-center"><Temperature temp={temp} /></div>

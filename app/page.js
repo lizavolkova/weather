@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import CardWrapper from "./components/CardWrapper";
 import MainWeather from "./components/MainWeather";
 import SideWeather from "./components/SideWeather";
@@ -15,12 +15,14 @@ import HourlyWeather from "./components/HourlyWeather";
 import InfoCard from "./components/Atoms/InfoCard";
 
 export default function Home() {
+
     const [data, setData] = useState();
     const [airPollution, setAirPollution] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [bgColor, setBgColor] = useState("#000");
     const [alerts, setAlerts] = useState([]);
     const [noaaData, setNoaaData] = useState([]);
+
 
 
     useEffect ( ()=> {
@@ -106,11 +108,11 @@ export default function Home() {
              <div>LOADING</div>
           ) : (
               <main className="relative w-full flex min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
-                  <div className="flex w-full flex-col md:flex-row" >
-                      <div className="w-full md:w-1/4 flex  h-screen md:fixed" >
-                          {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData}/>}
+                  <div className="flex w-full flex-col md:flex-row relative">
+                      <div className="w-full md:w-1/4 flex  h-screen" id="test-class" >
+                          {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData} />}
                       </div>
-                      <div  className="w-full md:w-3/4 flex h-screen md:overflow-auto md:absolute md:right-0 ">
+                      <div  className="w-full  flex h-screen md:w-3/4 md:overflow-auto md:absolute md:right-0 ">
                           <SideWeather current={data.current} daily={data.daily} hourly={data.hourly} airPollution={airPollution} noaaData={noaaData}/>
                       </div>
                   </div>
