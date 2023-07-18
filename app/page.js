@@ -108,12 +108,12 @@ export default function Home() {
              <div>LOADING</div>
           ) : (
               <main className="relative w-full flex min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
-                  <div className="flex w-full flex-col md:flex-row relative">
+                  <div className="flex w-full flex-col md:flex-row relative ">
                       <div className="w-full md:w-1/4 flex  h-screen" id="test-class" >
                           {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData} />}
                       </div>
-                      <div  className="w-full  flex h-screen md:w-3/4 md:overflow-auto md:absolute md:right-0 ">
-                          <SideWeather current={data.current} daily={data.daily} hourly={data.hourly} airPollution={airPollution} noaaData={noaaData}/>
+                      <div  className="w-full  flex h-screen md:w-3/4 md:overflow-auto md:absolute md:right-0 backdrop-blur-md">
+                          <SideWeather current={data.current} daily={data.daily} hourly={data.hourly} airPollution={airPollution} noaaData={noaaData} bgColor={bgColor}/>
                       </div>
                   </div>
 

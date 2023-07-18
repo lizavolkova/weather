@@ -32,7 +32,7 @@ const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     }
 
     return(
-        <div className="flex flex-col pb-4 text-3xl">
+        <div className="flex flex-col pb-4 text-3xl ">
             <div className="text-slate-100 capitalize pb-4 ml-1 drop-shadow-2xl text-xs text-slate-300">{title}</div>
             <div className="h-full flex">
                 <div className={`${iconClass} self-center text-lg pr-1 ${color}`}>{icon}</div>
@@ -59,10 +59,10 @@ const TimeCard = ({time, temp, icon, feel}) => {
     )
 }
 
-export default function SideWeather({current, airPollution, hourly, daily, noaaData}) {
+export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const test = getTimeWeather(current, hourly);
-    const cardClass = "flex-col flex-1 basis-1/3"
-
+    const cardClass = `flex-col flex-1 basis-1/3 `
+    // style={{backgroundColor: bgColor}}
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
@@ -79,7 +79,7 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                 <DailyWeather daily={daily} noaaData={noaaData}/>
                 <div className="flex flex-col">
 
-                    <div className="flex flex-wrap md:justify-between w-full">
+                    <div className="flex flex-wrap md:justify-between w-full " >
                         <InfoCard title="Feels like" classes={cardClass} >
                             <Card value={`${Math.floor(current.feels_like)}°`} icon={<IconThermometerHalf/>} iconClass="text-xl"/>
                         </InfoCard>
