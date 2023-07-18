@@ -36,8 +36,11 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
 
     return (
         <div className=" flex flex-col justify-between p-2 md:p-6 bg-black bg-opacity-25 w-full" >
-            <div className="text-right">{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`} | {`${day.getHours()}:${day.getMinutes()}`}</div>
-            <div className="text-right">Ossining, NY</div>
+            <div>
+                <div className="text-right">{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`} | {`${day.getHours()}:${day.getMinutes()}`}</div>
+                <div className="text-right">Ossining, NY</div>
+            </div>
+
 
             <div>
                 <div className="flex flex-col items-end">

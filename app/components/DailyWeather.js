@@ -34,7 +34,7 @@ export default function DailyWeather({daily, noaaData}) {
         dots: false,
         infinite: false,
         speed: 500,
-        slidesToShow: 7,
+        slidesToShow: 6,
         responsive: [
             {
                 breakpoint: 640,
@@ -57,7 +57,7 @@ export default function DailyWeather({daily, noaaData}) {
             {
                 breakpoint: 1280,
                 settings: {
-                    slidesToShow: 6
+                    slidesToShow: 4
                 }
             }
         ]

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, createContext, useContext, useState } from "react";
 
 const Modal = ({ children, header, showModal, setShowModal}) => {
     useEffect(() => {
@@ -35,12 +35,9 @@ const Modal = ({ children, header, showModal, setShowModal}) => {
                             </svg>
                         </div>
                     </div>
-
-
                     <div className="text-black">{children}</div>
                 </div>
             </div>
-
         </>
     );
 };
