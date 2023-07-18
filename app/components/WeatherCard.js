@@ -14,7 +14,7 @@ export default function WeatherCard({date, time, temp, description,icon, noaa}) 
     return (
         <div className="flex-col">
         <div onClick={() => setShowDetails(!showDetails)}>
-            <CardStyle classes="w-[150px] flex-col bg-opacity-25 bg-black cursor-pointer text-center" >
+            <CardStyle classes="w-[110px] md:w-[150px] flex-col bg-opacity-25 bg-black cursor-pointer text-center" >
                 <span className="text-slate-400 text-xs">{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`}</span>
 
                 {icon && <div><img className="mx-auto" src={icon} width="50" height="50" alt=""/></div>}

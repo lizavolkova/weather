@@ -1,5 +1,5 @@
-export default function WeatherDescription({text}) {
+export default function WeatherDescription({text, classes}) {
     return (
-        <span className="text-sm text-slate-300 capitalize">{text}</span>
+        <span className={`text-sm text-slate-300 capitalize ${classes}`}>{text}</span>
     )
 }

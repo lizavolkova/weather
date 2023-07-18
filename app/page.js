@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import CardWrapper from "./components/CardWrapper";
 import MainWeather from "./components/MainWeather";
 import SideWeather from "./components/SideWeather";
@@ -8,13 +8,21 @@ import AirQuality from "./components/AirQuality";
 
 import { FastAverageColor } from 'fast-average-color';
 import {Map} from "./components/Map";
+import HourlyWeatherVertical from "./components/HourlyWeatherVertical";
+import DailyWeather from "./components/DailyWeather";
+import SliderDetails from "./components/Atoms/SliderDetails";
+import HourlyWeather from "./components/HourlyWeather";
+import InfoCard from "./components/Atoms/InfoCard";
 
 export default function Home() {
+
     const [data, setData] = useState();
+    const [airPollution, setAirPollution] = useState();
     const [isLoading, setIsLoading] = useState(true);
     const [bgColor, setBgColor] = useState("#000");
     const [alerts, setAlerts] = useState([]);
     const [noaaData, setNoaaData] = useState([]);
+
 
 
     useEffect ( ()=> {
@@ -22,7 +30,11 @@ export default function Home() {
             try {
                 const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=41.18856&lon=-73.83745&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
                 const data = await res.json();
+                //const air = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+                const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=41.18856&lon=-73.83745&key=${process.env.NEXT_PUBLIC_AIR_VISUAL_API_KEY}`);
+                const airData = await air.json();
                 setData(data);
+                setAirPollution(airData.data);
                 setIsLoading(false);
             } catch(err) {
                 console.error(err)
@@ -49,6 +61,10 @@ export default function Home() {
         async function fetchData() {
             const res = await fetch("http://localhost:3000/api/data")
             const data = await res.json();
+            const air = await fetch('http://localhost:3000/api/pollution');
+            const airData = await air.json();
+
+            setAirPollution(airData.data);
             setData(data);
             setIsLoading(false);
         }
@@ -69,7 +85,10 @@ export default function Home() {
 
     const current = data?.current?.weather[0];
     const timeOfDay = current?.icon?.slice(-1);
-    const bgImage = `/weather-photos/${timeOfDay}/${current?.main.toLowerCase()}.jpg`;
+    const weatherImage = data?.current?.weather[0].main.toLowerCase() === 'clouds' && data?.current?.clouds < 50 ? 'clouds-part' : current?.main.toLowerCase();
+    const bgImage = `/weather-photos/${timeOfDay}/${weatherImage}.jpg`;
+
+
 
     const fac = new FastAverageColor();
 
@@ -80,7 +99,7 @@ export default function Home() {
         .catch(e => {
             console.log(e);
         });
-
+//  style={{backgroundImage: `url(${bgImage})`}}
   return (
 
 
@@ -88,32 +107,73 @@ export default function Home() {
           {isLoading ? (
              <div>LOADING</div>
           ) : (
-              <main className="flex min-h-screen flex-col items-center p-0 md:p-12 bg-cover backdrop-blur-3xl" style={{backgroundColor: bgColor}}>
-
-                  <CardWrapper background={bgImage} classes="flex-col md:flex-row ">
-                      <div className="w-full md:w-1/2 lg:w-3/5 flex">
-                          {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData}/>}
+              <main className="relative w-full flex min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
+                  <div className="flex w-full flex-col md:flex-row relative">
+                      <div className="w-full md:w-1/4 flex  h-screen" id="test-class" >
+                          {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData} />}
                       </div>
-                      <div className="backdrop-blur-md bg-opacity-25 bg-black md:border-l md:rounded-r-lg border-slate-400 w-full md:w-1/2 md:w-2/3">
-                          <SideWeather current={data.current} daily={data.daily} hourly={data.hourly}/>
+                      <div  className="w-full  flex h-screen md:w-3/4 md:overflow-auto md:absolute md:right-0 ">
+                          <SideWeather current={data.current} daily={data.daily} hourly={data.hourly} airPollution={airPollution} noaaData={noaaData}/>
                       </div>
-                  </CardWrapper>
+                  </div>
 
-                  <CardWrapper>
-                      <Map/>
-                  </CardWrapper>
 
-                  {/*<CardWrapper>*/}
-                  {/*    <div className="w-2/3 bg-yellow-600">*/}
-                  {/*        <DetailsWeather/>*/}
-                  {/*    </div>*/}
-                  {/*    <div className="w-1/3 bg-green-600">*/}
-                  {/*        <AirQuality/>*/}
+                  {/*<CardWrapper background={bgImage} classes="flex-col md:flex-row " bgColor={bgColor}>*/}
+
+
+                  {/*    <div className="backdrop-blur-md flex flex-col  justify-between bg-opacity-25 bg-black md:border-l md:rounded-r-lg border-slate-400 w-full md:w-3/4">*/}
+                  {/*        <SideWeather current={data.current} daily={data.daily} hourly={data.hourly} airPollution={airPollution}/>*/}
                   {/*    </div>*/}
                   {/*</CardWrapper>*/}
 
+                  {/*<CardWrapper classes="flex flex-col " background={bgImage} bgColor={bgColor}>*/}
+
+                  {/*    <div className="flex w-3/4">*/}
+                  {/*        <InfoCard title="AQI" classes="w-1/3 h-1/3">test</InfoCard>*/}
+                  {/*        <InfoCard title="UV Index" classes="w-1/3 h-1/3">test</InfoCard>*/}
+                  {/*        <InfoCard title="Humidity" classes="w-1/3 h-1/3">test</InfoCard>*/}
+                  {/*    </div>*/}
+                  {/*    <div className="backdrop-blur md:rounded-lg ">*/}
+                  {/*        <DailyWeather daily={data.daily} noaaData={noaaData}/>*/}
+                  {/*    </div>*/}
+
+                  {/*</CardWrapper>*/}
+
+                  {/*<CardWrapper bgColor={bgColor} background={bgImage} >*/}
+                  {/*    <div className="w-full backdrop-blur md:rounded-lg">*/}
+                  {/*        /!*<HourlyWeather arr={data.hourly}/>*!/*/}
+
+
+                  {/*    </div>*/}
+
+                  {/*    /!*<div>*!/*/}
+                  {/*    /!*    <HourlyWeatherUpdated hourly={data.hourly}/>*!/*/}
+                  {/*    /!*</div>*!/*/}
+                  {/*    /!*<div style={{backgroundColor: bgColor}}>*!/*/}
+                  {/*    /!*    <div className=""><HourlyWeather hourly={data.hourly}/></div>*!/*/}
+                  {/*    /!*</div>*!/*/}
+                  {/*</CardWrapper>*/}
+
+                  {/*<CardWrapper>*/}
+
+                  {/*    <div className="w-1/3 bg-green-600">*/}
+                  {/*        <AirQuality/>*/}
+                  {/*    </div>*/}
+
+
+                  {/*</CardWrapper>*/}
+
+                  {/*<CardWrapper>*/}
+                  {/*    <div className="w-full">*/}
+                  {/*        <HourlyWeatherVertical hourly={data.hourly}/>*/}
+                  {/*    </div>*/}
+
+                  {/*</CardWrapper>*/}
                   {/*<CardWrapper>*/}
                   {/*    RADAR*/}
+                  {/*    <div className="w-2/3 bg-yellow-600">*/}
+                  {/*        <DetailsWeather/>*/}
+                  {/*    </div>*/}
                   {/*</CardWrapper>*/}
               </main>
           )}
