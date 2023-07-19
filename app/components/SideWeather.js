@@ -51,6 +51,11 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
     const test = getTimeWeather(current, hourly);
     const cardClass = `flex-col flex-1 basis-1/3 `
     // style={{backgroundColor: bgColor}}
+    const temp = current.feels_like;
+    const tempRange = [-30, 50];
+    const total = Math.abs(tempRange[0]) + tempRange[1];
+    const percent = ((Math.abs(tempRange[0]) + temp)/total) *100;
+    const steps = [0,1,2,3,4,5];
 
     return (
         <>
@@ -62,8 +67,18 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                 <div className="flex flex-col">
 
                     <div className="flex flex-wrap md:justify-between w-full " >
+
+
                         <InfoCard title="Feels like" classes={cardClass} >
-                            <Card value={`${Math.floor(current.feels_like)}°`} icon={<IconThermometerHalf/>} iconClass="text-xl"/>
+                            <div>{Math.floor(current.feels_like)}°</div>
+                            <div className="flex flex-col space-y-2 p-2 w-full">
+                                <input type="range" className="w-full" min={0} max={100} step={10} value={percent}/>
+                                <ul className="flex justify-between w-full px-[10px]">
+                                    {steps.map(step => {
+                                        return <li className="flex justify-center relative"><span className="absolute">{Math.floor(tempRange[0] + ((total/5) * step))}</span></li>
+                                    })}
+                                </ul>
+                            </div>
                         </InfoCard>
 
                         <InfoCard title="Humidity" classes={cardClass}  >

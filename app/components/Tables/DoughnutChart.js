@@ -80,7 +80,6 @@ export default function DoughnutChart({val, colors, chartId, rot, circum, diagno
             });
         },
         afterDraw: (chart) => {
-            console.log(chart)
             const dataSet  =chart.config._config.data.datasets[0];
             const value = dataSet.value;
 
@@ -107,7 +106,6 @@ export default function DoughnutChart({val, colors, chartId, rot, circum, diagno
                 const textY = ch - 100;
 
                 ctx.fillText(value, cx, textY - 50);
-                console.log(val)
 
                 ctx.fillStyle = "#aaaaaa";
                 ctx.font = fontSize / 3 + "em Verdana";
