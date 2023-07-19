@@ -13,6 +13,7 @@ import IconBxLeaf from "./icons/IconBxLeaf";
 import IconArrowsCollapse from "./icons/IconArrowsCollapse";
 import DailyWeather from "./DailyWeather";
 import InfoCard from "./Atoms/InfoCard";
+import WeatherTable from "./WeatherTable";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -42,41 +43,20 @@ const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     )
 };
 
-const TimeCard = ({time, temp, icon, feel}) => {
-    return (
-        <div className="text-center md:text-left flex justify-between">
-            <div>
-                <div className="flex">
-                    <div className="self-center"><Image src={`http://openweathermap.org/img/wn/${icon}@2x.png`} width="80" height="80" alt=""/></div>
-                    <div className="text-2xl self-center"><Temperature temp={temp} /></div>
-                </div>
-                <div className="text-xs text-slate-200">Feels like <Temperature temp={feel}/></div>
-            </div>
-            <div>
 
-            </div>
-        </div>
-    )
-}
 
 export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const test = getTimeWeather(current, hourly);
     const cardClass = `flex-col flex-1 basis-1/3 `
     // style={{backgroundColor: bgColor}}
+
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
-                <div className="flex justify-between md:mb-24 ">
-                    {test && test.map(weather => {
-                        return (
-                            <InfoCard title={weather.time} classes={cardClass} key={weather.time}>
-                                <TimeCard temp={weather.weather.temp} feel={weather.weather.feels_like} icon={weather.weather.weather[0].icon} />
-                            </InfoCard>
-                        )
-                    })}
-                </div>
+                <WeatherTable daily={daily} hourly={hourly} current={current} noaaData={noaaData}/>
 
-                <DailyWeather daily={daily} noaaData={noaaData}/>
+
+
                 <div className="flex flex-col">
 
                     <div className="flex flex-wrap md:justify-between w-full " >
