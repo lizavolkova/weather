@@ -58,7 +58,7 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
-                <WeatherTable daily={daily} hourly={hourly} current={current} noaaData={noaaData}/>
+
                 <div className="flex flex-col">
 
                     <div className="flex flex-wrap md:justify-between w-full " >
@@ -102,7 +102,9 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                         </InfoCard>
                     </div>
 
-                    <HourlyWeatherVertical hourly={hourly}/>
+                    <WeatherTable daily={daily} hourly={hourly} current={current} noaaData={noaaData}/>
+
+                    {/*<HourlyWeatherVertical hourly={hourly}/>*/}
 
                 </div>
             </div>

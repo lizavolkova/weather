@@ -93,9 +93,9 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        fetchRealData();
+        //fetchRealData();
         fetchNoaaforecast();
-        //fetchData();
+        fetchData();
         fetchAlerts()
 
 
