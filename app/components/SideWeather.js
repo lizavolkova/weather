@@ -18,6 +18,7 @@ import AirQuality from "./AirQuality";
 import UVIndex from "./UVIndex";
 import FeelLikeTemp from "./FeelLikeTemp";
 import RangeBar from "./Atoms/RangeBar";
+import IconUmbrella from "./icons/IconUmbrella";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -52,8 +53,7 @@ const Card = ({title, icon, value, units, iconClass, range=[]}) => {
 export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const test = getTimeWeather(current, hourly);
     const cardClass = `flex-col flex-1 basis-1/3 `
-    // style={{backgroundColor: bgColor}}
-
+    console.log(daily)
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
@@ -75,13 +75,17 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
 
                         <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} >
                             <AirQuality air={airPollution}/>
-                            {/*<Card value={`${airPollution.current.pollution.aqius}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,50,150]} />*/}
                         </InfoCard>
 
                         <InfoCard title="UV Index" classes={cardClass}  icon={<IconSun />}>
                             <UVIndex uvi={current.uvi}/>
-                            {/*<Card value={`${current.uvi}°`} icon={<IconSun/>} iconClass="text-xl" range={[0,2,7]}/>*/}
                         </InfoCard>
+
+                        <InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />}>
+                            <div className="mb-4 text-5xl">{Math.floor(daily[0].pop * 100)}%</div>
+                            <RangeBar percent={daily[0].pop *100} />
+                        </InfoCard>
+
 
                         <InfoCard title="Wind" classes={cardClass} icon={<IconWind />}>
                             <Card value={`${current.wind_speed}m/s`}  iconClass="text-3xl" />
