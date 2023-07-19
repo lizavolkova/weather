@@ -93,9 +93,9 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        //fetchRealData();
+        fetchRealData();
         fetchNoaaforecast();
-        fetchData();
+        //fetchData();
         fetchAlerts()
 
 
@@ -125,7 +125,7 @@ export default function Home() {
           {isLoading ? (
              <div>LOADING</div>
           ) : (
-              <main className="relative w-full flex min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
+              <main className="relative w-full flex min-h-[calc(100vh-150px)] md:min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
                   <div className="flex w-full flex-col md:flex-row relative ">
                       <div className="w-full md:w-1/4 flex  h-screen" id="test-class" >
                           {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData} />}

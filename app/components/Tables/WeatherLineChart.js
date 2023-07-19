@@ -2,11 +2,12 @@
 import React, {useRef, useEffect, useState} from 'react';
 
 
-import { Line } from 'react-chartjs-2';
+import { Line, getElementsAtEvent } from 'react-chartjs-2';
 import {Chart as ChartJS} from "chart.js";
 
 
-export default function WeatherLineChart({temp, pop, time, icons, minTemp}) {
+function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
+    const chartRef = useRef();
 
     const customPlugin = {
         id: 'hourly-icons',
@@ -47,7 +48,6 @@ export default function WeatherLineChart({temp, pop, time, icons, minTemp}) {
 
                 });
             }
-
             ctx.restore()
         }
     }
@@ -190,8 +190,24 @@ export default function WeatherLineChart({temp, pop, time, icons, minTemp}) {
         ChartJS.register(customPlugin);
     }, []);
 
+    const onClick = (event) => {
+        if (clickedEl && chartRef.current) {
+            let value = chartRef.current.scales.x.getValueForPixel(event.nativeEvent.layerX);
+            const el = Math.round(Math.abs(value));
+            clickedEl(el)
+        }
 
+    }
+
+    console.log('child re render')
     return (
-        <Line options={options} data={data} />
+        <Line options={options} data={data} ref={chartRef} onClick={onClick}/>
     )
 }
+
+function arePropsEqual(oldProps, newProps) {
+
+    return oldProps.clickedEl.length === newProps.clickedEl.length
+}
+
+export default React.memo(WeatherLineChart, arePropsEqual);

@@ -54,7 +54,7 @@ const Card = ({title, icon, value, units, iconClass, range=[]}) => {
 export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const test = getTimeWeather(current, hourly);
     const cardClass = `flex-col flex-1 basis-1/3 `
-    console.log(current)
+
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
