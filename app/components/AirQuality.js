@@ -5,25 +5,30 @@ export default function AirQuality({air}) {
     const aqi = air.current.pollution.aqius;
 
     let diagnosis;
+    let note ='';
 
     switch(true) {
         case aqi <= 50:
-            console.log('here!')
             diagnosis = 'Good';
             break;
         case aqi > 50 && aqi <= 100:
             diagnosis = 'Moderate';
+            note = 'Usually sensitive individuals should consider limiting prolonged outdoor exertion.';
             break;
         case aqi >= 101 && aqi <= 150:
+            note = 'Children, active adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.';
             diagnosis = 'Unhealthy';
             break;
         case aqi > 151 && aqi <= 200:
+            note = 'Children, active adults, and people with respiratory disease, such as asthma, should avoid outdoor exertion; everyone else should limit prolonged outdoor exertion.';
             diagnosis = 'Unhealthy';
             break;
         case aqi >= 201 && aqi <= 300:
+            note = 'Children, active adults, and people with respiratory disease, such as asthma, should avoid outdoor exertion; everyone else should limit outdoor exertion.';
             diagnosis = 'Very Unhealthy';
             break;
         case aqi >= 301:
+            note = 'Everyone should avoid all physical activity outdoors.';
             diagnosis = 'Hazerdous';
             break;
     }
@@ -183,9 +188,13 @@ export default function AirQuality({air}) {
     })
 
     return (
-        <div id="chart-aqi" width="200" height="200">
-            <Doughnut type="doughnut" data={aqiData} options={options}/>
+        <div>
+            <div id="chart-aqi" width="200" height="200">
+                <Doughnut type="doughnut" data={aqiData} options={options}/>
+            </div>
+            <div className="text-center">{note}</div>
         </div>
+
 
     )
 }
