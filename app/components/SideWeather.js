@@ -16,6 +16,8 @@ import InfoCard from "./Atoms/InfoCard";
 import WeatherTable from "./WeatherTable";
 import AirQuality from "./AirQuality";
 import UVIndex from "./UVIndex";
+import FeelLikeTemp from "./FeelLikeTemp";
+import RangeBar from "./Atoms/RangeBar";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -51,11 +53,6 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
     const test = getTimeWeather(current, hourly);
     const cardClass = `flex-col flex-1 basis-1/3 `
     // style={{backgroundColor: bgColor}}
-    const temp = current.feels_like;
-    const tempRange = [-30, 50];
-    const total = Math.abs(tempRange[0]) + tempRange[1];
-    const percent = ((Math.abs(tempRange[0]) + temp)/total) *100;
-    const steps = [0,1,2,3,4,5];
 
     return (
         <>
@@ -70,22 +67,12 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
 
 
                         <InfoCard title="Feels like" classes={cardClass} >
-                            <div>{Math.floor(current.feels_like)}°</div>
-                            <div className="flex flex-col space-y-2 p-2 w-full">
-                                <input type="range" className="w-full" min={0} max={100} step={10} value={percent}/>
-                                <ul className="flex justify-between w-full px-[10px]">
-                                    {steps.map(step => {
-                                        return <li key={step}  className="flex justify-center relative"><span className="absolute">{Math.floor(tempRange[0] + ((total/5) * step))}</span></li>
-                                    })}
-                                </ul>
-                            </div>
+                            <FeelLikeTemp temp={current.feels_like} />
                         </InfoCard>
 
                         <InfoCard title="Humidity" classes={cardClass}  >
-                            <div>{current.humidity}%</div>
-                            <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
-                                <div className="bg-blue-600 h-2.5 rounded-full dark:bg-blue-500" style={{width: `${current.humidity}%`}}></div>
-                            </div>
+                            <div className="mb-4">{current.humidity}%</div>
+                            <RangeBar percent={current.humidity} />
                         </InfoCard>
 
                         <InfoCard title="Wind" classes={cardClass}  >
