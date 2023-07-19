@@ -75,7 +75,7 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                                 <input type="range" className="w-full" min={0} max={100} step={10} value={percent}/>
                                 <ul className="flex justify-between w-full px-[10px]">
                                     {steps.map(step => {
-                                        return <li key={step} className="flex justify-center relative"><span className="absolute">{Math.floor(tempRange[0] + ((total/5) * step))}</span></li>
+                                        return <li key={step}  className="flex justify-center relative"><span className="absolute">{Math.floor(tempRange[0] + ((total/5) * step))}</span></li>
                                     })}
                                 </ul>
                             </div>
