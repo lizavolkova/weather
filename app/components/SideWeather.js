@@ -19,6 +19,7 @@ import UVIndex from "./UVIndex";
 import FeelLikeTemp from "./FeelLikeTemp";
 import RangeBar from "./Atoms/RangeBar";
 import IconUmbrella from "./icons/IconUmbrella";
+import IconCloud from "./icons/IconCloud";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -53,7 +54,7 @@ const Card = ({title, icon, value, units, iconClass, range=[]}) => {
 export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const test = getTimeWeather(current, hourly);
     const cardClass = `flex-col flex-1 basis-1/3 `
-    console.log(daily)
+    console.log(current)
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
@@ -84,6 +85,11 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                         <InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />}>
                             <div className="mb-4 text-5xl">{Math.floor(daily[0].pop * 100)}%</div>
                             <RangeBar percent={daily[0].pop *100} />
+                        </InfoCard>
+
+                        <InfoCard title="Cloud Cover" classes={cardClass} icon={<IconCloud />}>
+                            <div className="mb-4 text-5xl">{Math.floor(current.clouds)}%</div>
+                            <RangeBar percent={current.clouds} />
                         </InfoCard>
 
 
