@@ -73,11 +73,7 @@ html ::-webkit-scrollbar {
   top: 0;
   pointer-events:none;
 }
-.chartAreaWrapper {
-  position: relative;
-  width: 2000px;
-  height: 350px;
-}
+
 
 .doughnut-chart canvas {
   margin-left: auto;

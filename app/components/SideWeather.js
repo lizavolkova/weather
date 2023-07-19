@@ -58,39 +58,37 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
                 <WeatherTable daily={daily} hourly={hourly} current={current} noaaData={noaaData}/>
-
-
-
                 <div className="flex flex-col">
 
                     <div className="flex flex-wrap md:justify-between w-full " >
 
 
-                        <InfoCard title="Feels like" classes={cardClass} >
+                        <InfoCard title="Feels like" classes={cardClass} icon={<IconThermometerHalf />}>
+                            <div className="mb-4 text-5xl"><Temperature temp={current.feels_like} /></div>
                             <FeelLikeTemp temp={current.feels_like} />
                         </InfoCard>
 
-                        <InfoCard title="Humidity" classes={cardClass}  >
-                            <div className="mb-4">{current.humidity}%</div>
+                        <InfoCard title="Humidity" classes={cardClass} icon={<IconWiHumidity />}>
+                            <div className="mb-4 text-5xl">{current.humidity}%</div>
                             <RangeBar percent={current.humidity} />
                         </InfoCard>
 
-                        <InfoCard title="Wind" classes={cardClass}  >
-                            <Card value={`${current.wind_speed}m/s`} icon={<IconWind />} iconClass="text-3xl" />
-                        </InfoCard>
-
-                        <InfoCard title="UVI" classes={cardClass}  >
-                            <UVIndex uvi={current.uvi}/>
-                            {/*<Card value={`${current.uvi}°`} icon={<IconSun/>} iconClass="text-xl" range={[0,2,7]}/>*/}
-                        </InfoCard>
-
-                        <InfoCard title="AQI" classes={cardClass}  >
+                        <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} >
                             <AirQuality air={airPollution}/>
                             {/*<Card value={`${airPollution.current.pollution.aqius}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,50,150]} />*/}
                         </InfoCard>
 
-                        <InfoCard title="Pressure" classes={cardClass} >
-                            <Card value={`${current.pressure}hPa`} icon={<IconArrowsCollapse />} iconClass="text-3xl" />
+                        <InfoCard title="UV Index" classes={cardClass}  icon={<IconSun />}>
+                            <UVIndex uvi={current.uvi}/>
+                            {/*<Card value={`${current.uvi}°`} icon={<IconSun/>} iconClass="text-xl" range={[0,2,7]}/>*/}
+                        </InfoCard>
+
+                        <InfoCard title="Wind" classes={cardClass} icon={<IconWind />}>
+                            <Card value={`${current.wind_speed}m/s`}  iconClass="text-3xl" />
+                        </InfoCard>
+
+                        <InfoCard title="Pressure" classes={cardClass} icon={<IconArrowsCollapse />}>
+                            <Card value={`${current.pressure}hPa`}  iconClass="text-3xl" />
                         </InfoCard>
                     </div>
 

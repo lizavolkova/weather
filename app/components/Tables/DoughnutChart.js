@@ -105,7 +105,7 @@ export default function DoughnutChart({val, colors, chartId, rot, circum, diagno
 
                 const textY = ch - 100;
 
-                ctx.fillText(value, cx, textY - 50);
+                ctx.fillText(value, cx, textY - 30);
 
                 ctx.fillStyle = "#aaaaaa";
                 ctx.font = fontSize / 3 + "em Verdana";

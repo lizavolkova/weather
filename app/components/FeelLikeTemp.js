@@ -10,9 +10,6 @@ export default function FeelLikeTemp({temp}) {
 
     return  (
         <>
-            <div className="mb-4">
-                <Temperature temp={temp} />
-            </div>
             <div className="flex flex-col space-y-2 w-full">
                 <RangeBar percent={percent} />
                 <ul className="flex justify-between w-full px-[10px] pb-10">

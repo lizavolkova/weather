@@ -5,7 +5,7 @@ import Temperature from "../Atoms/Temperature";
 
 const TimeCard = ({time, temp, icon, feel}) => {
     return (
-        <div className="text-center md:text-left flex justify-between">
+        <div className="text-center md:text-left flex justify-center md:justify-between">
             <div>
                 <div className="flex">
                     <div className="self-center"><Image src={`http://openweathermap.org/img/wn/${icon}@2x.png`} width="80" height="80" alt=""/></div>
@@ -22,7 +22,7 @@ const TimeCard = ({time, temp, icon, feel}) => {
 
 export default function Today({current, hourly}) {
     const test = getTimeWeather(current, hourly);
-    const cardClass = `flex-col flex-1 basis-1/3 `
+    const cardClass = `flex-col flex-1 basis-1/3 border-0 border-color-none`
 
     return (
         <div className="flex justify-between md:mb-24 ">

@@ -1,7 +1,7 @@
 import CardStyle from "./Atoms/CardStyle";
 import {useState} from "react";
 import Today from "./Tables/Today";
-import DailyWeather from "./DailyWeather";
+import DailyWeatherChart from "./Tables/DailyWeatherChart";
 import Hourly from "./Tables/Hourly";
 
 export default function WeatherTable({current, daily, hourly, noaaData}) {
@@ -19,7 +19,7 @@ export default function WeatherTable({current, daily, hourly, noaaData}) {
 
         {
             title: "daily",
-            component: <DailyWeather daily={daily} noaaData={noaaData}/>
+            component: <DailyWeatherChart daily={daily} noaaData={noaaData}/>
         }
     ]
     return (
