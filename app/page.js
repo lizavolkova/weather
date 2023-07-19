@@ -4,7 +4,33 @@ import MainWeather from "./components/MainWeather";
 import SideWeather from "./components/SideWeather";
 
 import { FastAverageColor } from 'fast-average-color';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    Filler,
+    Legend,
+    LinearScale,
+    LineElement,
+    PointElement,
+    Title,
+    Tooltip,
+    ArcElement
+} from "chart.js";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
+
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Filler,
+    Legend,
+    ChartDataLabels,
+    ArcElement
+)
 
 export default function Home() {
 

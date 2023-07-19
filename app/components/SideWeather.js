@@ -14,6 +14,7 @@ import IconArrowsCollapse from "./icons/IconArrowsCollapse";
 import DailyWeather from "./DailyWeather";
 import InfoCard from "./Atoms/InfoCard";
 import WeatherTable from "./WeatherTable";
+import AirQuality from "./AirQuality";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -77,7 +78,8 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                         </InfoCard>
 
                         <InfoCard title="AQI" classes={cardClass}  >
-                            <Card value={`${airPollution.current.pollution.aqius}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,50,150]} />
+                            <AirQuality air={airPollution}/>
+                            {/*<Card value={`${airPollution.current.pollution.aqius}`} icon={<IconBxLeaf />} iconClass="text-3xl" range={[0,50,150]} />*/}
                         </InfoCard>
 
                         <InfoCard title="Pressure" classes={cardClass} >

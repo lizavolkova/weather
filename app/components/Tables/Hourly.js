@@ -1,22 +1,13 @@
 "use client"
 import React, {useRef, useEffect, useState} from 'react';
 
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Filler,
-    Legend,
-} from 'chart.js';
+
 import { Line } from 'react-chartjs-2';
 import {getTime} from "../../utils/getTime";
 import {getDate} from "../../utils/getDate";
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+
 import {getIcon} from "../../utils/getIcon";
+import {Chart as ChartJS} from "chart.js";
 
 
 
@@ -28,7 +19,52 @@ export default function Hourly({current, hourly}) {
     const pop = hourlyHalf.map(weather => Math.floor(weather.pop*100));
     const time = hourlyHalf.map(weather => getTime(getDate(weather.dt)));
     const icons = hourlyHalf.map(weather => getIcon(weather.weather))
-    console.log(icons[0])
+
+    const customPlugin = {
+        id: 'hourly-icons',
+        afterDraw: chart => {
+            const ctx = chart.ctx;
+            const xAxis = chart.scales['x3'];
+            const xAxisTwo = chart.scales['x3'];
+            const yAxis = chart.scales['y'];
+
+            if (xAxis) {
+                xAxis.ticks.forEach((value, index) => {
+                    //const img = getImage(iconUrl[index]);
+                    const sun = new Image();
+                    sun.src = icons[index];
+                    const x = xAxis.getPixelForTick(index);
+
+                    sun.onload = function() {
+                        ctx.drawImage(sun, x - 50, yAxis.top - 10);
+                    }
+
+                });
+            }
+
+            if (xAxisTwo) {
+                xAxisTwo.ticks.forEach((value, index) => {
+                    const drop = new Image();
+                    drop.src = '/icons/drop.png'
+                    drop.width = 15;
+                    drop.height = 15;
+
+                    const x = xAxis.getPixelForTick(index);
+                    drop.onload = function() {
+                        ctx.drawImage(drop, x - 30, yAxis.bottom - 25, drop.width, drop.height);
+                        ctx.font = "15px Arial";
+                        ctx.fillStyle = "white";
+                        ctx.fillText(`${pop[index]}%`, x - 12, yAxis.bottom - 12)
+                    }
+
+                });
+            }
+
+            ctx.restore()
+        }
+    }
+
+
 
     const max = Math.max(...temp);
 
@@ -162,59 +198,11 @@ export default function Hourly({current, hourly}) {
         ]
     };
 
-    const customPlugin = {
-        id: 'custom_canvas_background_color',
-        afterDraw: chart => {
-            const ctx = chart.ctx;
-            const xAxis = chart.scales['x3'];
-            const xAxisTwo = chart.scales['x3'];
-            const yAxis = chart.scales['y'];
-            xAxis.ticks.forEach((value, index) => {
-                //const img = getImage(iconUrl[index]);
-                const sun = new Image();
-                sun.src = icons[index];
-                const x = xAxis.getPixelForTick(index);
 
-                sun.onload = function() {
-                    ctx.drawImage(sun, x - 50, yAxis.top - 10);
-                }
+    useEffect(() => {
+        ChartJS.register(customPlugin);
+    }, []);
 
-            });
-
-            xAxisTwo.ticks.forEach((value, index) => {
-                //const img = getImage(iconUrl[index]);
-                const drop = new Image();
-                drop.src = '/icons/drop.png'
-                drop.width = 15;
-                drop.height = 15;
-
-                const x = xAxis.getPixelForTick(index);
-                drop.onload = function() {
-                    ctx.drawImage(drop, x - 30, yAxis.bottom - 25, drop.width, drop.height);
-                    ctx.font = "15px Arial";
-                    ctx.fillStyle = "white";
-                    ctx.fillText(`${pop[index]}%`, x - 12, yAxis.bottom - 12)
-                }
-
-            });
-            ctx.restore()
-        },
-        afterInit(chart, args, options) {
-            //  chart.zoom(.5);
-        }
-    }
-    ChartJS.register(
-        CategoryScale,
-        LinearScale,
-        PointElement,
-        LineElement,
-        Title,
-        Tooltip,
-        Filler,
-        Legend,
-        ChartDataLabels,
-        customPlugin
-    )
 
     return (
 
