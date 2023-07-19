@@ -18,22 +18,24 @@ import {getDate} from "../../utils/getDate";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import {getIcon} from "../../utils/getIcon";
 
+
+
+
 export default function Hourly({current, hourly}) {
-    const [load, setLoad] = useState(false);
-    const chartRef = useRef();
-    const hourlyHalf = hourly.slice(0, 12);
+    const hourlyHalf = hourly.slice(0, 24);
 
     const temp = hourlyHalf.map(weather => Math.floor(weather.temp));
     const pop = hourlyHalf.map(weather => Math.floor(weather.pop*100));
     const time = hourlyHalf.map(weather => getTime(getDate(weather.dt)));
     const icons = hourlyHalf.map(weather => getIcon(weather.weather))
+    console.log(icons[0])
 
     const max = Math.max(...temp);
 
 
     const options = {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         plugins: {
             datalabels: {
                 display: true,
@@ -92,13 +94,13 @@ export default function Hourly({current, hourly}) {
                     offset: true,
                 },
                 ticks: {
-                    callback: function(val, index) {
-                        return `${pop[val]}%`
-                    },
+                    display: false,
                     color: '#cbd5e1',
                     font: {
                         size: 16
-                    }
+                    },
+                    padding: -50,
+                    z: 5
                 }
             },
             x3: {
@@ -130,7 +132,6 @@ export default function Hourly({current, hourly}) {
 
     };
 
-
     const labels = time;
     const data = {
         labels,
@@ -161,84 +162,65 @@ export default function Hourly({current, hourly}) {
         ]
     };
 
+    const customPlugin = {
+        id: 'custom_canvas_background_color',
+        afterDraw: chart => {
+            const ctx = chart.ctx;
+            const xAxis = chart.scales['x3'];
+            const xAxisTwo = chart.scales['x3'];
+            const yAxis = chart.scales['y'];
+            xAxis.ticks.forEach((value, index) => {
+                //const img = getImage(iconUrl[index]);
+                const sun = new Image();
+                sun.src = icons[index];
+                const x = xAxis.getPixelForTick(index);
 
+                sun.onload = function() {
+                    ctx.drawImage(sun, x - 50, yAxis.top - 10);
+                }
 
-
-    useEffect(() => {
-        const sun = new Image();
-        sun.src = 'https://i.imgur.com/yDYW1I7.png';
-
-
-        const customPlugin = {
-            id: 'custom_canvas_background_color',
-            afterDraw: chart => {
-                const ctx = chart.ctx;
-                const xAxis = chart.scales['x3'];
-                const yAxis = chart.scales['y'];
-                xAxis.ticks.forEach((value, index) => {
-                    //const img = getImage(iconUrl[index]);
-                    const x = xAxis.getPixelForTick(index);
-                    ctx.drawImage(sun, x - 12, yAxis.top - 10);
-                });
-                ctx.restore()
-            },
-            afterInit(chart, args, options) {
-                //  chart.zoom(.5);
-            }
-        }
-
-        if (typeof window !== "undefined")
-            import('chartjs-plugin-zoom').then((plugin) => {
-                ChartJS.register(
-                    CategoryScale,
-                    LinearScale,
-                    PointElement,
-                    LineElement,
-                    Title,
-                    Tooltip,
-                    Filler,
-                    Legend,
-                    ChartDataLabels,
-                    plugin,
-                    customPlugin
-                )
-                console.log(ChartJS)
-                setLoad(true);
             });
 
+            xAxisTwo.ticks.forEach((value, index) => {
+                //const img = getImage(iconUrl[index]);
+                const drop = new Image();
+                drop.src = '/icons/drop.png'
+                drop.width = 15;
+                drop.height = 15;
 
+                const x = xAxis.getPixelForTick(index);
+                drop.onload = function() {
+                    ctx.drawImage(drop, x - 30, yAxis.bottom - 25, drop.width, drop.height);
+                    ctx.font = "15px Arial";
+                    ctx.fillStyle = "white";
+                    ctx.fillText(`${pop[index]}%`, x - 12, yAxis.bottom - 12)
+                }
 
-    },[] );
-
-    useEffect(() => {
-        if (load && chartRef && chartRef.current) {
-            console.log(chartRef)
-            // console.log(chartRef.current)
-            setTimeout(() => {
-               // zoomIn();
-
-            }, 1500);
+            });
+            ctx.restore()
+        },
+        afterInit(chart, args, options) {
+            //  chart.zoom(.5);
         }
-    }, [load]);
-
-    const zoomIn = () => {
-        const steps = 4;
-
-        if (chartRef && chartRef.current) {
-            console.log(chartRef)
-
-            chartRef.current.zoomScale('x', {min: 0, max: steps}, 'easeOutCubic');
-            chartRef.current.zoomScale('x2', {min: 0, max: steps}, 'easeOutCubic');
-            chartRef.current.zoomScale('x3', {min: 0, max: steps}, 'easeOutCubic');
-            chartRef.current.zoomScale('y', {min: 0, max: max * 2}, 'easeOutCubic');
-        }
-    };
+    }
+    ChartJS.register(
+        CategoryScale,
+        LinearScale,
+        PointElement,
+        LineElement,
+        Title,
+        Tooltip,
+        Filler,
+        Legend,
+        ChartDataLabels,
+        customPlugin
+    )
 
     return (
 
-        <div id="chart" className="overflow-x-scroll chartWrapper ">
+        <div id="chart" className="chartWrapper overflow-x-scroll">
             <div className="chartAreaWrapper ">
-                {load && <Line ref={chartRef} options={options} data={data} />}
+                <Line options={options} data={data} />
             </div>
 
         </div>
