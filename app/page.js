@@ -1,18 +1,10 @@
 "use client"
 import React, { useState, useEffect, useContext } from 'react';
-import CardWrapper from "./components/CardWrapper";
 import MainWeather from "./components/MainWeather";
 import SideWeather from "./components/SideWeather";
-import DetailsWeather from "./components/DetailsWeather";
-import AirQuality from "./components/AirQuality";
 
 import { FastAverageColor } from 'fast-average-color';
-import {Map} from "./components/Map";
-import HourlyWeatherVertical from "./components/HourlyWeatherVertical";
-import DailyWeather from "./components/DailyWeather";
-import SliderDetails from "./components/Atoms/SliderDetails";
-import HourlyWeather from "./components/HourlyWeather";
-import InfoCard from "./components/Atoms/InfoCard";
+
 
 export default function Home() {
 
@@ -117,64 +109,6 @@ export default function Home() {
                       </div>
                   </div>
 
-
-                  {/*<CardWrapper background={bgImage} classes="flex-col md:flex-row " bgColor={bgColor}>*/}
-
-
-                  {/*    <div className="backdrop-blur-md flex flex-col  justify-between bg-opacity-25 bg-black md:border-l md:rounded-r-lg border-slate-400 w-full md:w-3/4">*/}
-                  {/*        <SideWeather current={data.current} daily={data.daily} hourly={data.hourly} airPollution={airPollution}/>*/}
-                  {/*    </div>*/}
-                  {/*</CardWrapper>*/}
-
-                  {/*<CardWrapper classes="flex flex-col " background={bgImage} bgColor={bgColor}>*/}
-
-                  {/*    <div className="flex w-3/4">*/}
-                  {/*        <InfoCard title="AQI" classes="w-1/3 h-1/3">test</InfoCard>*/}
-                  {/*        <InfoCard title="UV Index" classes="w-1/3 h-1/3">test</InfoCard>*/}
-                  {/*        <InfoCard title="Humidity" classes="w-1/3 h-1/3">test</InfoCard>*/}
-                  {/*    </div>*/}
-                  {/*    <div className="backdrop-blur md:rounded-lg ">*/}
-                  {/*        <DailyWeather daily={data.daily} noaaData={noaaData}/>*/}
-                  {/*    </div>*/}
-
-                  {/*</CardWrapper>*/}
-
-                  {/*<CardWrapper bgColor={bgColor} background={bgImage} >*/}
-                  {/*    <div className="w-full backdrop-blur md:rounded-lg">*/}
-                  {/*        /!*<HourlyWeather arr={data.hourly}/>*!/*/}
-
-
-                  {/*    </div>*/}
-
-                  {/*    /!*<div>*!/*/}
-                  {/*    /!*    <HourlyWeatherUpdated hourly={data.hourly}/>*!/*/}
-                  {/*    /!*</div>*!/*/}
-                  {/*    /!*<div style={{backgroundColor: bgColor}}>*!/*/}
-                  {/*    /!*    <div className=""><HourlyWeather hourly={data.hourly}/></div>*!/*/}
-                  {/*    /!*</div>*!/*/}
-                  {/*</CardWrapper>*/}
-
-                  {/*<CardWrapper>*/}
-
-                  {/*    <div className="w-1/3 bg-green-600">*/}
-                  {/*        <AirQuality/>*/}
-                  {/*    </div>*/}
-
-
-                  {/*</CardWrapper>*/}
-
-                  {/*<CardWrapper>*/}
-                  {/*    <div className="w-full">*/}
-                  {/*        <HourlyWeatherVertical hourly={data.hourly}/>*/}
-                  {/*    </div>*/}
-
-                  {/*</CardWrapper>*/}
-                  {/*<CardWrapper>*/}
-                  {/*    RADAR*/}
-                  {/*    <div className="w-2/3 bg-yellow-600">*/}
-                  {/*        <DetailsWeather/>*/}
-                  {/*    </div>*/}
-                  {/*</CardWrapper>*/}
               </main>
           )}
       </>

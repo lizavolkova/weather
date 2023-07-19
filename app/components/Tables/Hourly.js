@@ -1,4 +1,6 @@
-import React, {useRef, useEffect} from 'react';
+"use client"
+import React, {useRef, useEffect, useState} from 'react';
+
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -14,61 +16,12 @@ import { Line } from 'react-chartjs-2';
 import {getTime} from "../../utils/getTime";
 import {getDate} from "../../utils/getDate";
 import ChartDataLabels from 'chartjs-plugin-datalabels';
-import zoomPlugin from 'chartjs-plugin-zoom';
 import {getIcon} from "../../utils/getIcon";
 
-const getImage = (url) => {
-    const image = new Image();
-    image.src = url;
-    return image;
-}
-
-const iconUrl = ['http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/04d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/04d@2x.png', 'http://openweathermap.org/img/wn/10n@2x.png', 'http://openweathermap.org/img/wn/10n@2x.png', 'http://openweathermap.org/img/wn/10n@2x.png', 'http://openweathermap.org/img/wn/04n@2x.png', 'http://openweathermap.org/img/wn/03n@2x.png', 'http://openweathermap.org/img/wn/03n@2x.png', 'http://openweathermap.org/img/wn/01n@2x.png', 'http://openweathermap.org/img/wn/01n@2x.png', 'http://openweathermap.org/img/wn/01n@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png'];
-const sun = new Image();
-sun.src = 'https://i.imgur.com/yDYW1I7.png';
-
-const cloud = new Image();
-cloud.src = 'https://i.imgur.com/DIbr9q1.png';
-
-const customPlugin = {
-    id: 'custom_canvas_background_color',
-    afterDraw: chart => {
-        const ctx = chart.ctx;
-        const xAxis = chart.scales['x3'];
-        const yAxis = chart.scales['y'];
-        xAxis.ticks.forEach((value, index) => {
-            const img = getImage(iconUrl[index]);
-            const x = xAxis.getPixelForTick(index);
-            ctx.drawImage(sun, x - 12, yAxis.top - 10);
-        });
-        ctx.restore()
-    },
-    afterInit(chart, args, options) {
-      //  chart.zoom(.5);
-    }
-}
-
-
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Filler,
-    Legend,
-    zoomPlugin,
-    ChartDataLabels,
-    customPlugin
-);
-
-
-
-
 export default function Hourly({current, hourly}) {
+    const [load, setLoad] = useState(false);
     const chartRef = useRef();
-    const hourlyHalf = hourly.slice(0, 24);
+    const hourlyHalf = hourly.slice(0, 12);
 
     const temp = hourlyHalf.map(weather => Math.floor(weather.temp));
     const pop = hourlyHalf.map(weather => Math.floor(weather.pop*100));
@@ -77,21 +30,10 @@ export default function Hourly({current, hourly}) {
 
     const max = Math.max(...temp);
 
-    const test = {
-        render: 'image',
-        images: icons.map(icon => {
-            return {
-                src: 'icon',
-                heigh: 25,
-                width: 25
-            }
-
-        })
-    }
 
     const options = {
         responsive: true,
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         plugins: {
             datalabels: {
                 display: true,
@@ -219,22 +161,71 @@ export default function Hourly({current, hourly}) {
         ]
     };
 
-    useEffect(() => {
-        const chart = chartRef.current;
 
-        if (chartRef && chartRef.current) {
+
+
+    useEffect(() => {
+        const sun = new Image();
+        sun.src = 'https://i.imgur.com/yDYW1I7.png';
+
+
+        const customPlugin = {
+            id: 'custom_canvas_background_color',
+            afterDraw: chart => {
+                const ctx = chart.ctx;
+                const xAxis = chart.scales['x3'];
+                const yAxis = chart.scales['y'];
+                xAxis.ticks.forEach((value, index) => {
+                    //const img = getImage(iconUrl[index]);
+                    const x = xAxis.getPixelForTick(index);
+                    ctx.drawImage(sun, x - 12, yAxis.top - 10);
+                });
+                ctx.restore()
+            },
+            afterInit(chart, args, options) {
+                //  chart.zoom(.5);
+            }
+        }
+
+        if (typeof window !== "undefined")
+            import('chartjs-plugin-zoom').then((plugin) => {
+                ChartJS.register(
+                    CategoryScale,
+                    LinearScale,
+                    PointElement,
+                    LineElement,
+                    Title,
+                    Tooltip,
+                    Filler,
+                    Legend,
+                    ChartDataLabels,
+                    plugin,
+                    customPlugin
+                )
+                console.log(ChartJS)
+                setLoad(true);
+            });
+
+
+
+    },[] );
+
+    useEffect(() => {
+        if (load && chartRef && chartRef.current) {
+            console.log(chartRef)
             // console.log(chartRef.current)
             setTimeout(() => {
-                zoomIn();
-            }, 1500);
+               // zoomIn();
 
+            }, 1500);
         }
-    },[] );;
+    }, [load]);
 
     const zoomIn = () => {
         const steps = 4;
 
         if (chartRef && chartRef.current) {
+            console.log(chartRef)
 
             chartRef.current.zoomScale('x', {min: 0, max: steps}, 'easeOutCubic');
             chartRef.current.zoomScale('x2', {min: 0, max: steps}, 'easeOutCubic');
@@ -245,8 +236,11 @@ export default function Hourly({current, hourly}) {
 
     return (
 
-        <div id="chart" className="overflow-auto h-[300px]">
-            <Line ref={chartRef} options={options} data={data} />
+        <div id="chart" className="overflow-x-scroll chartWrapper ">
+            <div className="chartAreaWrapper ">
+                {load && <Line ref={chartRef} options={options} data={data} />}
+            </div>
+
         </div>
     )
 }

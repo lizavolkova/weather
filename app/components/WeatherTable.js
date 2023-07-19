@@ -6,10 +6,11 @@ import Hourly from "./Tables/Hourly";
 
 export default function WeatherTable({current, daily, hourly, noaaData}) {
     const [selectedTab, setSelectedTab] = useState(0);
+
     const tabs = [
         {
             title: "hourly",
-            component: <Hourly hourly={hourly}/>
+            component:  <Hourly hourly={hourly}/>
         },
         {
             title: "today",
