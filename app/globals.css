@@ -78,3 +78,8 @@ html ::-webkit-scrollbar {
   width: 2000px;
   height: 350px;
 }
+
+.doughnut-chart canvas {
+  margin-left: auto;
+  margin-right: auto;
+}
