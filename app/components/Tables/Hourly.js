@@ -17,13 +17,13 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 import zoomPlugin from 'chartjs-plugin-zoom';
 import {getIcon} from "../../utils/getIcon";
 
-const iconUrl = ['http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png', 'http://openweathermap.org/img/wn/undefined@2x.png'];
 const getImage = (url) => {
     const image = new Image();
     image.src = url;
     return image;
 }
 
+const iconUrl = ['http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/04d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/10d@2x.png', 'http://openweathermap.org/img/wn/04d@2x.png', 'http://openweathermap.org/img/wn/10n@2x.png', 'http://openweathermap.org/img/wn/10n@2x.png', 'http://openweathermap.org/img/wn/10n@2x.png', 'http://openweathermap.org/img/wn/04n@2x.png', 'http://openweathermap.org/img/wn/03n@2x.png', 'http://openweathermap.org/img/wn/03n@2x.png', 'http://openweathermap.org/img/wn/01n@2x.png', 'http://openweathermap.org/img/wn/01n@2x.png', 'http://openweathermap.org/img/wn/01n@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png', 'http://openweathermap.org/img/wn/01d@2x.png'];
 const sun = new Image();
 sun.src = 'https://i.imgur.com/yDYW1I7.png';
 
@@ -42,6 +42,9 @@ const customPlugin = {
             ctx.drawImage(sun, x - 12, yAxis.top - 10);
         });
         ctx.restore()
+    },
+    afterInit(chart, args, options) {
+      //  chart.zoom(.5);
     }
 }
 
@@ -70,7 +73,7 @@ export default function Hourly({current, hourly}) {
     const temp = hourlyHalf.map(weather => Math.floor(weather.temp));
     const pop = hourlyHalf.map(weather => Math.floor(weather.pop*100));
     const time = hourlyHalf.map(weather => getTime(getDate(weather.dt)));
-    const icons = hourlyHalf.map(weather => getIcon(weather.weather[0].icon))
+    const icons = hourlyHalf.map(weather => getIcon(weather.weather))
 
     const max = Math.max(...temp);
 
@@ -88,7 +91,7 @@ export default function Hourly({current, hourly}) {
 
     const options = {
         responsive: true,
-        maintainAspectRatio: true,
+        maintainAspectRatio: false,
         plugins: {
             datalabels: {
                 display: true,
@@ -96,6 +99,9 @@ export default function Hourly({current, hourly}) {
                 align: 'top',
                 font: {
                     size: 28
+                },
+                formatter: function(value, context) {
+                    return `${value}°`
                 }
             },
             legend: {
@@ -146,6 +152,10 @@ export default function Hourly({current, hourly}) {
                 ticks: {
                     callback: function(val, index) {
                         return `${pop[val]}%`
+                    },
+                    color: '#cbd5e1',
+                    font: {
+                        size: 16
                     }
                 }
             },
@@ -166,7 +176,13 @@ export default function Hourly({current, hourly}) {
                     offset: true,
                     align: 'end'
                 },
-                position: 'top'
+                position: 'top',
+                ticks: {
+                    color: '#fff',
+                    font: {
+                        size: 18
+                    }
+                }
             },
         }
 
@@ -207,6 +223,7 @@ export default function Hourly({current, hourly}) {
         const chart = chartRef.current;
 
         if (chartRef && chartRef.current) {
+            // console.log(chartRef.current)
             setTimeout(() => {
                 zoomIn();
             }, 1500);
@@ -215,17 +232,20 @@ export default function Hourly({current, hourly}) {
     },[] );;
 
     const zoomIn = () => {
+        const steps = 4;
+
         if (chartRef && chartRef.current) {
-            chartRef.current.zoomScale('x', {min: 0, max: 12}, 'easeOutCubic');
-            chartRef.current.zoomScale('x2', {min: 0, max: 12}, 'easeOutCubic');
-            chartRef.current.zoomScale('x3', {min: 0, max: 12}, 'easeOutCubic');
-            chartRef.current.zoomScale('y', {min: 0, max: max + 10}, 'easeOutCubic');
+
+            chartRef.current.zoomScale('x', {min: 0, max: steps}, 'easeOutCubic');
+            chartRef.current.zoomScale('x2', {min: 0, max: steps}, 'easeOutCubic');
+            chartRef.current.zoomScale('x3', {min: 0, max: steps}, 'easeOutCubic');
+            chartRef.current.zoomScale('y', {min: 0, max: max * 2}, 'easeOutCubic');
         }
     };
 
     return (
 
-        <div id="chart" className="overflow-auto">
+        <div id="chart" className="overflow-auto h-[300px]">
             <Line ref={chartRef} options={options} data={data} />
         </div>
     )
