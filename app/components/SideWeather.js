@@ -67,7 +67,10 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                         </InfoCard>
 
                         <InfoCard title="Humidity" classes={cardClass}  >
-                            <Card value={`${current.humidity}`} units="%" icon={<IconWiHumidity />} iconClass="text-3xl" range={[0,55,65]}/>
+                            <div>{current.humidity}%</div>
+                            <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700">
+                                <div className="bg-blue-600 h-2.5 rounded-full dark:bg-blue-500" style={{width: `${current.humidity}%`}}></div>
+                            </div>
                         </InfoCard>
 
                         <InfoCard title="Wind" classes={cardClass}  >
