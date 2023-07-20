@@ -48,7 +48,7 @@ export default function UVIndex({uvi}) {
 
 
     return (
-        <div>
+        <div className="flex flex-col w-full">
             <DoughnutChart val={uvi} colors={allColors} chartId="uvi-chart" rot={-90} circum={180} diagnosis={diagnosis} ranges={ranges}/>
             <div className="text-center">{note}</div>
             <div className="flex w-full">

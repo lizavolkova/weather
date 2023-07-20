@@ -61,6 +61,14 @@ const getHumidityColor = (humidity) => {
     }
 }
 
+const SimpleData = ({children}) => {
+    return (
+        <div className="flex flex-col w-full">
+            {children}
+        </div>
+    )
+}
+
 export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const test = getTimeWeather(current, hourly);
     const cardClass = `flex-col flex-1 basis-1/3 `
@@ -72,16 +80,23 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
 
                     <div className="flex flex-wrap md:justify-between w-full " >
                         <InfoCard title="Feels like" classes={cardClass} icon={<IconThermometerHalf />}>
-                            <div className="mb-4 text-5xl"><Temperature temp={current.feels_like} /></div>
-                            <FeelLikeTemp temp={current.feels_like} />
+                            <SimpleData>
+                                <div className="mb-4 text-5xl"><Temperature temp={current.feels_like} /></div>
+                                <FeelLikeTemp temp={current.feels_like} />
+                            </SimpleData>
+
+
                         </InfoCard>
 
                         <InfoCard title="Humidity" classes={cardClass} icon={<IconWiHumidity />}>
-                            <div className="mb-4 text-5xl">{current.humidity}%</div>
-                            <RangeBar percent={current.humidity} color={getHumidityColor(current.humidity)}/>
+                            <SimpleData>
+                                <div className="mb-4 text-5xl">{current.humidity}%</div>
+                                <RangeBar percent={current.humidity} color={getHumidityColor(current.humidity)}/>
+                            </SimpleData>
+
                         </InfoCard>
 
-                        <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} >
+                        <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} footer="Learn more at:" footerLogo="/icons/ic-logo-iq-air-blue.svg" footerUrl="https://www.iqair.com/us/usa/new-york/ossining" >
                             <AirQuality air={airPollution}/>
                         </InfoCard>
 
@@ -89,14 +104,20 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                             <UVIndex uvi={current.uvi}/>
                         </InfoCard>}
 
-                        <InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />}>
-                            <div className="mb-4 text-5xl">{Math.floor(daily[0].pop * 100)}%</div>
-                            <RangeBar percent={daily[0].pop *100} />
+                        <InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />} footer="See map:" footerLogo="/icons/zoom-earth-logo.png" footerUrl="https://zoom.earth/maps/precipitation/#view=41.18856,-73.83745,10z/date=2023-07-20,03:50,-4/model=icon">
+                            <SimpleData>
+                                <div className="mb-4 text-5xl">{Math.floor(daily[0].pop * 100)}%</div>
+                                <RangeBar percent={daily[0].pop *100} />
+                            </SimpleData>
+
                         </InfoCard>
 
                         <InfoCard title="Cloud Cover" classes={cardClass} icon={<IconCloud />}>
-                            <div className="mb-4 text-5xl">{Math.floor(current.clouds)}%</div>
-                            <RangeBar percent={current.clouds} />
+                            <SimpleData>
+                                <div className="mb-4 text-5xl">{Math.floor(current.clouds)}%</div>
+                                <RangeBar percent={current.clouds} />
+                            </SimpleData>
+
                         </InfoCard>
 
 

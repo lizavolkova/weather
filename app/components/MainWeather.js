@@ -43,7 +43,7 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
 
 
             <div>
-                <div className="flex flex-col items-end mb-12">
+                <div className="flex flex-col items-end mb-24">
                     <div className="flex flex-col">
                         <div className="self-end"><Image src={getIcon(current?.weather)} width="200" height="100" alt=""/></div>
                         <div className="text-9xl self-end"><Temperature temp={current.temp} /></div>
