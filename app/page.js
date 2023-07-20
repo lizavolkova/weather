@@ -40,7 +40,8 @@ export default function Home() {
     const [bgColor, setBgColor] = useState("#000");
     const [alerts, setAlerts] = useState([]);
     const [noaaData, setNoaaData] = useState([]);
-    const [solarData, setSolarDate] = useState(null);
+    const [solarData, setSolarData] = useState(null);
+    const [planetData, setPlanetData] = useState(null);
 
 
 
@@ -100,16 +101,30 @@ export default function Home() {
         async function fetchSolarInfo() {
             const res = await fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&formatted=0`);
             const data = await res.json();
-            setSolarDate(data.results);
+            setSolarData(data.results);
+        }
+
+        async function fetchVisiblePlanets() {
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('en-CA')
+
+            const res = await fetch(`https://api.astronomyapi.com/api/v2/bodies/positions?longitude=${long}&latitude=${lat}&from_date=${formattedDate}&to_date=${formattedDate}&time=18%3A52%3A40&elevation=1`,
+                { method:'GET',
+                    headers: {'Authorization': 'Basic ' + btoa(`${process.env.NEXT_PUBLIC_ASTRO_ID}:${process.env.NEXT_PUBLIC_ASTRO_SECRET}`)},
+
+                });
+            const data = await res.json();
+            setPlanetData(data.data);
+
         }
 
 
-        fetchRealData();
+        //fetchRealData();
         fetchNoaaforecast();
-        //fetchData();
+        fetchData();
         fetchAlerts()
         fetchSolarInfo();
-
+        //fetchVisiblePlanets();
 
     }, []);
 
@@ -151,6 +166,7 @@ export default function Home() {
                                        airPollution={airPollution}
                                        noaaData={noaaData}
                                        solarData={solarData}
+                                       planetData={planetData}
                                        bgColor={bgColor}/>}
                       </div>
                   </div>
