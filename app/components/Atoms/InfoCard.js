@@ -6,7 +6,7 @@ export default function InfoCard({title, classes, children, icon}) {
         <CardStyle classes={classes} >
             <div className="backdrop-blur">
                 <div className="capitalize mb-4 text-xl flex justify-between">
-                    <div>{title}</div>
+                    <div className="border-b">{title}</div>
                     {icon && <div className="text-3xl">{icon}</div>}
                 </div>
                 <div>{children}</div>

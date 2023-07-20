@@ -1,7 +1,6 @@
 "use client"
 import React, {useRef, useEffect, useState} from 'react';
 
-
 import { Line, getElementsAtEvent } from 'react-chartjs-2';
 import {Chart as ChartJS} from "chart.js";
 
@@ -19,7 +18,6 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
 
             if (xAxis) {
                 xAxis.ticks.forEach((value, index) => {
-                    //const img = getImage(iconUrl[index]);
                     const sun = new Image();
                     sun.src = icons[index];
                     const x = xAxis.getPixelForTick(index);
@@ -41,7 +39,7 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
                     const x = xAxis.getPixelForTick(index);
                     drop.onload = function() {
                         ctx.drawImage(drop, x - 30, yAxis.bottom - 25, drop.width, drop.height);
-                        ctx.font = "15px Arial";
+                        ctx.font = "12px Arial";
                         ctx.fillStyle = "white";
                         ctx.fillText(`${pop[index]}%`, x - 12, yAxis.bottom - 12)
                     }
@@ -59,6 +57,12 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
     const options = {
         responsive: true,
         maintainAspectRatio: false,
+        layout: {
+            padding: {
+                left: 50,
+                right: 50
+            }
+        },
         plugins: {
             datalabels: {
                 display: true,
@@ -139,15 +143,18 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
             x: {
                 grid: {
                     display: true,
-                    color: '#fff',
+                    color: '#363636',
                     offset: true,
-                    align: 'end'
+                    align: 'end',
+                },
+                border: {
+                    display: false
                 },
                 position: 'top',
                 ticks: {
-                    color: '#fff',
+                    color: '#aeaeae',
                     font: {
-                        size: 18
+                        size: 14
                     }
                 }
             },
@@ -199,7 +206,6 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
 
     }
 
-    console.log('child re render')
     return (
         <Line options={options} data={data} ref={chartRef} onClick={onClick}/>
     )
@@ -207,7 +213,7 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
 
 function arePropsEqual(oldProps, newProps) {
 
-    return oldProps.clickedEl.length === newProps.clickedEl.length
+    return oldProps.clickedEl?.length === newProps.clickedEl?.length
 }
 
 export default React.memo(WeatherLineChart, arePropsEqual);

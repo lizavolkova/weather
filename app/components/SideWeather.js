@@ -49,7 +49,17 @@ const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     )
 };
 
+const getHumidityColor = (humidity) => {
+    switch(true) {
+        case humidity <= 20:
+            return 'bg-yellow-500'
+        case humidity > 20 && humidity <=60:
+            return 'bg-green-600'
+        case humidity > 60:
+            return 'bg-red-600'
 
+    }
+}
 
 export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const test = getTimeWeather(current, hourly);
@@ -58,12 +68,9 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
-
-                <div className="flex flex-col">
+                <div className="flex flex-col md:pr-32">
 
                     <div className="flex flex-wrap md:justify-between w-full " >
-
-
                         <InfoCard title="Feels like" classes={cardClass} icon={<IconThermometerHalf />}>
                             <div className="mb-4 text-5xl"><Temperature temp={current.feels_like} /></div>
                             <FeelLikeTemp temp={current.feels_like} />
@@ -71,7 +78,7 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
 
                         <InfoCard title="Humidity" classes={cardClass} icon={<IconWiHumidity />}>
                             <div className="mb-4 text-5xl">{current.humidity}%</div>
-                            <RangeBar percent={current.humidity} />
+                            <RangeBar percent={current.humidity} color={getHumidityColor(current.humidity)}/>
                         </InfoCard>
 
                         <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} >

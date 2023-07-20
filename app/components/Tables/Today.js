@@ -1,38 +1,42 @@
-import InfoCard from "../Atoms/InfoCard";
+import React, {useRef, useEffect, useState} from 'react';
 import {getTimeWeather} from "../../utils/getTimeWeather";
 import Image from "next/image";
 import Temperature from "../Atoms/Temperature";
-
-const TimeCard = ({time, temp, icon, feel}) => {
-    return (
-        <div className="text-center md:text-left flex justify-center md:justify-between">
-            <div>
-                <div className="flex">
-                    <div className="self-center"><Image src={`http://openweathermap.org/img/wn/${icon}@2x.png`} width="80" height="80" alt=""/></div>
-                    <div className="text-2xl self-center"><Temperature temp={temp} /></div>
-                </div>
-                <div className="text-xs text-slate-200">Feels like <Temperature temp={feel}/></div>
-            </div>
-            <div>
-
-            </div>
-        </div>
-    )
-}
+import {getDate} from "../../utils/getDate";
+import {getIcon} from "../../utils/getIcon";
+import WeatherLineChart from "./WeatherLineChart";
+import ForecastDetailsTable from "../Atoms/ForecastDetailsTable";
 
 export default function Today({current, hourly}) {
-    const test = getTimeWeather(current, hourly);
-    const cardClass = `flex-col flex-1 basis-1/3 border-0 border-color-none`
+    const [details, setDetails] = useState(0);
+
+    const weather = getTimeWeather(current, hourly);
+    const temp = weather.map(weather => Math.floor(weather.weather.temp));
+    const pop = weather.map(weather => Math.floor(weather.weather.pop*100));
+    const time = weather.map(weather => weather.time);
+    const icons = weather.map(weather => getIcon(weather.weather.weather))
+
+    const onClick = (el) => {
+        setDetails(el);
+    }
 
     return (
-        <div className="flex justify-between md:mb-24 ">
-            {test && test.map(weather => {
-                return (
-                    <InfoCard title={weather.time} classes={cardClass} key={weather.time}>
-                        <TimeCard temp={weather.weather.temp} feel={weather.weather.feels_like} icon={weather.weather.weather[0].icon} />
-                    </InfoCard>
-                )
-            })}
+        <div className="flex flex-col py-6">
+            {weather && <div id="daily-chart" className="chartWrapper overflow-x-scroll">
+                <div className="relative w-[800px] h-[350px] mx-auto">
+                    <WeatherLineChart temp={temp} pop={pop} time={time} icons={icons} clickedEl={onClick}/>
+                </div>
+            </div>}
+            <div className="mt-4">
+                <ForecastDetailsTable
+                    humidity={weather[details].weather.humidity}
+                    feels={weather[details].weather.feels_like.day}
+                    pop={weather[details].weather.pop}
+                    clouds={weather[details].weather.clouds}
+                    uvi={weather[details].weather.uvi}
+                    wind={weather[details].weather.wind_speed}
+                    timeStamp={`${getDate(weather[details].weather.dt).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: "long",})}`} />
+            </div>
         </div>
     )
 }

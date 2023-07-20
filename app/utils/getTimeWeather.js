@@ -6,9 +6,10 @@ export const getTimeWeather = (current, hourly) => {
     const now = hourly[0];
     const first = hourly[6];
     const second = hourly[12];
+    const third = hourly[18];
 
-    const times = ["morning", "afternoon","evening","night","tomorrow morning","tomorrow afternoon"];
-    const weather = [now, first, second];
+    const times = ["Morning", "Afternoon","Evening","Night","Tomorrow Morning","Tomorrow Afternoon"];
+    const weather = [now, first, second, third];
 
     let isMorning   = date.getHours() > 5  && date.getHours() <= 12;
     let isAfternoon = date.getHours() > 12 && date.getHours() <= 18;
@@ -18,19 +19,19 @@ export const getTimeWeather = (current, hourly) => {
 
 
     if (isMorning) {
-        count = [0,1,2];
+        count = [0,1,2,3];
     }
 
     if (isAfternoon) {
-        count = [1,2,3];
+        count = [1,2,3,4];
     }
 
     if (isEvening) {
-        count = [2,3,4];
+        count = [2,3,4,5];
     }
 
     if (isNight) {
-        count = [3,4,5]
+        count = [3,4,5,6]
     }
 
     return count.map((num,i) => {

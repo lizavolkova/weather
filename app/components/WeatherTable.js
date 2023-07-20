@@ -9,16 +9,16 @@ export default function WeatherTable({current, daily, hourly, noaaData}) {
 
     const tabs = [
         {
-            title: "hourly",
+            title: "Hourly",
             component:  <Hourly hourly={hourly}/>
         },
         {
-            title: "today",
+            title: "Today",
             component: <Today current={current} hourly={hourly}/>
         },
 
         {
-            title: "daily",
+            title: "Daily",
             component: <DailyWeatherChart daily={daily} noaaData={noaaData}/>
         }
     ]
@@ -28,7 +28,7 @@ export default function WeatherTable({current, daily, hourly, noaaData}) {
                 <ul className="flex">
                     {tabs.map((tab,i) => {
                         return (
-                            <li className={`m-2 p-1 cursor-pointer ${selectedTab === i ? 'border-b' : ''}`} key={i} onClick={() => setSelectedTab(i)}>{tab.title}</li>
+                            <li className={`m-2 p-1 cursor-pointer text-xl ${selectedTab === i ? 'border-b' : ''}`} key={i} onClick={() => setSelectedTab(i)}>{tab.title}</li>
                         )
                     })}
                 </ul>
