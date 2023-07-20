@@ -30,7 +30,7 @@ export default function DailyWeatherChart({daily, noaaData}) {
         <div>
             <div id="daily-chart" className="chartWrapper overflow-x-scroll py-6">
                 <div className="relative w-[800px] h-[350px] mx-auto">
-                    <WeatherLineChart temp={temp} pop={pop} time={time} icons={icons} minTemp={minTemp} clickedEl={onClick}/>
+                    <WeatherLineChart temp={temp} pop={pop} time={time} icons={icons} minTemp={minTemp} clickedEl={onClick} id="daily"/>
                 </div>
             </div>
             <div className="mt-4">

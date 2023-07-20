@@ -20,6 +20,13 @@ import FeelLikeTemp from "./FeelLikeTemp";
 import RangeBar from "./Atoms/RangeBar";
 import IconUmbrella from "./icons/IconUmbrella";
 import IconCloud from "./icons/IconCloud";
+import CelestialDoughnutChart from "./Tables/CelestialDoughnutChart";
+import IconSunset from "./icons/IconSunset";
+import CelestialAreaChart from "./Tables/CelestialAreaChart";
+import {getTime} from "../utils/getTime";
+import CelestialRiseCard from "../CelestialRiseCard";
+import SunriseCard from "./SunriseCard";
+import MoonriseCard from "./MoonriseCard";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -69,9 +76,11 @@ const SimpleData = ({children}) => {
     )
 }
 
-export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
-    const test = getTimeWeather(current, hourly);
-    const cardClass = `flex-col flex-1 basis-1/3 `
+
+
+export default function SideWeather({current, airPollution, hourly, daily, noaaData, solarData, bgColor}) {
+    const cardClass = `flex-col flex-1 basis-1/3`;
+
 
     return (
         <>
@@ -93,8 +102,8 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                                 <div className="mb-4 text-5xl">{current.humidity}%</div>
                                 <RangeBar percent={current.humidity} color={getHumidityColor(current.humidity)}/>
                             </SimpleData>
-
                         </InfoCard>
+
 
                         <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} footer="Learn more at:" footerLogo="/icons/ic-logo-iq-air-blue.svg" footerUrl="https://www.iqair.com/us/usa/new-york/ossining" >
                             <AirQuality air={airPollution}/>
@@ -128,10 +137,23 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                         <InfoCard title="Pressure" classes={cardClass} icon={<IconArrowsCollapse />}>
                             <Card value={`${current.pressure}hPa`}  iconClass="text-3xl" />
                         </InfoCard>
+
                     </div>
 
                     <WeatherTable daily={daily} hourly={hourly} current={current} noaaData={noaaData}/>
 
+                    <div className="flex flex-wrap md:justify-between w-full " >
+                        <InfoCard title="Sun" classes={cardClass} icon={<IconSunset />}  >
+                            {solarData && <div className="flex flex-col w-full">
+                                <div>Today has {Math.floor(solarData.day_length/ 3600)} hours of daylight</div>
+                                <SunriseCard data={solarData} />
+                            </div>}
+                        </InfoCard>
+
+                        <InfoCard title="Moon" classes={cardClass} icon={<IconSunset />}  >
+                            {daily && <MoonriseCard data={daily[0]} />}
+                        </InfoCard>
+                    </div>
                     {/*<HourlyWeatherVertical hourly={hourly}/>*/}
 
                 </div>

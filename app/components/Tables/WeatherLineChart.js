@@ -5,11 +5,11 @@ import { Line, getElementsAtEvent } from 'react-chartjs-2';
 import {Chart as ChartJS} from "chart.js";
 
 
-function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
+function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
     const chartRef = useRef();
 
     const customPlugin = {
-        id: 'hourly-icons',
+        id: `weather-line-chart-${id}`,
         afterDraw: chart => {
             const ctx = chart.ctx;
             const xAxis = chart.scales['x3'];
@@ -193,10 +193,6 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
     };
 
 
-    useEffect(() => {
-        ChartJS.register(customPlugin);
-    }, []);
-
     const onClick = (event) => {
         if (clickedEl && chartRef.current) {
             let value = chartRef.current.scales.x.getValueForPixel(event.nativeEvent.layerX);
@@ -207,7 +203,7 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl}) {
     }
 
     return (
-        <Line options={options} data={data} ref={chartRef} onClick={onClick}/>
+        <Line options={options} data={data} ref={chartRef} onClick={onClick} plugins={[customPlugin]}/>
     )
 }
 

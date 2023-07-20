@@ -30,7 +30,7 @@ export default function Hourly({current, hourly}) {
         <div>
             <div id="hourly-chart" className="chartWrapper overflow-x-scroll  py-6">
                 <div className="relative w-[2000px] h-[350px] ">
-                    <WeatherLineChart hourly={hourly} temp={temp} pop={pop} time={time} icons={icons} clickedEl={onClick}/>
+                    <WeatherLineChart hourly={hourly} temp={temp} pop={pop} time={time} icons={icons} clickedEl={onClick} id="hourly"/>
                 </div>
             </div>
             <div className="mt-4">

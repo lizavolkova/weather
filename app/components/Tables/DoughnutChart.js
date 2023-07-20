@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import {Chart as ChartJS} from "chart.js";
 
@@ -59,13 +60,14 @@ export default function DoughnutChart({val, colors, chartId, rot, circum, diagno
                 data: dataArray,
                 backgroundColor: chartColors,
                 borderWidth: 0,
-                value: val,
+                value: val
             },
         ],
     };
 
-    ChartJS.register({
-        id: 'doughnut-plugin',
+
+    const doughnutPlugin = {
+        id: `doughnut-plugin-${chartId}`,
         afterUpdate: function(chart) {
             const arcs = chart.getDatasetMeta(0).data;
 
@@ -115,12 +117,12 @@ export default function DoughnutChart({val, colors, chartId, rot, circum, diagno
             }
 
         }
-    })
+    }
 
     return (
         <div>
             <div id={chartId} width="200" height="200" className="max-h-[400px] mx-auto doughnut-chart">
-                <Doughnut type="doughnut" data={uviData} options={options}/>
+                <Doughnut type="doughnut" data={uviData} options={options} plugins={[doughnutPlugin]} />
             </div>
         </div>
 

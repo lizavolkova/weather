@@ -24,7 +24,7 @@ export default function Today({current, hourly}) {
         <div className="flex flex-col py-6">
             {weather && <div id="daily-chart" className="chartWrapper overflow-x-scroll">
                 <div className="relative w-[800px] h-[350px] mx-auto">
-                    <WeatherLineChart temp={temp} pop={pop} time={time} icons={icons} clickedEl={onClick}/>
+                    <WeatherLineChart temp={temp} pop={pop} time={time} icons={icons} clickedEl={onClick} id="today"/>
                 </div>
             </div>}
             <div className="mt-4">
