@@ -5,8 +5,8 @@ const CelestialTimeCard = ({text, time, icon}) => {
 
     return (
         <div className="flex flex-col items-center">
-            <div className="text-md text-slate-400">{text}</div>
-            <div className="text-lg">{time}</div>
+            <div className="text-sm text-slate-400">{text}</div>
+            <div className="text-xl">{time}</div>
             {icon && <img src={icon} alt="moon-phase" className="max-w-[100px]"/>}
         </div>
     )

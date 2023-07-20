@@ -3,13 +3,25 @@ import {getTime} from "../utils/getTime";
 import CelestialRiseCard from "../CelestialRiseCard";
 import {getDate} from "../utils/getDate";
 
-const CelestialTimeCard = ({text, time}) => {
-    return (
-        <div className="flex flex-col">
-            <div className="text-md text-slate-400">{text}</div>
-            <div className="text-lg">{time}</div>
-        </div>
-    )
+const getMoonPhase = (phase) => {
+    switch(true) {
+        case phase === 0 || phase === 1:
+            return 'New Moon';
+        case phase === 0.25:
+            return 'First Quarter Moon';
+        case phase === 0.75:
+            return 'Last Quarter Moon';
+        case phase === 0.5:
+            return 'Full Moon';
+        case phase < 0.25:
+            return 'Waxing Crescent';
+        case phase > 0.25 && phase < 0.5:
+            return 'Waxing Gibous';
+        case phase > 0.5 && phase < 0.75:
+            return 'Waning Gibous';
+        case phase > 0.75 && phase < 1:
+            return 'Waning Crescent';
+    }
 }
 
 export default function MoonriseCard({data}) {
@@ -20,7 +32,7 @@ export default function MoonriseCard({data}) {
     const params = [
         {
             name: 'Phase',
-            val: 'Waxing Gibbous',
+            val: getMoonPhase(data.moon_phase),
             icon: phaseIcon
         }
     ]
