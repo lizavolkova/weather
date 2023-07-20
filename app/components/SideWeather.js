@@ -85,9 +85,9 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                             <AirQuality air={airPollution}/>
                         </InfoCard>
 
-                        <InfoCard title="UV Index" classes={cardClass}  icon={<IconSun />}>
+                        {current.uvi !== 0 && <InfoCard title="UV Index" classes={cardClass}  icon={<IconSun />}>
                             <UVIndex uvi={current.uvi}/>
-                        </InfoCard>
+                        </InfoCard>}
 
                         <InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />}>
                             <div className="mb-4 text-5xl">{Math.floor(daily[0].pop * 100)}%</div>
