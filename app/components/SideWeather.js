@@ -28,6 +28,7 @@ import CelestialRiseCard from "../CelestialRiseCard";
 import SunriseCard from "./SunriseCard";
 import MoonriseCard from "./MoonriseCard";
 import PlanetsVisible from "./PlanetsVisible";
+import IconPlanetOutline from "./icons/IconPlanetOutline";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -80,79 +81,78 @@ const SimpleData = ({children}) => {
 export default function SideWeather({current, airPollution, hourly, daily, noaaData, solarData, bgColor, planetData}) {
     const cardClass = `flex-col flex-1 basis-1/3`;
 
-
     return (
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
                 <div className="flex flex-col md:pr-32">
 
                     <div className="flex flex-wrap md:justify-between w-full " >
-                        {/*<InfoCard title="Feels like" classes={cardClass} icon={<IconThermometerHalf />}>*/}
-                        {/*    <SimpleData>*/}
-                        {/*        <div className="mb-4 text-4xl md:text-5xl"><Temperature temp={current.feels_like} /></div>*/}
-                        {/*        <FeelLikeTemp temp={current.feels_like} />*/}
-                        {/*    </SimpleData>*/}
-                        {/*</InfoCard>*/}
+                        <InfoCard title="Feels like" classes={cardClass} icon={<IconThermometerHalf />}>
+                            <SimpleData>
+                                <div className="mb-4 text-4xl md:text-5xl"><Temperature temp={current.feels_like} /></div>
+                                <FeelLikeTemp temp={current.feels_like} />
+                            </SimpleData>
+                        </InfoCard>
 
-                        {/*<InfoCard title="Humidity" classes={cardClass} icon={<IconWiHumidity />}>*/}
-                        {/*    <SimpleData>*/}
-                        {/*        <div className="mb-4 text-4xl md:text-5xl">{current.humidity}%</div>*/}
-                        {/*        <RangeBar percent={current.humidity} color={getHumidityColor(current.humidity)}/>*/}
-                        {/*    </SimpleData>*/}
-                        {/*</InfoCard>*/}
-
-
-                        {/*<InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} footer="Learn more at:" footerLogo="/icons/ic-logo-iq-air-blue.svg" footerUrl="https://www.iqair.com/us/usa/new-york/ossining" >*/}
-                        {/*    <AirQuality air={airPollution}/>*/}
-                        {/*</InfoCard>*/}
-
-                        {/*{current.uvi !== 0 && <InfoCard title="UV Index" classes={cardClass}  icon={<IconSun />}>*/}
-                        {/*    <UVIndex uvi={current.uvi}/>*/}
-                        {/*</InfoCard>}*/}
-
-                        {/*<InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />} footer="See map:" footerLogo="/icons/zoom-earth-logo.png" footerUrl="https://zoom.earth/maps/precipitation/#view=41.18856,-73.83745,10z/date=2023-07-20,03:50,-4/model=icon">*/}
-                        {/*    <SimpleData>*/}
-                        {/*        <div className="mb-4 text-4xl md:text-5xl">{Math.floor(daily[0].pop * 100)}%</div>*/}
-                        {/*        <RangeBar percent={daily[0].pop *100} />*/}
-                        {/*    </SimpleData>*/}
-
-                        {/*</InfoCard>*/}
-
-                        {/*<InfoCard title="Cloud Cover" classes={cardClass} icon={<IconCloud />}>*/}
-                        {/*    <SimpleData>*/}
-                        {/*        <div className="mb-4 text-4xl md:text-5xl">{Math.floor(current.clouds)}%</div>*/}
-                        {/*        <RangeBar percent={current.clouds} />*/}
-                        {/*    </SimpleData>*/}
-
-                        {/*</InfoCard>*/}
+                        <InfoCard title="Humidity" classes={cardClass} icon={<IconWiHumidity />}>
+                            <SimpleData>
+                                <div className="mb-4 text-4xl md:text-5xl">{current.humidity}%</div>
+                                <RangeBar percent={current.humidity} color={getHumidityColor(current.humidity)}/>
+                            </SimpleData>
+                        </InfoCard>
 
 
-                        {/*<InfoCard title="Wind" classes={cardClass} icon={<IconWind />}>*/}
-                        {/*    <Card value={`${current.wind_speed}m/s`}  iconClass="text-3xl" />*/}
-                        {/*</InfoCard>*/}
+                        <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} footer="Learn more at:" footerLogo="/icons/ic-logo-iq-air-blue.svg" footerUrl="https://www.iqair.com/us/usa/new-york/ossining" >
+                            <AirQuality air={airPollution}/>
+                        </InfoCard>
 
-                        {/*<InfoCard title="Pressure" classes={cardClass} icon={<IconArrowsCollapse />}>*/}
-                        {/*    <Card value={`${current.pressure}hPa`}  iconClass="text-3xl" />*/}
-                        {/*</InfoCard>*/}
+                        {current.uvi !== 0 && <InfoCard title="UV Index" classes={cardClass}  icon={<IconSun />}>
+                            <UVIndex uvi={current.uvi}/>
+                        </InfoCard>}
+
+                        <InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />} footer="See map:" footerLogo="/icons/zoom-earth-logo.png" footerUrl="https://zoom.earth/maps/precipitation/#view=41.18856,-73.83745,10z/date=2023-07-20,03:50,-4/model=icon">
+                            <SimpleData>
+                                <div className="mb-4 text-4xl md:text-5xl">{Math.floor(daily[0].pop * 100)}%</div>
+                                <RangeBar percent={daily[0].pop *100} />
+                            </SimpleData>
+
+                        </InfoCard>
+
+                        <InfoCard title="Cloud Cover" classes={cardClass} icon={<IconCloud />}>
+                            <SimpleData>
+                                <div className="mb-4 text-4xl md:text-5xl">{Math.floor(current.clouds)}%</div>
+                                <RangeBar percent={current.clouds} />
+                            </SimpleData>
+
+                        </InfoCard>
+
+
+                        <InfoCard title="Wind" classes={cardClass} icon={<IconWind />}>
+                            <Card value={`${current.wind_speed}m/s`}  iconClass="text-3xl" />
+                        </InfoCard>
+
+                        <InfoCard title="Pressure" classes={cardClass} icon={<IconArrowsCollapse />}>
+                            <Card value={`${current.pressure}hPa`}  iconClass="text-3xl" />
+                        </InfoCard>
 
                     </div>
 
-                    {/*<WeatherTable daily={daily} hourly={hourly} current={current} noaaData={noaaData}/>*/}
+                    <WeatherTable daily={daily} hourly={hourly} current={current} noaaData={noaaData}/>
 
                     <div className="flex flex-wrap md:justify-between w-full " >
-                        {/*<InfoCard title="Sun" classes={cardClass} icon={<IconSunset />}  >*/}
-                        {/*    {solarData && <div className="flex flex-col w-full">*/}
-                        {/*        <div>Today has {Math.floor(solarData.day_length/ 3600)} hours of daylight</div>*/}
-                        {/*        <SunriseCard data={solarData} />*/}
-                        {/*    </div>}*/}
-                        {/*</InfoCard>*/}
+                        <InfoCard title="Sun" classes={cardClass} icon={<IconSunset />}  >
+                            {solarData && <div className="flex flex-col w-full">
+                                <div>Today has {Math.floor(solarData.day_length/ 3600)} hours of daylight</div>
+                                <SunriseCard data={solarData} />
+                            </div>}
+                        </InfoCard>
 
-                        {/*<InfoCard title="Moon" classes={cardClass} icon={<IconSunset />}  >*/}
-                        {/*    {daily && <MoonriseCard data={daily[0]} />}*/}
-                        {/*</InfoCard>*/}
+                        <InfoCard title="Moon" classes={cardClass} icon={<IconSunset />}  >
+                            {daily && <MoonriseCard data={daily[0]} />}
+                        </InfoCard>
 
-                        <InfoCard title="Visible Planets" classes={cardClass} icon={<IconSunset />}  >
-                            {planetData && <PlanetsVisible data={planetData} />}
+                        <InfoCard title="Visible Planets" classes={cardClass} icon={<IconPlanetOutline />}  >
+                            <PlanetsVisible />
                         </InfoCard>
                     </div>
                     {/*<HourlyWeatherVertical hourly={hourly}/>*/}
