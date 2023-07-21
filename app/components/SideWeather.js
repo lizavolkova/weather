@@ -29,6 +29,8 @@ import SunriseCard from "./SunriseCard";
 import MoonriseCard from "./MoonriseCard";
 import PlanetsVisible from "./PlanetsVisible";
 import IconPlanetOutline from "./icons/IconPlanetOutline";
+import IconWiMoonrise from "./icons/IconWiMoonrise";
+import IconMoonset from "./icons/IconMoonset";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -147,7 +149,7 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
                             </div>}
                         </InfoCard>
 
-                        <InfoCard title="Moon" classes={cardClass} icon={<IconSunset />}  >
+                        <InfoCard title="Moon" classes={cardClass} icon={<IconMoonset />}  >
                             {daily && <MoonriseCard data={daily[0]} />}
                         </InfoCard>
 

@@ -119,7 +119,7 @@ export default function Home() {
         }
 
 
-        //fetchRealData();
+        fetchRealData();
         fetchNoaaforecast();
         fetchData();
         fetchAlerts()
