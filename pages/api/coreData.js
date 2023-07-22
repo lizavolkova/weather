@@ -117,6 +117,8 @@ export default async function handler(req, res) {
         const tomorrowWeather = await fetchTomorrowWeather(fetchRealData);
         console.log('Got Tomrrow.io data!')
 
+        console.log('TOMORROW WEATHER RECEIVED:', tomorrowWeather);
+
         const tomorrowHourly = tomorrowWeather.dailyHourly.timelines.hourly.slice(0,24);
 
         const date = new Date()
