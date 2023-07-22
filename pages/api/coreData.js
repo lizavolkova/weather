@@ -96,7 +96,7 @@ const fetchTomorrowWeather = async(real) => {
             if (current.code) {
                 throw new Error({error: makeEnumerableCopy(current)});
             }
-            
+
 
             return {
                 dailyHourly,
@@ -178,7 +178,8 @@ export default async function handler(req, res) {
                         id: 123,
                         main: 'rain',
                         icon: '10d',
-                        description: weatherCodeFullDay[values.weatherCodeMax]
+                        description: weatherCodeFullDay[values.weatherCodeMax],
+                        iconCode: values.weatherCodeMax + '0'
                     }
                 ],
                 moonrise,
@@ -213,7 +214,8 @@ export default async function handler(req, res) {
                     description: isNight ? weatherCodeNight[values.weatherCode + '1'] : weatherCodeFullDay[values.weatherCode],
                     icon: '10d',
                     id: tomorrowCurrent.id,
-                    main: 'clouds'
+                    main: 'clouds',
+                    iconCode: isNight ? values.weatherCode + '1' : values.weatherCode + '0'
                 }
             ],
         };
@@ -223,7 +225,7 @@ export default async function handler(req, res) {
             const timestamp = Math.floor(date.getTime() / 1000);
             return {
                 dt: timestamp,
-                feels_like: weather.temperatureApparent,
+                feels_like: weather.values.temperatureApparent,
                 temp: weather.values.temperature,
                 uvi:weather.values.uvIndex,
                 pop: weather.values.precipitationProbability / 100,
@@ -231,10 +233,11 @@ export default async function handler(req, res) {
                 humidity: weather.values.humidity,
                 weather: [
                     {
-                        description: weatherCodeFullDay[weather.weatherCode],
+                        description: weatherCodeFullDay[weather.values.weatherCode],
                         icon: '10d',
                         id: weather.id,
-                        main: weather.main
+                        main: weather.main,
+                        iconCode: weather.values.weatherCode + '0'
                     }
                 ],
             }

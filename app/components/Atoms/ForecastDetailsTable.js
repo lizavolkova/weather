@@ -21,34 +21,34 @@ const DailyIconAttribute = ({icon, title, value}) => {
     )
 };
 
-export default function ForecastDetailsTable({humidity, wind, feels, sunrise, sunset, pop, timeStamp, clouds, uvi}) {
+export default function ForecastDetailsTable({humidity, wind, feels, pop, timeStamp, clouds, uvi}) {
     return (
         <div
             className="flex flex-col border rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
             <div className="p-2 text-slate-200 text-base">{timeStamp}</div>
             <div className="flex p-3 flex-wrap">
 
-                {feels && <DailyIconAttribute title="Feels like"
+                {feels >= 0 && <DailyIconAttribute title="Feels like"
                                               value={<Temperature temp={feels}/>}
                                             icon={<IconThermometerHalf/>} />}
 
-                {humidity && <DailyIconAttribute title="Humidity"
+                {humidity >=0 && <DailyIconAttribute title="Humidity"
                                                  value={`${humidity}%`}
                                                  icon={<IconWiHumidity/>}/>}
 
-                {pop && <DailyIconAttribute title="Chance of Rain"
+                {pop >= 0 && <DailyIconAttribute title="Chance of Rain"
                                                  value={`${pop * 100}%`}
                                                  icon={<IconUmbrella/>}/>}
 
-                {uvi && <DailyIconAttribute title="UV Index"
+                {uvi >=0 && <DailyIconAttribute title="UV Index"
                                                value={uvi}
                                                icon={<IconSun/>}/>}
 
-                {clouds && <DailyIconAttribute title="Cloud Cover"
+                {clouds >= 0 && <DailyIconAttribute title="Cloud Cover"
                                             value={`${clouds}%`}
                                             icon={<IconCloud/>}/>}
 
-                {wind && <DailyIconAttribute title="Wind"
+                {wind >= 0 && <DailyIconAttribute title="Wind"
                                                value={`${wind}m/s`}
                                                icon={<IconWind/>}/>}
 

@@ -4,28 +4,14 @@ import WeatherCard from "./WeatherCard";
 import {getDay} from "../utils/getDay";
 import {getMonth} from "../utils/getMonth";
 import Image from 'next/image'
-import IconThermometerHalf from '../components/icons/IconThermometerHalf'
-import IconWiHumidity from "./icons/IconWiHumidity";
-import IconUmbrella from "./icons/IconUmbrella";
 import Alert from "./Alert";
 import Temperature from "./Atoms/Temperature";
 import {getDate} from "../utils/getDate";
-import CardStyle from "./Atoms/CardStyle";
-import {getTime} from "../utils/getTime";
-import IconWind from "./icons/IconWind";
-import IconSunset from "./icons/IconSunset";
-import IconSunrise from "./icons/IconSunrise";
-import IconWiMoonrise from "./icons/IconWiMoonrise";
-import IconMoonset from "./icons/IconMoonset";
-import IconSun from "./icons/IconSun";
-import DailyWeather from "./DailyWeather";
-
 
 
 
 
 export default function MainWeather({current, daily, alerts, noaaData}) {
-
 
     const day = getDate(current.dt);
 

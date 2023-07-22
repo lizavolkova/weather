@@ -18,12 +18,15 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
 
             if (xAxis) {
                 xAxis.ticks.forEach((value, index) => {
-                    const sun = new Image();
-                    sun.src = icons[index];
+                    const icon = new Image();
+                    icon.src = icons[index];
+                    icon.width = 35;
+                    icon.height = 35;
+
                     const x = xAxis.getPixelForTick(index);
 
-                    sun.onload = function() {
-                        ctx.drawImage(sun, x - 50, yAxis.top - 10);
+                    icon.onload = function() {
+                        ctx.drawImage(icon, x - icon.width/2, yAxis.top + icon.height/2, icon.width, icon.height);
                     }
 
                 });
