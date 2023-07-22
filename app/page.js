@@ -114,7 +114,7 @@ export default function Home() {
     }, []);
 
     const current = data?.current?.weather[0];
-    const timeOfDay = current?.icon?.slice(-1);
+    const timeOfDay = data?.current?.isNight ? 'n' : 'd';
     const weatherImage = data?.current?.weather[0].main.toLowerCase() === 'clouds' && data?.current?.clouds < 50 ? 'clouds-part' : current?.main.toLowerCase();
     const bgImage = `/weather-photos/${timeOfDay}/${weatherImage}.jpg`;
 

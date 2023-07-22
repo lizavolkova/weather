@@ -29,6 +29,7 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
 
     const day = getDate(current.dt);
 
+
     const importantAlerts = alerts.filter(alert => alert.properties.severity === "Severe" ||  alert.properties.severity === "Extreme");
     const otherAlerts     = alerts.filter(alert => alert.properties.severity != "Severe" &&  alert.properties.severity != "Extreme")
     const sortedAlerts = [...importantAlerts, ...otherAlerts];

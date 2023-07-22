@@ -2,6 +2,7 @@ import queryString from 'query-string';
 import tomorrowDailyJson from './tomorrowDaily.json';
 import tomorrowCurrent from './tomorrowCurrent.json';
 import weatherCodes from './tomorrow-weather-codes.json';
+import { SearchRiseSet, Observer } from 'astronomy-engine';
 const lat = 41.18856;
 const long = -73.83745;
 
@@ -66,8 +67,16 @@ const fetchTomorrowWeather = async(real) => {
                 options
             );
 
+
             console.log('Got daily and hourly data from Tomorrow.io')
             const dailyHourly = await weatherDailyForecastRes.json();
+
+            if (dailyHourly.code) {
+                const { code, type } = dailyHourly;
+
+                throw new Error(JSON.stringify(dailyHourly));
+            }
+
 
             // GET CURRENT WEATHER
             const weatherCurrentForecastParams =  queryString.stringify({
@@ -84,15 +93,21 @@ const fetchTomorrowWeather = async(real) => {
             console.log('Got current data from Tomorrow.io')
             const current = await weatherCurrentForecastRes.json();
 
+            if (current.code) {
+                throw new Error({error: makeEnumerableCopy(current)});
+            }
+            
+
             return {
                 dailyHourly,
                 current
             }
 
 
-        } catch (err) {
-            console.error("error:" + err);
-            return err;
+        } catch (error) {
+            const { code, type } = error;
+            console.error('THROWING ERROR FROM TOMORROW CALL',error);
+            throw new Error(makeEnumerableCopy(error));
         }
     } else {
         return {
@@ -124,7 +139,7 @@ export default async function handler(req, res) {
         const date = new Date()
         const dt = Math.floor(date.getTime() / 1000);
 
-        const { weatherCodeFullDay } = weatherCodes;
+        const { weatherCodeFullDay, weatherCodeNight } = weatherCodes;
 
         const daily =  tomorrowWeather.dailyHourly.timelines.daily.map(weather => {
             const { values } = weather;
@@ -175,8 +190,15 @@ export default async function handler(req, res) {
 
         const { values } = tomorrowWeather.current.data;
 
+        const dateCurrent = new Date(tomorrowWeather.current.data.time)
+        const dateCurrentUnix = Math.floor(dateCurrent.getTime() / 1000);
+        const observer = new Observer(lat, long, 1);
+        const set  = new Date(SearchRiseSet('Sun',  observer, -1, date, 300).date);
+        const rise  = new Date(SearchRiseSet('Sun',  observer, +1, date, 300).date);
+        const isNight = (date.getHours() > set.getHours() || date.getHours() < rise.getHours());
+
         const current = {
-            dt: dt,
+            dt: dateCurrentUnix,
             feels_like: values.temperatureApparent,
             temp: values.temperature,
             uvi: values.uvIndex,
@@ -185,9 +207,10 @@ export default async function handler(req, res) {
             humidity: values.humidity,
             pressure: values.pressureSurfaceLevel,
             wind_speed: values.windSpeed,
+            isNight,
             weather: [
                 {
-                    description: weatherCodeFullDay[values.weatherCode],
+                    description: isNight ? weatherCodeNight[values.weatherCode + '1'] : weatherCodeFullDay[values.weatherCode],
                     icon: '10d',
                     id: tomorrowCurrent.id,
                     main: 'clouds'
@@ -225,8 +248,17 @@ export default async function handler(req, res) {
 
         res.status(200).json({air, hourly, daily, current})
     } catch(err) {
-        console.error({serverError: err})
-        res.status(500).json({error: err})
+        console.error({serverError: makeEnumerableCopy(err)})
+        res.status(500).json({serverError: makeEnumerableCopy(err)})
     }
 
+}
+
+function makeEnumerableCopy(err) {
+    let descriptor = Object.getOwnPropertyDescriptors(err);
+    // set all properties in the descriptor to be enumerable
+    for (let key of Object.keys(descriptor)) {
+        descriptor[key].enumerable = true;
+    }
+    return Object.defineProperties({}, descriptor);
 }
