@@ -7,10 +7,13 @@ const long = -73.83745;
 
 const fetchOpenWeatherData = async (real) => {
     if(real == 'true' ) {
+        console.log('Fetching real weather data')
         try {
             const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.API_KEY}`)
+            console.log('Real weather data fetched succesfully')
             return await res.json();
         } catch (err) {
+            console.error('Error fetching real weather data: ', err)
             return err;
         }
 
@@ -22,10 +25,13 @@ const fetchOpenWeatherData = async (real) => {
 
 const fetchAirDate = async (real) => {
     if (real == 'true') {
+        console.log('Fetching real air data')
         try {
             const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=${process.env.AIR_VISUAL_API_KEY}`);
+            console.log('Real air data fetched succesfully')
             return await air.json();
         }catch (err) {
+            console.error('Error fetching real air data: ', err)
             return err;
         }
 
@@ -93,10 +99,13 @@ const fetchTomorrowWeather = async(real) => {
 
 export default async function handler(req, res) {
     try {
+        console.log('Begin fetch of data...')
         const fetchRealData = req.query.real;
         const dataJson = await fetchOpenWeatherData(fetchRealData);
+        console.log('Got weather data!')
 
         const air = await fetchAirDate(fetchRealData);
+        console.log('Got air data!')
        // const tomorrowWeather = await fetchTomorrowWeather(fetchRealData);
 
         //const tomorrowHourly = tomorrowWeather.dailyHourly.timelines.hourly.slice(0,24);
@@ -203,6 +212,7 @@ export default async function handler(req, res) {
 
         res.status(200).json({air, hourly, daily, current})
     } catch(err) {
+        console.err({serverError: err})
         res.status(500).json({error: err})
     }
 
