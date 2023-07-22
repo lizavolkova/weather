@@ -117,6 +117,40 @@ const fetchTomorrowWeather = async(real) => {
     }
 }
 
+const isNight = (date, rise, set) => {
+    return date.getHours() > set.getHours() || date.getHours() < rise.getHours()
+}
+
+const getImage = (number) => {
+    const code = parseInt(number);
+    const clearCodes = [1000, 1100];
+    const cloudsPart = [1101];
+    const cloudy = [1102, 1001];
+    const mist = [2000, 2100];
+    const drizzle = [4000, 4200];
+    const rain = [4001, 4201];
+    const thunderstorm = [8000];
+    const snow = [5000, 5001, 5100, 5101]
+
+    switch(true) {
+        case clearCodes.indexOf(code) >= 0:
+            return 'clear'
+        case cloudsPart.indexOf(code) >= 0:
+            return 'clouds-part'
+        case cloudy.indexOf(code) >= 0:
+            return 'clouds'
+        case mist.indexOf(code) >= 0:
+            return 'mist'
+        case drizzle.indexOf(code) >= 0:
+            return 'drizzle'
+        case rain.indexOf(code) >= 0:
+            return 'rain'
+        case thunderstorm.indexOf(code) >= 0:
+            return 'thunderstorm'
+        case snow.indexOf(code) >= 0:
+            return 'snow'
+    }
+}
 
 export default async function handler(req, res) {
     try {
@@ -136,9 +170,14 @@ export default async function handler(req, res) {
 
         const tomorrowHourly = tomorrowWeather.dailyHourly.timelines.hourly.slice(0,24);
 
+        // Get Today's date
         const date = new Date()
         const dt = Math.floor(date.getTime() / 1000);
 
+        // Get sunrise/set time
+        const observer = new Observer(lat, long, 1);
+        const set  = new Date(SearchRiseSet('Sun',  observer, -1, date, 300).date);
+        const rise  = new Date(SearchRiseSet('Sun',  observer, +1, date, 300).date);
         const { weatherCodeFullDay, weatherCodeNight } = weatherCodes;
 
         const daily =  tomorrowWeather.dailyHourly.timelines.daily.map(weather => {
@@ -172,6 +211,7 @@ export default async function handler(req, res) {
                     eve: '',
                     morn: '',
                 },
+                isNight: isNight(date, rise, set),
                 uvi: values.uvIndexMax,
                 weather: [
                     {
@@ -193,10 +233,6 @@ export default async function handler(req, res) {
 
         const dateCurrent = new Date(tomorrowWeather.current.data.time)
         const dateCurrentUnix = Math.floor(dateCurrent.getTime() / 1000);
-        const observer = new Observer(lat, long, 1);
-        const set  = new Date(SearchRiseSet('Sun',  observer, -1, date, 300).date);
-        const rise  = new Date(SearchRiseSet('Sun',  observer, +1, date, 300).date);
-        const isNight = (date.getHours() > set.getHours() || date.getHours() < rise.getHours());
 
         const current = {
             dt: dateCurrentUnix,
@@ -208,14 +244,15 @@ export default async function handler(req, res) {
             humidity: values.humidity,
             pressure: values.pressureSurfaceLevel,
             wind_speed: values.windSpeed,
-            isNight,
+            isNight: isNight(date, rise, set),
+            image: getImage(values.weatherCode),
             weather: [
                 {
-                    description: isNight ? weatherCodeNight[values.weatherCode + '1'] : weatherCodeFullDay[values.weatherCode],
+                    description: isNight(date, rise, set) ? weatherCodeNight[values.weatherCode + '1'] : weatherCodeFullDay[values.weatherCode],
                     icon: '10d',
                     id: tomorrowCurrent.id,
                     main: 'clouds',
-                    iconCode: isNight ? values.weatherCode + '1' : values.weatherCode + '0'
+                    iconCode: isNight(date, rise, set) ? values.weatherCode + '1' : values.weatherCode + '0'
                 }
             ],
         };
@@ -223,6 +260,7 @@ export default async function handler(req, res) {
         const hourly = tomorrowHourly.map(weather => {
             const date = new Date(weather.startTime)
             const timestamp = Math.floor(date.getTime() / 1000);
+
             return {
                 dt: timestamp,
                 feels_like: weather.values.temperatureApparent,
@@ -231,6 +269,7 @@ export default async function handler(req, res) {
                 pop: weather.values.precipitationProbability / 100,
                 clouds: weather.values.cloudCover,
                 humidity: weather.values.humidity,
+                isNight: isNight(date, rise, set),
                 weather: [
                     {
                         description: weatherCodeFullDay[weather.values.weatherCode],

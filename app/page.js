@@ -113,10 +113,10 @@ export default function Home() {
 
     }, []);
 
-    const current = data?.current?.weather[0];
+
     const timeOfDay = data?.current?.isNight ? 'n' : 'd';
-    const weatherImage = data?.current?.weather[0].main.toLowerCase() === 'clouds' && data?.current?.clouds < 50 ? 'clouds-part' : current?.main.toLowerCase();
-    const bgImage = `/weather-photos/${timeOfDay}/${weatherImage}.jpg`;
+    //const weatherImage = data?.current?.weather[0].main.toLowerCase() === 'clouds' && data?.current?.clouds < 50 ? 'clouds-part' : current?.main.toLowerCase();
+    const bgImage = `/weather-photos/${timeOfDay}/${data?.current?.image}.jpg`;
 
     const fac = new FastAverageColor();
 

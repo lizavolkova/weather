@@ -15,11 +15,9 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
 
     const day = getDate(current.dt);
 
-
     const importantAlerts = alerts.filter(alert => alert.properties.severity === "Severe" ||  alert.properties.severity === "Extreme");
     const otherAlerts     = alerts.filter(alert => alert.properties.severity != "Severe" &&  alert.properties.severity != "Extreme")
     const sortedAlerts = [...importantAlerts, ...otherAlerts];
-
 
     return (
         <div className=" flex flex-col justify-between p-2 md:p-6 bg-black bg-opacity-25 w-full" >
