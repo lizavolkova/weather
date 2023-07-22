@@ -68,7 +68,7 @@ export default function Home() {
 
         async function fetchData(real = false) {
 
-            const res = await fetch(`http://localhost:3000/api/coreData?real=${real}`)
+            const res = await fetch(`/api/coreData?real=${real}`)
             const data = await res.json();
 
             setAirPollution(data.air.data);
