@@ -106,7 +106,7 @@ export default function Home() {
 
        // fetchRealData();
         fetchNoaaforecast();
-        fetchData(true);
+        fetchData();
         fetchAlerts()
         fetchSolarInfo();
         //fetchVisiblePlanets();
