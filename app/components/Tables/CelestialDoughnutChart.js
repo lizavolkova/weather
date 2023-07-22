@@ -36,6 +36,7 @@ export default function CelestialDoughnutChart({riseTime, setTime, celestialIcon
 
 
     const dataArray = range(start, stop);
+
     const chartColors = dataArray.map(hour => {
         return hour <= currentHours + 1 ? highlightColor : grey;
     })
@@ -43,7 +44,7 @@ export default function CelestialDoughnutChart({riseTime, setTime, celestialIcon
     const oneAngle = 180/dataArray.length +1;
     const angles = dataArray.map((hour,i) => (oneAngle * i)).reverse();
 
-    const currentAngle = angles[currentHours - 5];
+    const currentAngle = angles[currentHours - riseTime.getHours()];
 
     const options = {
         plugins: {
@@ -87,6 +88,19 @@ export default function CelestialDoughnutChart({riseTime, setTime, celestialIcon
 
     const celestialPlugin = {
         id: `celestial-chart-${riseText}`,
+        afterUpdate: function(chart) {
+            const arcs = chart.getDatasetMeta(0).data;
+
+            arcs.forEach(function(arc) {
+                arc.round = {
+                    x: (chart.chartArea.left + chart.chartArea.right) / 2,
+                    y: (chart.chartArea.top + chart.chartArea.bottom) / 2,
+                    radius: (arc.outerRadius + arc.innerRadius) / 2,
+                    thickness: (arc.outerRadius - arc.innerRadius) / 2,
+                    backgroundColor: arc.options.backgroundColor
+                }
+            });
+        },
         afterDraw: (chart, args, options) => {
             const dataSet =chart.config._config.data.datasets[0];
 
@@ -103,7 +117,6 @@ export default function CelestialDoughnutChart({riseTime, setTime, celestialIcon
 
                 const angle = currentAngle;
 
-                // https://stackoverflow.com/questions/36934967/chart-js-doughnut-with-rounded-edges
                 const x = cx + radius * Math.cos(-angle*Math.PI/180);
                 const y = cy + radius * Math.sin(-angle*Math.PI/180);
 

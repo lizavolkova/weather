@@ -22,9 +22,8 @@ import IconUmbrella from "./icons/IconUmbrella";
 import IconCloud from "./icons/IconCloud";
 import CelestialDoughnutChart from "./Tables/CelestialDoughnutChart";
 import IconSunset from "./icons/IconSunset";
-import CelestialAreaChart from "./Tables/CelestialAreaChart";
 import {getTime} from "../utils/getTime";
-import CelestialRiseCard from "../CelestialRiseCard";
+import CelestialRiseCard from "./CelestialRiseCard";
 import SunriseCard from "./SunriseCard";
 import MoonriseCard from "./MoonriseCard";
 import PlanetsVisible from "./PlanetsVisible";
@@ -80,7 +79,7 @@ const SimpleData = ({children}) => {
     )
 }
 
-export default function SideWeather({current, airPollution, hourly, daily, noaaData, solarData, bgColor, planetData}) {
+export default function SideWeather({current, airPollution, hourly, daily, noaaData, bgColor}) {
     const cardClass = `flex-col flex-1 basis-1/3`;
 
     return (
@@ -143,14 +142,14 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
 
                     <div className="flex flex-wrap md:justify-between w-full " >
                         <InfoCard title="Sun" classes={cardClass} icon={<IconSunset />}  >
-                            {solarData && <div className="flex flex-col w-full">
-                                <div>Today has {Math.floor(solarData.day_length/ 3600)} hours of daylight</div>
-                                <SunriseCard data={solarData} />
-                            </div>}
+                            <div className="flex flex-col w-full">
+                                {/*<div>Today has {Math.floor(solarData.day_length/ 3600)} hours of daylight</div>*/}
+                                <SunriseCard />
+                            </div>
                         </InfoCard>
 
                         <InfoCard title="Moon" classes={cardClass} icon={<IconMoonset />}  >
-                            {daily && <MoonriseCard data={daily[0]} />}
+                            <MoonriseCard />
                         </InfoCard>
 
                         <InfoCard title="Visible Planets" classes={cardClass} icon={<IconPlanetOutline />}  >

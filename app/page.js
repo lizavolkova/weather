@@ -41,9 +41,6 @@ export default function Home() {
     const [bgColor, setBgColor] = useState("#000");
     const [alerts, setAlerts] = useState([]);
     const [noaaData, setNoaaData] = useState([]);
-    const [solarData, setSolarData] = useState(null);
-    const [planetData, setPlanetData] = useState(null);
-
 
 
     useEffect ( ()=> {
@@ -83,33 +80,10 @@ export default function Home() {
             setAlerts(data.features);
         }
 
-        async function fetchSolarInfo() {
-            const res = await fetch(`https://api.sunrise-sunset.org/json?lat=${lat}&lng=${long}&formatted=0`);
-            const data = await res.json();
-            setSolarData(data.results);
-        }
-
-        async function fetchVisiblePlanets() {
-            const today = new Date();
-            const formattedDate = today.toLocaleDateString('en-CA')
-
-            const res = await fetch(`https://api.astronomyapi.com/api/v2/bodies/positions?longitude=${long}&latitude=${lat}&from_date=${formattedDate}&to_date=${formattedDate}&time=18%3A52%3A40&elevation=1`,
-                { method:'GET',
-                    headers: {'Authorization': 'Basic ' + btoa(`${process.env.NEXT_PUBLIC_ASTRO_ID}:${process.env.NEXT_PUBLIC_ASTRO_SECRET}`)},
-
-                });
-            const data = await res.json();
-            setPlanetData(data.data);
-
-        }
-
-
        // fetchRealData();
         fetchNoaaforecast();
         fetchData(true);
         fetchAlerts()
-        fetchSolarInfo();
-        //fetchVisiblePlanets();
 
     }, []);
 
@@ -143,14 +117,12 @@ export default function Home() {
                       </div>
 
                       <div  className="w-full  flex h-screen md:w-3/4 md:overflow-auto md:absolute md:right-0 backdrop-blur-md">
-                          {solarData !== null && <SideWeather current={data.current}
+                          <SideWeather current={data.current}
                                        daily={data.daily}
                                        hourly={data.hourly}
                                        airPollution={airPollution}
                                        noaaData={noaaData}
-                                       solarData={solarData}
-                                       planetData={planetData}
-                                       bgColor={bgColor}/>}
+                                       bgColor={bgColor}/>
                       </div>
                   </div>
 

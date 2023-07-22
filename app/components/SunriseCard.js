@@ -1,6 +1,8 @@
 import CelestialDoughnutChart from "./Tables/CelestialDoughnutChart";
 import {getTime} from "../utils/getTime";
-import CelestialRiseCard from "../CelestialRiseCard";
+import CelestialRiseCard from "./CelestialRiseCard";
+import {Observer, SearchRiseSet, SearchAltitude, SearchHourAngle} from "astronomy-engine";
+import React from "react";
 
 const CelestialTimeCard = ({text, time}) => {
     return (
@@ -11,28 +13,41 @@ const CelestialTimeCard = ({text, time}) => {
     )
 }
 
-export default function SunriseCard({data}) {
-    const sunriseTime = new Date(data.sunrise);
-    const sunsetTime = new Date(data.sunset);
-    const dawnTime = new Date(data.civil_twilight_begin);
-    const duskTime = new Date(data.civil_twilight_end);
-    const solarNoon = new Date(data.solar_noon);
+export default function SunriseCard() {
+    const lat = 41.18856;
+    const long = -73.83745;
 
+    const date = new Date();
+    const observer = new Observer(lat, long, 1);
+    const set  = new Date(SearchRiseSet('Sun',  observer, -1, date, 300).date);
+    const rise  = new Date(SearchRiseSet('Sun',  observer, +1, date, 300).date);
+
+    const dusk = new Date(SearchAltitude('Sun', observer, -1, date, 1, -6));
+    const dawn = new Date(SearchAltitude('Sun', observer, +1, date, 1, -6));
+
+    const noon = new Date(SearchHourAngle('Sun', observer, 0, date).time.date);
+
+    const daylight = Math.floor(set.getHours() - rise.getHours());
 
     const params = [
         {
             name: 'Dawn',
-            val: getTime(dawnTime)
+            val: getTime(dawn)
         },
         {
             name: 'Solar Noon',
-            val: getTime(solarNoon)
+            val: getTime(noon)
         },
         {
             name: 'Dusk',
-            val: getTime(duskTime)
+            val: getTime(dusk)
         }
     ]
 
-    return <CelestialRiseCard rise={sunriseTime} set={sunsetTime} params={params} celestialIcon='/icons/sun.png' riseText="Sunrise" setText="Sunset" highlightColor='#d7b13e'/>
+    return (
+        <div className="flex flex-col w-full">
+            <div>Today has {daylight} hours of daylight</div>
+            <CelestialRiseCard rise={rise} set={set} params={params} celestialIcon='/icons/sun.png' riseText="Sunrise" setText="Sunset" highlightColor='#d7b13e'/>
+        </div>
+    )
 }

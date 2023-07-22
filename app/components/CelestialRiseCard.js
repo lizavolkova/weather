@@ -1,5 +1,5 @@
-import CelestialDoughnutChart from "./components/Tables/CelestialDoughnutChart";
-import {getTime} from "./utils/getTime";
+import CelestialDoughnutChart from "./Tables/CelestialDoughnutChart";
+import {getTime} from "../utils/getTime";
 
 const CelestialTimeCard = ({text, time, icon}) => {
 
