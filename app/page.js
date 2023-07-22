@@ -50,21 +50,6 @@ export default function Home() {
         const lat = 41.18856;
         const long = -73.83745;
 
-        async function fetchRealData() {
-            try {
-                const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
-                const data = await res.json();
-                //const air = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
-
-
-                setData(data);
-                setAirPollution(airData.data);
-                setIsLoading(false);
-            } catch(err) {
-                setIsLoading(true);
-            }
-        }
-
         async function fetchNoaaforecast() {
             try {
                 const res = await fetch('https://api.weather.gov/gridpoints/OKX/36,57/forecast?units=si')

@@ -7,7 +7,7 @@ const long = -73.83745;
 
 const fetchOpenWeatherData = async (real) => {
     if(real == 'true' ) {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.API_KEY}`)
         return await res.json();
     } else {
         const data = await fetch("http://localhost:3000/api/data")
@@ -17,7 +17,7 @@ const fetchOpenWeatherData = async (real) => {
 
 const fetchAirDate = async (real) => {
     if (real == 'true') {
-        const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=${process.env.NEXT_PUBLIC_AIR_VISUAL_API_KEY}`);
+        const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=${process.env.AIR_VISUAL_API_KEY}`);
         return await air.json();
 
     } else {
