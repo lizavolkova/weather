@@ -28,14 +28,14 @@ export default function Today({current, hourly}) {
                 </div>
             </div>}
             <div className="mt-4">
-                <ForecastDetailsTable
-                    humidity={weather[details].weather.humidity}
-                    feels={weather[details].weather.feels_like.day}
-                    pop={weather[details].weather.pop}
-                    clouds={weather[details].weather.clouds}
-                    uvi={weather[details].weather.uvi}
-                    wind={weather[details].weather.wind_speed}
-                    timeStamp={`${getDate(weather[details].weather.dt).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: "long",})}`} />
+                {/*<ForecastDetailsTable*/}
+                {/*    humidity={weather[details].weather.humidity}*/}
+                {/*    feels={weather[details].weather.feels_like.day}*/}
+                {/*    pop={weather[details].weather.pop}*/}
+                {/*    clouds={weather[details].weather.clouds}*/}
+                {/*    uvi={weather[details].weather.uvi}*/}
+                {/*    wind={weather[details].weather.wind_speed}*/}
+                {/*    timeStamp={`${getDate(weather[details].weather.dt).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: "long",})}`} />*/}
             </div>
         </div>
     )

@@ -1,0 +1,2475 @@
+{
+    "data": {
+      "timelines": [
+        {
+          "timestep": "1d",
+          "endTime": "2023-07-26T10:00:00Z",
+          "startTime": "2023-07-21T10:00:00Z",
+          "intervals": [
+            {
+              "startTime": "2023-07-21T10:00:00Z",
+              "values": {
+                "cloudBase": 3.53,
+                "cloudCeiling": 2.59,
+                "cloudCover": 100,
+                "humidity": 99,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 26.04,
+                "temperatureApparent": 26.04,
+                "uvIndex": 3,
+                "weatherCode": 1000,
+                "windDirection": 236.64,
+                "windGust": 6.84,
+                "windSpeed": 5
+              }
+            },
+            {
+              "startTime": "2023-07-22T10:00:00Z",
+              "values": {
+                "cloudBase": 0,
+                "cloudCeiling": 0,
+                "cloudCover": 30.23,
+                "humidity": 87.98,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 25.18,
+                "temperatureApparent": 25.18,
+                "uvIndex": 8,
+                "weatherCode": 1000,
+                "windDirection": 242.96,
+                "windGust": 6.88,
+                "windSpeed": 3.31
+              }
+            },
+            {
+              "startTime": "2023-07-23T10:00:00Z",
+              "values": {
+                "cloudBase": 3.67,
+                "cloudCeiling": 0,
+                "cloudCover": 40.63,
+                "humidity": 95.24,
+                "precipitationIntensity": 0.08,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 28.63,
+                "temperatureApparent": 28.6,
+                "uvIndex": 7,
+                "weatherCode": 1000,
+                "windDirection": 155.16,
+                "windGust": 5.05,
+                "windSpeed": 2.67
+              }
+            },
+            {
+              "startTime": "2023-07-24T10:00:00Z",
+              "values": {
+                "cloudBase": 9.9,
+                "cloudCeiling": 7.08,
+                "cloudCover": 66.41,
+                "humidity": 95.08,
+                "precipitationIntensity": 0.05,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 29.98,
+                "temperatureApparent": 29.96,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 208.66,
+                "windGust": 7.2,
+                "windSpeed": 3.47
+              }
+            },
+            {
+              "startTime": "2023-07-25T10:00:00Z",
+              "values": {
+                "cloudBase": 5.15,
+                "cloudCeiling": 0,
+                "cloudCover": 99.94,
+                "humidity": 97.43,
+                "precipitationIntensity": 1.17,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 31.08,
+                "temperatureApparent": 30.31,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 187.4,
+                "windGust": 10.43,
+                "windSpeed": 4.59
+              }
+            },
+            {
+              "startTime": "2023-07-26T10:00:00Z",
+              "values": {
+                "cloudBase": 3.79,
+                "cloudCeiling": 0,
+                "cloudCover": 98.14,
+                "humidity": 92.9,
+                "precipitationIntensity": 0.59,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 28.01,
+                "temperatureApparent": 29.3,
+                "weatherCode": 4200,
+                "windDirection": 227.54,
+                "windGust": 9.6,
+                "windSpeed": 4.22
+              }
+            }
+          ]
+        },
+        {
+          "timestep": "1h",
+          "endTime": "2023-07-26T15:00:00Z",
+          "startTime": "2023-07-21T15:00:00Z",
+          "intervals": [
+            {
+              "startTime": "2023-07-21T15:00:00Z",
+              "values": {
+                "cloudBase": 0.36,
+                "cloudCeiling": null,
+                "cloudCover": 29,
+                "humidity": 85,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 23.63,
+                "temperatureApparent": 23.63,
+                "uvIndex": 2,
+                "weatherCode": 1100,
+                "windDirection": 129.88,
+                "windGust": 0.81,
+                "windSpeed": 0.63
+              }
+            },
+            {
+              "startTime": "2023-07-21T16:00:00Z",
+              "values": {
+                "cloudBase": 1.23,
+                "cloudCeiling": null,
+                "cloudCover": 41.57,
+                "humidity": 80.34,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.13,
+                "temperatureApparent": 24.13,
+                "uvIndex": 2,
+                "weatherCode": 1101,
+                "windDirection": 206.45,
+                "windGust": 6.12,
+                "windSpeed": 4.59
+              }
+            },
+            {
+              "startTime": "2023-07-21T17:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 13.75,
+                "humidity": 77.68,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.38,
+                "temperatureApparent": 24.38,
+                "uvIndex": 2,
+                "weatherCode": 1100,
+                "windDirection": 213.56,
+                "windGust": 5.85,
+                "windSpeed": 5
+              }
+            },
+            {
+              "startTime": "2023-07-21T18:00:00Z",
+              "values": {
+                "cloudBase": 3.27,
+                "cloudCeiling": null,
+                "cloudCover": 48.6,
+                "humidity": 73.69,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.86,
+                "temperatureApparent": 24.86,
+                "uvIndex": 3,
+                "weatherCode": 1101,
+                "windDirection": 226.02,
+                "windGust": 6.31,
+                "windSpeed": 4.81
+              }
+            },
+            {
+              "startTime": "2023-07-21T19:00:00Z",
+              "values": {
+                "cloudBase": 1.82,
+                "cloudCeiling": null,
+                "cloudCover": 99.25,
+                "humidity": 70.27,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 25.56,
+                "temperatureApparent": 25.56,
+                "uvIndex": 3,
+                "weatherCode": 1001,
+                "windDirection": 228.47,
+                "windGust": 5.69,
+                "windSpeed": 4.37
+              }
+            },
+            {
+              "startTime": "2023-07-21T20:00:00Z",
+              "values": {
+                "cloudBase": 2.76,
+                "cloudCeiling": 2.59,
+                "cloudCover": 100,
+                "humidity": 68.57,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 25.83,
+                "temperatureApparent": 25.83,
+                "uvIndex": 3,
+                "weatherCode": 1001,
+                "windDirection": 224.79,
+                "windGust": 5.34,
+                "windSpeed": 3.95
+              }
+            },
+            {
+              "startTime": "2023-07-21T21:00:00Z",
+              "values": {
+                "cloudBase": 3.53,
+                "cloudCeiling": null,
+                "cloudCover": 13.04,
+                "humidity": 66.79,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 26.04,
+                "temperatureApparent": 26.04,
+                "uvIndex": 1,
+                "weatherCode": 1100,
+                "windDirection": 225.22,
+                "windGust": 4.72,
+                "windSpeed": 3.62
+              }
+            },
+            {
+              "startTime": "2023-07-21T22:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 1.05,
+                "humidity": 67.95,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 25.77,
+                "temperatureApparent": 25.77,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 232.98,
+                "windGust": 4.83,
+                "windSpeed": 3.58
+              }
+            },
+            {
+              "startTime": "2023-07-21T23:00:00Z",
+              "values": {
+                "cloudBase": 1.42,
+                "cloudCeiling": null,
+                "cloudCover": 32.9,
+                "humidity": 76.7,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 23.2,
+                "temperatureApparent": 23.2,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 271.07,
+                "windGust": 6.84,
+                "windSpeed": 3.67
+              }
+            },
+            {
+              "startTime": "2023-07-22T00:00:00Z",
+              "values": {
+                "cloudBase": 1.16,
+                "cloudCeiling": null,
+                "cloudCover": 45.18,
+                "humidity": 81.69,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 22.34,
+                "temperatureApparent": 22.34,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 252.4,
+                "windGust": 3.6,
+                "windSpeed": 3
+              }
+            },
+            {
+              "startTime": "2023-07-22T01:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 84.19,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 21.89,
+                "temperatureApparent": 21.89,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 253.99,
+                "windGust": 3.5,
+                "windSpeed": 2.92
+              }
+            },
+            {
+              "startTime": "2023-07-22T02:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 2.87,
+                "humidity": 85.02,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 21.43,
+                "temperatureApparent": 21.43,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 265.48,
+                "windGust": 5.04,
+                "windSpeed": 2.91
+              }
+            },
+            {
+              "startTime": "2023-07-22T03:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 3.96,
+                "humidity": 83.12,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.91,
+                "temperatureApparent": 20.91,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 276.14,
+                "windGust": 5.3,
+                "windSpeed": 3
+              }
+            },
+            {
+              "startTime": "2023-07-22T04:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 10.14,
+                "humidity": 84.99,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.13,
+                "temperatureApparent": 20.13,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 289.39,
+                "windGust": 4.73,
+                "windSpeed": 2.67
+              }
+            },
+            {
+              "startTime": "2023-07-22T05:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 85.9,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.53,
+                "temperatureApparent": 19.53,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 293.35,
+                "windGust": 3.55,
+                "windSpeed": 2.49
+              }
+            },
+            {
+              "startTime": "2023-07-22T06:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 93.07,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.13,
+                "temperatureApparent": 19.13,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 350.05,
+                "windGust": 2.77,
+                "windSpeed": 2.29
+              }
+            },
+            {
+              "startTime": "2023-07-22T07:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 91.7,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.84,
+                "temperatureApparent": 18.84,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 310.16,
+                "windGust": 2.82,
+                "windSpeed": 2.27
+              }
+            },
+            {
+              "startTime": "2023-07-22T08:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 90.81,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.54,
+                "temperatureApparent": 18.54,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 302.38,
+                "windGust": 4.06,
+                "windSpeed": 2.37
+              }
+            },
+            {
+              "startTime": "2023-07-22T09:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 90.33,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.14,
+                "temperatureApparent": 18.14,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 302.24,
+                "windGust": 4.69,
+                "windSpeed": 2.57
+              }
+            },
+            {
+              "startTime": "2023-07-22T10:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 90.45,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 17.76,
+                "temperatureApparent": 17.76,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 309.33,
+                "windGust": 4.13,
+                "windSpeed": 2.64
+              }
+            },
+            {
+              "startTime": "2023-07-22T11:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 87.98,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.52,
+                "temperatureApparent": 18.52,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 312.66,
+                "windGust": 5.46,
+                "windSpeed": 2.58
+              }
+            },
+            {
+              "startTime": "2023-07-22T12:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 85.48,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.58,
+                "temperatureApparent": 19.58,
+                "uvIndex": 1,
+                "weatherCode": 1000,
+                "windDirection": 326.91,
+                "windGust": 6.88,
+                "windSpeed": 2.64
+              }
+            },
+            {
+              "startTime": "2023-07-22T13:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 1.14,
+                "humidity": 83.13,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.63,
+                "temperatureApparent": 20.63,
+                "uvIndex": 2,
+                "weatherCode": 1000,
+                "windDirection": 330.18,
+                "windGust": 4.88,
+                "windSpeed": 2.78
+              }
+            },
+            {
+              "startTime": "2023-07-22T14:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 6.09,
+                "humidity": 79.43,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 21.51,
+                "temperatureApparent": 21.51,
+                "uvIndex": 4,
+                "weatherCode": 1000,
+                "windDirection": 331.27,
+                "windGust": 3.63,
+                "windSpeed": 3.02
+              }
+            },
+            {
+              "startTime": "2023-07-22T15:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 30.23,
+                "humidity": 75.21,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 22.44,
+                "temperatureApparent": 22.44,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 328.64,
+                "windGust": 3.08,
+                "windSpeed": 3.02
+              }
+            },
+            {
+              "startTime": "2023-07-22T16:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 19.89,
+                "humidity": 70.99,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 23.26,
+                "temperatureApparent": 23.26,
+                "uvIndex": 7,
+                "weatherCode": 1100,
+                "windDirection": 324.72,
+                "windGust": 4.02,
+                "windSpeed": 3.1
+              }
+            },
+            {
+              "startTime": "2023-07-22T17:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 3.32,
+                "humidity": 67.81,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 23.81,
+                "temperatureApparent": 23.81,
+                "uvIndex": 8,
+                "weatherCode": 1000,
+                "windDirection": 322.7,
+                "windGust": 4.84,
+                "windSpeed": 3.31
+              }
+            },
+            {
+              "startTime": "2023-07-22T18:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 4.18,
+                "humidity": 65.12,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.4,
+                "temperatureApparent": 24.4,
+                "uvIndex": 7,
+                "weatherCode": 1000,
+                "windDirection": 318.72,
+                "windGust": 5.31,
+                "windSpeed": 3.25
+              }
+            },
+            {
+              "startTime": "2023-07-22T19:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0.86,
+                "humidity": 62.95,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.95,
+                "temperatureApparent": 24.95,
+                "uvIndex": 5,
+                "weatherCode": 1000,
+                "windDirection": 315.65,
+                "windGust": 5.01,
+                "windSpeed": 3.08
+              }
+            },
+            {
+              "startTime": "2023-07-22T20:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 62.42,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 25.18,
+                "temperatureApparent": 25.18,
+                "uvIndex": 3,
+                "weatherCode": 1000,
+                "windDirection": 319.88,
+                "windGust": 4.9,
+                "windSpeed": 3.01
+              }
+            },
+            {
+              "startTime": "2023-07-22T21:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 62.67,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 25.08,
+                "temperatureApparent": 25.08,
+                "uvIndex": 2,
+                "weatherCode": 1000,
+                "windDirection": 321.2,
+                "windGust": 4.65,
+                "windSpeed": 3.08
+              }
+            },
+            {
+              "startTime": "2023-07-22T22:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 64.24,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.73,
+                "temperatureApparent": 24.73,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 326.7,
+                "windGust": 4.65,
+                "windSpeed": 3.02
+              }
+            },
+            {
+              "startTime": "2023-07-22T23:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 69.65,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 23.94,
+                "temperatureApparent": 23.94,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 331.02,
+                "windGust": 3.87,
+                "windSpeed": 2.75
+              }
+            },
+            {
+              "startTime": "2023-07-23T00:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 78.38,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 22.63,
+                "temperatureApparent": 22.63,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 346.7,
+                "windGust": 2.79,
+                "windSpeed": 2.33
+              }
+            },
+            {
+              "startTime": "2023-07-23T01:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 82.16,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 21.64,
+                "temperatureApparent": 21.64,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 47.82,
+                "windGust": 2.74,
+                "windSpeed": 2.28
+              }
+            },
+            {
+              "startTime": "2023-07-23T02:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 5.71,
+                "humidity": 84.29,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.72,
+                "temperatureApparent": 20.72,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 25.13,
+                "windGust": 2.76,
+                "windSpeed": 2.3
+              }
+            },
+            {
+              "startTime": "2023-07-23T03:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 6.57,
+                "humidity": 85.18,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.18,
+                "temperatureApparent": 20.18,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 38.77,
+                "windGust": 2.75,
+                "windSpeed": 2.29
+              }
+            },
+            {
+              "startTime": "2023-07-23T04:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 85.21,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.74,
+                "temperatureApparent": 19.74,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 50.15,
+                "windGust": 2.68,
+                "windSpeed": 2.24
+              }
+            },
+            {
+              "startTime": "2023-07-23T05:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 84.32,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.4,
+                "temperatureApparent": 19.4,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 290.84,
+                "windGust": 2.69,
+                "windSpeed": 2.24
+              }
+            },
+            {
+              "startTime": "2023-07-23T06:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 82.96,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.05,
+                "temperatureApparent": 19.05,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 270.12,
+                "windGust": 2.71,
+                "windSpeed": 2.26
+              }
+            },
+            {
+              "startTime": "2023-07-23T07:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 76.29,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.83,
+                "temperatureApparent": 18.83,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 110.45,
+                "windGust": 1.86,
+                "windSpeed": 1.55
+              }
+            },
+            {
+              "startTime": "2023-07-23T08:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 69.62,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.6,
+                "temperatureApparent": 18.6,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 110.45,
+                "windGust": 0.87,
+                "windSpeed": 0.84
+              }
+            },
+            {
+              "startTime": "2023-07-23T09:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 71.36,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.22,
+                "temperatureApparent": 18.22,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 87.36,
+                "windGust": 1.03,
+                "windSpeed": 0.99
+              }
+            },
+            {
+              "startTime": "2023-07-23T10:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0.78,
+                "humidity": 88.43,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 17.74,
+                "temperatureApparent": 17.74,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 27.11,
+                "windGust": 2.61,
+                "windSpeed": 1.6
+              }
+            },
+            {
+              "startTime": "2023-07-23T11:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 2.34,
+                "humidity": 85.91,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.76,
+                "temperatureApparent": 18.76,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 19.38,
+                "windGust": 2.94,
+                "windSpeed": 1.6
+              }
+            },
+            {
+              "startTime": "2023-07-23T12:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 1.56,
+                "humidity": 84.4,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.46,
+                "temperatureApparent": 20.46,
+                "uvIndex": 1,
+                "weatherCode": 1000,
+                "windDirection": 12.71,
+                "windGust": 2.85,
+                "windSpeed": 0.82
+              }
+            },
+            {
+              "startTime": "2023-07-23T13:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 73.12,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 22.7,
+                "temperatureApparent": 22.7,
+                "uvIndex": 2,
+                "weatherCode": 1000,
+                "windDirection": 22.98,
+                "windGust": 3.24,
+                "windSpeed": 0.74
+              }
+            },
+            {
+              "startTime": "2023-07-23T14:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 62.93,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.72,
+                "temperatureApparent": 24.72,
+                "uvIndex": 4,
+                "weatherCode": 1000,
+                "windDirection": 46.8,
+                "windGust": 3.46,
+                "windSpeed": 0.73
+              }
+            },
+            {
+              "startTime": "2023-07-23T15:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 55.23,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 26.24,
+                "temperatureApparent": 26.24,
+                "uvIndex": 5,
+                "weatherCode": 1000,
+                "windDirection": 80.49,
+                "windGust": 3.24,
+                "windSpeed": 0.5
+              }
+            },
+            {
+              "startTime": "2023-07-23T16:00:00Z",
+              "values": {
+                "cloudBase": 1.58,
+                "cloudCeiling": null,
+                "cloudCover": 25,
+                "humidity": 50.37,
+                "precipitationIntensity": 0.03,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 27.36,
+                "temperatureApparent": 27.8,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 180.61,
+                "windGust": 3.62,
+                "windSpeed": 0.36
+              }
+            },
+            {
+              "startTime": "2023-07-23T17:00:00Z",
+              "values": {
+                "cloudBase": 1.67,
+                "cloudCeiling": null,
+                "cloudCover": 25,
+                "humidity": 47.43,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 27.69,
+                "temperatureApparent": 27.91,
+                "uvIndex": 7,
+                "weatherCode": 1100,
+                "windDirection": 195.88,
+                "windGust": 5,
+                "windSpeed": 1.05
+              }
+            },
+            {
+              "startTime": "2023-07-23T18:00:00Z",
+              "values": {
+                "cloudBase": 1.73,
+                "cloudCeiling": null,
+                "cloudCover": 17.97,
+                "humidity": 45.34,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 28.21,
+                "temperatureApparent": 28.27,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 204.91,
+                "windGust": 4.79,
+                "windSpeed": 1.19
+              }
+            },
+            {
+              "startTime": "2023-07-23T19:00:00Z",
+              "values": {
+                "cloudBase": 1.85,
+                "cloudCeiling": null,
+                "cloudCover": 16.41,
+                "humidity": 43.73,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 28.55,
+                "temperatureApparent": 28.48,
+                "uvIndex": 5,
+                "weatherCode": 1100,
+                "windDirection": 219.99,
+                "windGust": 4.61,
+                "windSpeed": 1.36
+              }
+            },
+            {
+              "startTime": "2023-07-23T20:00:00Z",
+              "values": {
+                "cloudBase": 1.89,
+                "cloudCeiling": null,
+                "cloudCover": 21.09,
+                "humidity": 44.11,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 28.63,
+                "temperatureApparent": 28.6,
+                "uvIndex": 3,
+                "weatherCode": 1100,
+                "windDirection": 222.7,
+                "windGust": 4.11,
+                "windSpeed": 1.36
+              }
+            },
+            {
+              "startTime": "2023-07-23T21:00:00Z",
+              "values": {
+                "cloudBase": 1.88,
+                "cloudCeiling": null,
+                "cloudCover": 29.69,
+                "humidity": 47.88,
+                "precipitationIntensity": 0.08,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 27.94,
+                "temperatureApparent": 28.2,
+                "uvIndex": 1,
+                "weatherCode": 1100,
+                "windDirection": 202,
+                "windGust": 4.84,
+                "windSpeed": 1.98
+              }
+            },
+            {
+              "startTime": "2023-07-23T22:00:00Z",
+              "values": {
+                "cloudBase": 2.08,
+                "cloudCeiling": null,
+                "cloudCover": 40.63,
+                "humidity": 62.29,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 26.27,
+                "temperatureApparent": 26.27,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 221.9,
+                "windGust": 4.72,
+                "windSpeed": 1.62
+              }
+            },
+            {
+              "startTime": "2023-07-23T23:00:00Z",
+              "values": {
+                "cloudBase": 3.06,
+                "cloudCeiling": null,
+                "cloudCover": 35.94,
+                "humidity": 78.21,
+                "precipitationIntensity": 0.02,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 23.06,
+                "temperatureApparent": 23.06,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 329.16,
+                "windGust": 5.05,
+                "windSpeed": 2.67
+              }
+            },
+            {
+              "startTime": "2023-07-24T00:00:00Z",
+              "values": {
+                "cloudBase": 3.67,
+                "cloudCeiling": null,
+                "cloudCover": 14.06,
+                "humidity": 85.54,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 21.69,
+                "temperatureApparent": 21.69,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 46.2,
+                "windGust": 1.51,
+                "windSpeed": 0.92
+              }
+            },
+            {
+              "startTime": "2023-07-24T01:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 2.34,
+                "humidity": 87.34,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 21.19,
+                "temperatureApparent": 21.19,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 97.65,
+                "windGust": 1.32,
+                "windSpeed": 0.72
+              }
+            },
+            {
+              "startTime": "2023-07-24T02:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 90.76,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.54,
+                "temperatureApparent": 20.54,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 148.07,
+                "windGust": 2.27,
+                "windSpeed": 1.38
+              }
+            },
+            {
+              "startTime": "2023-07-24T03:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0.78,
+                "humidity": 90.61,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.9,
+                "temperatureApparent": 20.9,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 172.71,
+                "windGust": 3.55,
+                "windSpeed": 2.17
+              }
+            },
+            {
+              "startTime": "2023-07-24T04:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 91.31,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.74,
+                "temperatureApparent": 20.74,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 182.34,
+                "windGust": 3.35,
+                "windSpeed": 2.05
+              }
+            },
+            {
+              "startTime": "2023-07-24T05:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 92.89,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.29,
+                "temperatureApparent": 20.29,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 190.49,
+                "windGust": 2.89,
+                "windSpeed": 1.77
+              }
+            },
+            {
+              "startTime": "2023-07-24T06:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 93.61,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 20.15,
+                "temperatureApparent": 20.15,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 176.46,
+                "windGust": 2.92,
+                "windSpeed": 1.78
+              }
+            },
+            {
+              "startTime": "2023-07-24T07:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 14.84,
+                "humidity": 93.6,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.93,
+                "temperatureApparent": 19.93,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 189,
+                "windGust": 2.64,
+                "windSpeed": 1.65
+              }
+            },
+            {
+              "startTime": "2023-07-24T08:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 94.32,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.62,
+                "temperatureApparent": 19.62,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 202.97,
+                "windGust": 2.17,
+                "windSpeed": 1.37
+              }
+            },
+            {
+              "startTime": "2023-07-24T09:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 0,
+                "humidity": 95.24,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.25,
+                "temperatureApparent": 19.25,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 203.34,
+                "windGust": 2.15,
+                "windSpeed": 1.37
+              }
+            },
+            {
+              "startTime": "2023-07-24T10:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 28.13,
+                "humidity": 97.48,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.57,
+                "temperatureApparent": 18.57,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 207.63,
+                "windGust": 1.94,
+                "windSpeed": 1.31
+              }
+            },
+            {
+              "startTime": "2023-07-24T11:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 7.03,
+                "humidity": 95.08,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.99,
+                "temperatureApparent": 19.99,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 204.16,
+                "windGust": 2.59,
+                "windSpeed": 1.22
+              }
+            },
+            {
+              "startTime": "2023-07-24T12:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 2.34,
+                "humidity": 88.26,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 21.97,
+                "temperatureApparent": 21.97,
+                "uvIndex": 1,
+                "weatherCode": 1000,
+                "windDirection": 208.49,
+                "windGust": 2.89,
+                "windSpeed": 0.75
+              }
+            },
+            {
+              "startTime": "2023-07-24T13:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 1.56,
+                "humidity": 81.86,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 23.66,
+                "temperatureApparent": 23.66,
+                "uvIndex": 2,
+                "weatherCode": 1000,
+                "windDirection": 212.24,
+                "windGust": 4.13,
+                "windSpeed": 1.17
+              }
+            },
+            {
+              "startTime": "2023-07-24T14:00:00Z",
+              "values": {
+                "cloudBase": 9.9,
+                "cloudCeiling": null,
+                "cloudCover": 25.82,
+                "humidity": 72.88,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 25.52,
+                "temperatureApparent": 25.52,
+                "uvIndex": 3,
+                "weatherCode": 1100,
+                "windDirection": 210.19,
+                "windGust": 4.83,
+                "windSpeed": 1.54
+              }
+            },
+            {
+              "startTime": "2023-07-24T15:00:00Z",
+              "values": {
+                "cloudBase": 1.45,
+                "cloudCeiling": null,
+                "cloudCover": 31.6,
+                "humidity": 62.55,
+                "precipitationIntensity": 0.05,
+                "precipitationProbability": 5,
+                "precipitationType": 1,
+                "temperature": 27.21,
+                "temperatureApparent": 28.56,
+                "uvIndex": 5,
+                "weatherCode": 1100,
+                "windDirection": 206.92,
+                "windGust": 5.79,
+                "windSpeed": 1.99
+              }
+            },
+            {
+              "startTime": "2023-07-24T16:00:00Z",
+              "values": {
+                "cloudBase": 1.81,
+                "cloudCeiling": null,
+                "cloudCover": 31.31,
+                "humidity": 54.41,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 28.33,
+                "temperatureApparent": 29.3,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 201.44,
+                "windGust": 6.23,
+                "windSpeed": 2.36
+              }
+            },
+            {
+              "startTime": "2023-07-24T17:00:00Z",
+              "values": {
+                "cloudBase": 2.12,
+                "cloudCeiling": null,
+                "cloudCover": 25.73,
+                "humidity": 48.44,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 29.38,
+                "temperatureApparent": 29.96,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 198.47,
+                "windGust": 6.27,
+                "windSpeed": 2.54
+              }
+            },
+            {
+              "startTime": "2023-07-24T18:00:00Z",
+              "values": {
+                "cloudBase": 1.94,
+                "cloudCeiling": null,
+                "cloudCover": 33.98,
+                "humidity": 41.57,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 29.98,
+                "temperatureApparent": 29.85,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 185.61,
+                "windGust": 6.64,
+                "windSpeed": 2.84
+              }
+            },
+            {
+              "startTime": "2023-07-24T19:00:00Z",
+              "values": {
+                "cloudBase": 2.83,
+                "cloudCeiling": 7.08,
+                "cloudCover": 66.41,
+                "humidity": 50.26,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 27.8,
+                "temperatureApparent": 28.25,
+                "uvIndex": 5,
+                "weatherCode": 1102,
+                "windDirection": 183.07,
+                "windGust": 7.2,
+                "windSpeed": 3.03
+              }
+            },
+            {
+              "startTime": "2023-07-24T20:00:00Z",
+              "values": {
+                "cloudBase": 2.59,
+                "cloudCeiling": 3.32,
+                "cloudCover": 64.19,
+                "humidity": 53.5,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 26.6,
+                "temperatureApparent": 26.6,
+                "uvIndex": 3,
+                "weatherCode": 1102,
+                "windDirection": 179.44,
+                "windGust": 5.34,
+                "windSpeed": 2.4
+              }
+            },
+            {
+              "startTime": "2023-07-24T21:00:00Z",
+              "values": {
+                "cloudBase": 2.48,
+                "cloudCeiling": 5.57,
+                "cloudCover": 50.76,
+                "humidity": 45.05,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 28.78,
+                "temperatureApparent": 28.85,
+                "uvIndex": 2,
+                "weatherCode": 1101,
+                "windDirection": 198.09,
+                "windGust": 5.86,
+                "windSpeed": 3.47
+              }
+            },
+            {
+              "startTime": "2023-07-24T22:00:00Z",
+              "values": {
+                "cloudBase": 2.67,
+                "cloudCeiling": null,
+                "cloudCover": 43.17,
+                "humidity": 52.62,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 27.66,
+                "temperatureApparent": 28.29,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 212.79,
+                "windGust": 5.28,
+                "windSpeed": 2.63
+              }
+            },
+            {
+              "startTime": "2023-07-24T23:00:00Z",
+              "values": {
+                "cloudBase": 2.11,
+                "cloudCeiling": null,
+                "cloudCover": 46.88,
+                "humidity": 74,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 23.32,
+                "temperatureApparent": 23.32,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 296.92,
+                "windGust": 4.36,
+                "windSpeed": 2.38
+              }
+            },
+            {
+              "startTime": "2023-07-25T00:00:00Z",
+              "values": {
+                "cloudBase": 2.05,
+                "cloudCeiling": 4.97,
+                "cloudCover": 54.56,
+                "humidity": 80.52,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 21.27,
+                "temperatureApparent": 21.27,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 112.85,
+                "windGust": 2.14,
+                "windSpeed": 1.37
+              }
+            },
+            {
+              "startTime": "2023-07-25T01:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 3.7,
+                "humidity": 73.9,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 20.92,
+                "temperatureApparent": 20.92,
+                "uvIndex": 0,
+                "weatherCode": 1000,
+                "windDirection": 159.39,
+                "windGust": 2.62,
+                "windSpeed": 1.76
+              }
+            },
+            {
+              "startTime": "2023-07-25T02:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 23.45,
+                "humidity": 70.71,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 20.89,
+                "temperatureApparent": 20.89,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 179.63,
+                "windGust": 2.73,
+                "windSpeed": 1.65
+              }
+            },
+            {
+              "startTime": "2023-07-25T03:00:00Z",
+              "values": {
+                "cloudBase": 1.77,
+                "cloudCeiling": null,
+                "cloudCover": 48.95,
+                "humidity": 68.5,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 21.93,
+                "temperatureApparent": 21.93,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 166.89,
+                "windGust": 3.73,
+                "windSpeed": 1.8
+              }
+            },
+            {
+              "startTime": "2023-07-25T04:00:00Z",
+              "values": {
+                "cloudBase": 1.79,
+                "cloudCeiling": null,
+                "cloudCover": 42.6,
+                "humidity": 72.88,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 20.71,
+                "temperatureApparent": 20.71,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 186.4,
+                "windGust": 3.03,
+                "windSpeed": 1.71
+              }
+            },
+            {
+              "startTime": "2023-07-25T05:00:00Z",
+              "values": {
+                "cloudBase": 1.79,
+                "cloudCeiling": null,
+                "cloudCover": 36.16,
+                "humidity": 74.74,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 20.07,
+                "temperatureApparent": 20.07,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 219.41,
+                "windGust": 2.99,
+                "windSpeed": 1.62
+              }
+            },
+            {
+              "startTime": "2023-07-25T06:00:00Z",
+              "values": {
+                "cloudBase": 1.78,
+                "cloudCeiling": null,
+                "cloudCover": 31.47,
+                "humidity": 77.85,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 19.31,
+                "temperatureApparent": 19.31,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 240.81,
+                "windGust": 2.5,
+                "windSpeed": 1.3
+              }
+            },
+            {
+              "startTime": "2023-07-25T07:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 46.82,
+                "humidity": 82.14,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 18.51,
+                "temperatureApparent": 18.51,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 293.78,
+                "windGust": 1.05,
+                "windSpeed": 0.61
+              }
+            },
+            {
+              "startTime": "2023-07-25T08:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 34.35,
+                "humidity": 85.61,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 18.02,
+                "temperatureApparent": 18.02,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 235.69,
+                "windGust": 0.96,
+                "windSpeed": 0.46
+              }
+            },
+            {
+              "startTime": "2023-07-25T09:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 51.13,
+                "humidity": 89.18,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 17.58,
+                "temperatureApparent": 17.58,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 306.59,
+                "windGust": 0.76,
+                "windSpeed": 0.61
+              }
+            },
+            {
+              "startTime": "2023-07-25T10:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 58.78,
+                "humidity": 91.18,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 17.36,
+                "temperatureApparent": 17.36,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 332.13,
+                "windGust": 0.85,
+                "windSpeed": 0.85
+              }
+            },
+            {
+              "startTime": "2023-07-25T11:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 66.86,
+                "humidity": 85.14,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 19.33,
+                "temperatureApparent": 19.33,
+                "uvIndex": 0,
+                "weatherCode": 1102,
+                "windDirection": 132.52,
+                "windGust": 0.7,
+                "windSpeed": 0.23
+              }
+            },
+            {
+              "startTime": "2023-07-25T12:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 72.36,
+                "humidity": 75.05,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 21.55,
+                "temperatureApparent": 21.55,
+                "uvIndex": 0,
+                "weatherCode": 1102,
+                "windDirection": 196.8,
+                "windGust": 1.91,
+                "windSpeed": 0.83
+              }
+            },
+            {
+              "startTime": "2023-07-25T13:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 26.43,
+                "humidity": 62.3,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.26,
+                "temperatureApparent": 24.26,
+                "uvIndex": 1,
+                "weatherCode": 1100,
+                "windDirection": 202.49,
+                "windGust": 3.21,
+                "windSpeed": 1.67
+              }
+            },
+            {
+              "startTime": "2023-07-25T14:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 13.22,
+                "humidity": 51.56,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 26.36,
+                "temperatureApparent": 26.36,
+                "uvIndex": 3,
+                "weatherCode": 1100,
+                "windDirection": 190.16,
+                "windGust": 4.28,
+                "windSpeed": 2.54
+              }
+            },
+            {
+              "startTime": "2023-07-25T15:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 10.42,
+                "humidity": 42.29,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 28.16,
+                "temperatureApparent": 27.97,
+                "uvIndex": 5,
+                "weatherCode": 1000,
+                "windDirection": 192.03,
+                "windGust": 4.76,
+                "windSpeed": 2.96
+              }
+            },
+            {
+              "startTime": "2023-07-25T16:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 9.08,
+                "humidity": 37.17,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 29.57,
+                "temperatureApparent": 28.93,
+                "uvIndex": 6,
+                "weatherCode": 1000,
+                "windDirection": 200.75,
+                "windGust": 5.63,
+                "windSpeed": 3.52
+              }
+            },
+            {
+              "startTime": "2023-07-25T17:00:00Z",
+              "values": {
+                "cloudBase": 2.63,
+                "cloudCeiling": null,
+                "cloudCover": 19.74,
+                "humidity": 34.65,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 30.19,
+                "temperatureApparent": 29.33,
+                "uvIndex": 6,
+                "weatherCode": 1100,
+                "windDirection": 197.1,
+                "windGust": 6.15,
+                "windSpeed": 4.24
+              }
+            },
+            {
+              "startTime": "2023-07-25T18:00:00Z",
+              "values": {
+                "cloudBase": 2.65,
+                "cloudCeiling": null,
+                "cloudCover": 18.54,
+                "humidity": 33.59,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 30.79,
+                "temperatureApparent": 29.86,
+                "uvIndex": 5,
+                "weatherCode": 1100,
+                "windDirection": 191.92,
+                "windGust": 6.14,
+                "windSpeed": 4.2
+              }
+            },
+            {
+              "startTime": "2023-07-25T19:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 17.46,
+                "humidity": 33.96,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 31.08,
+                "temperatureApparent": 30.23,
+                "uvIndex": 3,
+                "weatherCode": 1100,
+                "windDirection": 194.81,
+                "windGust": 6.3,
+                "windSpeed": 4.39
+              }
+            },
+            {
+              "startTime": "2023-07-25T20:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 28.96,
+                "humidity": 34.94,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 31.05,
+                "temperatureApparent": 30.31,
+                "uvIndex": 2,
+                "weatherCode": 1100,
+                "windDirection": 202.3,
+                "windGust": 6.35,
+                "windSpeed": 4.51
+              }
+            },
+            {
+              "startTime": "2023-07-25T21:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 37.83,
+                "humidity": 39.58,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 30.51,
+                "temperatureApparent": 30.24,
+                "uvIndex": 1,
+                "weatherCode": 1101,
+                "windDirection": 207.64,
+                "windGust": 6.56,
+                "windSpeed": 4.04
+              }
+            },
+            {
+              "startTime": "2023-07-25T22:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 40.93,
+                "humidity": 43.99,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 28.96,
+                "temperatureApparent": 28.94,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 194.67,
+                "windGust": 6.97,
+                "windSpeed": 4.59
+              }
+            },
+            {
+              "startTime": "2023-07-25T23:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 34.36,
+                "humidity": 52.53,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 26.56,
+                "temperatureApparent": 26.56,
+                "uvIndex": 0,
+                "weatherCode": 1100,
+                "windDirection": 178.7,
+                "windGust": 8.58,
+                "windSpeed": 4.35
+              }
+            },
+            {
+              "startTime": "2023-07-26T00:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 40.64,
+                "humidity": 59.72,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 24.04,
+                "temperatureApparent": 24.04,
+                "uvIndex": 0,
+                "weatherCode": 1101,
+                "windDirection": 159.75,
+                "windGust": 8.44,
+                "windSpeed": 3.46
+              }
+            },
+            {
+              "startTime": "2023-07-26T01:00:00Z",
+              "values": {
+                "cloudBase": null,
+                "cloudCeiling": null,
+                "cloudCover": 11.94,
+                "humidity": 62.13,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 23.05,
+                "temperatureApparent": 23.05,
+                "weatherCode": 1000,
+                "windDirection": 149.1,
+                "windGust": 8.26,
+                "windSpeed": 3.02
+              }
+            },
+            {
+              "startTime": "2023-07-26T02:00:00Z",
+              "values": {
+                "cloudBase": 5.15,
+                "cloudCeiling": null,
+                "cloudCover": 53.67,
+                "humidity": 67.21,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 22.93,
+                "temperatureApparent": 22.93,
+                "weatherCode": 1101,
+                "windDirection": 161.35,
+                "windGust": 8.75,
+                "windSpeed": 3.16
+              }
+            },
+            {
+              "startTime": "2023-07-26T03:00:00Z",
+              "values": {
+                "cloudBase": 5.12,
+                "cloudCeiling": null,
+                "cloudCover": 35.78,
+                "humidity": 71.66,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 22.7,
+                "temperatureApparent": 22.7,
+                "weatherCode": 1100,
+                "windDirection": 175.37,
+                "windGust": 8.4,
+                "windSpeed": 2.76
+              }
+            },
+            {
+              "startTime": "2023-07-26T04:00:00Z",
+              "values": {
+                "cloudBase": 5.11,
+                "cloudCeiling": null,
+                "cloudCover": 27.8,
+                "humidity": 89.29,
+                "precipitationIntensity": 0.15,
+                "precipitationProbability": 20,
+                "precipitationType": 1,
+                "temperature": 20.28,
+                "temperatureApparent": 20.28,
+                "weatherCode": 1100,
+                "windDirection": 203.81,
+                "windGust": 6.78,
+                "windSpeed": 2.38
+              }
+            },
+            {
+              "startTime": "2023-07-26T05:00:00Z",
+              "values": {
+                "cloudBase": 4.19,
+                "cloudCeiling": null,
+                "cloudCover": 34.47,
+                "humidity": 95.7,
+                "precipitationIntensity": 0.38,
+                "precipitationProbability": 20,
+                "precipitationType": 1,
+                "temperature": 19.58,
+                "temperatureApparent": 19.58,
+                "weatherCode": 4000,
+                "windDirection": 209.48,
+                "windGust": 4.57,
+                "windSpeed": 1.8
+              }
+            },
+            {
+              "startTime": "2023-07-26T06:00:00Z",
+              "values": {
+                "cloudBase": 2.8,
+                "cloudCeiling": null,
+                "cloudCover": 45.39,
+                "humidity": 95.57,
+                "precipitationIntensity": 0.48,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 20.22,
+                "temperatureApparent": 20.22,
+                "weatherCode": 4000,
+                "windDirection": 201.49,
+                "windGust": 7.48,
+                "windSpeed": 2.12
+              }
+            },
+            {
+              "startTime": "2023-07-26T07:00:00Z",
+              "values": {
+                "cloudBase": 2.8,
+                "cloudCeiling": null,
+                "cloudCover": 63.57,
+                "humidity": 96.19,
+                "precipitationIntensity": 0.48,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 20.24,
+                "temperatureApparent": 20.24,
+                "weatherCode": 4000,
+                "windDirection": 201.49,
+                "windGust": 8.46,
+                "windSpeed": 2.07
+              }
+            },
+            {
+              "startTime": "2023-07-26T08:00:00Z",
+              "values": {
+                "cloudBase": 2.08,
+                "cloudCeiling": null,
+                "cloudCover": 81.76,
+                "humidity": 96.81,
+                "precipitationIntensity": 1.17,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 20.25,
+                "temperatureApparent": 20.25,
+                "weatherCode": 4200,
+                "windDirection": 183.29,
+                "windGust": 9.45,
+                "windSpeed": 2.03
+              }
+            },
+            {
+              "startTime": "2023-07-26T09:00:00Z",
+              "values": {
+                "cloudBase": 2.08,
+                "cloudCeiling": null,
+                "cloudCover": 99.94,
+                "humidity": 97.43,
+                "precipitationIntensity": 1.17,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 20.26,
+                "temperatureApparent": 20.26,
+                "weatherCode": 4200,
+                "windDirection": 183.29,
+                "windGust": 10.43,
+                "windSpeed": 1.98
+              }
+            },
+            {
+              "startTime": "2023-07-26T10:00:00Z",
+              "values": {
+                "cloudBase": 2.08,
+                "cloudCeiling": null,
+                "cloudCover": 96.28,
+                "humidity": 95.92,
+                "precipitationIntensity": 1.17,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 21,
+                "temperatureApparent": 21,
+                "weatherCode": 4200,
+                "windDirection": 183.29,
+                "windGust": 10.16,
+                "windSpeed": 2.26
+              }
+            },
+            {
+              "startTime": "2023-07-26T11:00:00Z",
+              "values": {
+                "cloudBase": 1.71,
+                "cloudCeiling": null,
+                "cloudCover": 92.62,
+                "humidity": 94.41,
+                "precipitationIntensity": 0.59,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 21.74,
+                "temperatureApparent": 21.74,
+                "weatherCode": 4200,
+                "windDirection": 211.94,
+                "windGust": 9.88,
+                "windSpeed": 2.54
+              }
+            },
+            {
+              "startTime": "2023-07-26T12:00:00Z",
+              "values": {
+                "cloudBase": 1.71,
+                "cloudCeiling": null,
+                "cloudCover": 88.96,
+                "humidity": 92.9,
+                "precipitationIntensity": 0.59,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 22.47,
+                "temperatureApparent": 22.47,
+                "weatherCode": 4200,
+                "windDirection": 211.94,
+                "windGust": 9.6,
+                "windSpeed": 2.83
+              }
+            },
+            {
+              "startTime": "2023-07-26T13:00:00Z",
+              "values": {
+                "cloudBase": 1.71,
+                "cloudCeiling": null,
+                "cloudCover": 92.02,
+                "humidity": 81.45,
+                "precipitationIntensity": 0.59,
+                "precipitationProbability": 25,
+                "precipitationType": 1,
+                "temperature": 24.32,
+                "temperatureApparent": 24.32,
+                "weatherCode": 4200,
+                "windDirection": 211.94,
+                "windGust": 8.81,
+                "windSpeed": 3.29
+              }
+            },
+            {
+              "startTime": "2023-07-26T14:00:00Z",
+              "values": {
+                "cloudBase": 3.79,
+                "cloudCeiling": null,
+                "cloudCover": 95.08,
+                "humidity": 70.01,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 26.16,
+                "temperatureApparent": 26.16,
+                "weatherCode": 1001,
+                "windDirection": 250.94,
+                "windGust": 8.01,
+                "windSpeed": 3.75
+              }
+            },
+            {
+              "startTime": "2023-07-26T15:00:00Z",
+              "values": {
+                "cloudBase": 3.79,
+                "cloudCeiling": null,
+                "cloudCover": 98.14,
+                "humidity": 58.56,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 1,
+                "temperature": 28.01,
+                "temperatureApparent": 29.3,
+                "weatherCode": 1001,
+                "windDirection": 250.94,
+                "windGust": 7.22,
+                "windSpeed": 4.22
+              }
+            }
+          ]
+        },
+        {
+          "timestep": "current",
+          "endTime": "2023-07-21T15:15:00Z",
+          "startTime": "2023-07-21T15:15:00Z",
+          "intervals": [
+            {
+              "startTime": "2023-07-21T15:15:00Z",
+              "values": {
+                "cloudBase": 0.5,
+                "cloudCeiling": null,
+                "cloudCover": 31,
+                "humidity": 79,
+                "precipitationIntensity": 0,
+                "precipitationProbability": 0,
+                "precipitationType": 0,
+                "temperature": 24.69,
+                "temperatureApparent": 24.69,
+                "uvIndex": 2,
+                "weatherCode": 1100,
+                "windDirection": 181.31,
+                "windGust": 0.81,
+                "windSpeed": 0.13
+              }
+            }
+          ]
+        }
+      ],
+      "warnings": [
+        {
+          "code": 246001,
+          "type": "Time Bounded Field",
+          "message": "The following field is not supported for a time range: 'uvIndex'",
+          "meta": {
+            "field": "uvIndex",
+            "from": "2023-07-21T08:30:00Z",
+            "to": "2023-07-26T03:16:00Z"
+          }
+        },
+        {
+          "code": 246001,
+          "type": "Time Bounded Field",
+          "message": "The following field is not supported for a time range: 'uvIndex'",
+          "meta": {
+            "field": "uvIndex",
+            "from": "2023-07-21T13:30:00Z",
+            "to": "2023-07-26T03:16:00Z"
+          }
+        },
+        {
+          "code": 246009,
+          "type": "Missing Time Range",
+          "message": "The timestep is not supported in full for the time range requested.",
+          "meta": {
+            "from": "-12h",
+            "to": "+12h",
+            "timestep": "current"
+          }
+        }
+      ]
+    }
+  }

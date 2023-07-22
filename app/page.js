@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import MainWeather from "./components/MainWeather";
 import SideWeather from "./components/SideWeather";
+import queryString from 'query-string';
 
 import { FastAverageColor } from 'fast-average-color';
 import {
@@ -54,13 +55,12 @@ export default function Home() {
                 const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
                 const data = await res.json();
                 //const air = await fetch(`https://api.openweathermap.org/data/2.5/air_pollution?lat=41.18856&lon=-73.83745&appid=${process.env.NEXT_PUBLIC_API_KEY}`)
-                const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=${process.env.NEXT_PUBLIC_AIR_VISUAL_API_KEY}`);
-                const airData = await air.json();
+
+
                 setData(data);
                 setAirPollution(airData.data);
                 setIsLoading(false);
             } catch(err) {
-                console.error(err)
                 setIsLoading(true);
             }
         }
@@ -81,15 +81,23 @@ export default function Home() {
             }
         }
 
-        async function fetchData() {
-            const res = await fetch("http://localhost:3000/api/data")
-            const data = await res.json();
-            const air = await fetch('http://localhost:3000/api/pollution');
-            const airData = await air.json();
+        async function fetchData(real = false) {
 
-            setAirPollution(airData.data);
+            const res = await fetch(`http://localhost:3000/api/coreData?real=${real}`)
+            const data = await res.json();
+
+
+
+
+            //const test = await fetch(`https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query=${lat},${long}&duration=24&subscription-key=Dzjx4kW8q8afhuKzJL_A_-ilmGoKqRwevAK-OqJ6SHg`);
+           //const tomorrowJson = await test.json();
+
+
+
+            setAirPollution(data.air.data);
             setData(data);
             setIsLoading(false);
+
         }
 
         async function fetchAlerts() {
@@ -119,9 +127,9 @@ export default function Home() {
         }
 
 
-        fetchRealData();
+       // fetchRealData();
         fetchNoaaforecast();
-        fetchData();
+        fetchData(true);
         fetchAlerts()
         fetchSolarInfo();
         //fetchVisiblePlanets();
@@ -132,8 +140,6 @@ export default function Home() {
     const timeOfDay = current?.icon?.slice(-1);
     const weatherImage = data?.current?.weather[0].main.toLowerCase() === 'clouds' && data?.current?.clouds < 50 ? 'clouds-part' : current?.main.toLowerCase();
     const bgImage = `/weather-photos/${timeOfDay}/${weatherImage}.jpg`;
-
-
 
     const fac = new FastAverageColor();
 

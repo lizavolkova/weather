@@ -11,24 +11,24 @@ export default function UVIndex({uvi}) {
     let spf;
 
     switch(true) {
-        case uvi <= 2:
+        case uvi < 3:
             diagnosis = 'Low';
             tts = 60;
             spf = 10;
             break;
-        case uvi > 3 && uvi <= 5:
+        case uvi >= 3 && uvi < 6:
             diagnosis = 'Moderate';
             note = 'Some protetion required';
             tts = 40;
             spf = 20;
             break;
-        case uvi >= 6 && uvi <= 7:
+        case uvi >= 6 && uvi < 8:
             note = 'Protection essential';
             diagnosis = 'High';
             tts = 20;
             spf = 30;
             break;
-        case uvi >= 8 && uvi <= 10:
+        case uvi >= 8 && uvi < 11:
             note = 'Extra protection is needed';
             diagnosis = 'Very High';
             tts = 15;

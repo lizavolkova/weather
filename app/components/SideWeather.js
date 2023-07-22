@@ -114,8 +114,8 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
 
                         <InfoCard title="Chance of Rain" classes={cardClass} icon={<IconUmbrella />} footer="See map:" footerLogo="/icons/zoom-earth-logo.png" footerUrl="https://zoom.earth/maps/precipitation/#view=41.18856,-73.83745,10z/date=2023-07-20,03:50,-4/model=icon">
                             <SimpleData>
-                                <div className="mb-4 text-4xl md:text-5xl">{Math.floor(daily[0].pop * 100)}%</div>
-                                <RangeBar percent={daily[0].pop *100} />
+                                <div className="mb-4 text-4xl md:text-5xl">{Math.floor(current.pop * 100)}%</div>
+                                <RangeBar percent={current.pop *100} />
                             </SimpleData>
 
                         </InfoCard>
