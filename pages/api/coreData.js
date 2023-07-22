@@ -134,7 +134,7 @@ export default async function handler(req, res) {
 
             const moonrise = Math.floor(moonriseDate.getTime() / 1000);
             const moonset = Math.floor(moonsetDate.getTime() / 1000);
-            
+
             return {
                 dt,
                 cloud: values.cloudCoverAvg,
