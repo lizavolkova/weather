@@ -7,8 +7,13 @@ const long = -73.83745;
 
 const fetchOpenWeatherData = async (real) => {
     if(real == 'true' ) {
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.API_KEY}`)
-        return await res.json();
+        try {
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${process.env.API_KEY}`)
+            return await res.json();
+        } catch (err) {
+            return err;
+        }
+
     } else {
         const data = await fetch("http://localhost:3000/api/data")
         return await data.json();
@@ -17,8 +22,13 @@ const fetchOpenWeatherData = async (real) => {
 
 const fetchAirDate = async (real) => {
     if (real == 'true') {
-        const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=${process.env.AIR_VISUAL_API_KEY}`);
-        return await air.json();
+        try {
+            const air = await fetch(`https://api.airvisual.com/v2/nearest_city?lat=${lat}&lon=${long}&key=${process.env.AIR_VISUAL_API_KEY}`);
+            return await air.json();
+        }catch (err) {
+            return err;
+        }
+
 
     } else {
         const air = await fetch('http://localhost:3000/api/pollution');
@@ -193,9 +203,7 @@ export default async function handler(req, res) {
 
         res.status(200).json({air, hourly, daily, current})
     } catch(err) {
-        res.status(500).json({
-        error: err
-        })
+        res.status(500).json({error: err})
     }
 
 }
