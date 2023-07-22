@@ -85,15 +85,7 @@ export default function Home() {
 
             const res = await fetch(`http://localhost:3000/api/coreData?real=${real}`)
             const data = await res.json();
-
-
-
-
-            //const test = await fetch(`https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query=${lat},${long}&duration=24&subscription-key=Dzjx4kW8q8afhuKzJL_A_-ilmGoKqRwevAK-OqJ6SHg`);
-           //const tomorrowJson = await test.json();
-
-
-
+            
             setAirPollution(data.air.data);
             setData(data);
             setIsLoading(false);
