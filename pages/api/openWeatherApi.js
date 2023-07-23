@@ -80,7 +80,7 @@ const parseOpenData = async (data, lat, long) => {
         ...data.current,
         pop: data.current.pop || 0,
         icon: getIcon(data.current),
-        isNight: isNight(today, rise, set),
+        isNight: isNight(today, rise, set, true),
         image: getImage(data.current.weather[0].id)
     }
 

@@ -161,7 +161,6 @@ const parseData = async (tomorrowWeather, lat, long) => {
                 morn: '',
             },
             icon: getIcon(iconCode, description),
-            isNight: isNight(date, rise, set),
             uvi: values.uvIndexMax,
             weather: [
                 {
@@ -199,7 +198,7 @@ const parseData = async (tomorrowWeather, lat, long) => {
         humidity: values.humidity,
         pressure: values.pressureSurfaceLevel,
         wind_speed: values.windSpeed,
-        isNight: isNight(today, rise, set),
+        isNight: isNight(today, rise, set,true),
         image: getImage(values.weatherCode),
         icon: getIcon(iconCode, description),
         weather: [
