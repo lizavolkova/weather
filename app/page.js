@@ -105,7 +105,7 @@ export default function Home() {
     }, []);
 
     useEffect( () => {
-       fetchData(true);
+       fetchData();
     }, [api])
 
 

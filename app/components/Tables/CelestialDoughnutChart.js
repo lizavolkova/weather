@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import {Chart as ChartJS} from "chart.js";
 import {getDate} from "../../utils/getDate";
@@ -23,6 +23,7 @@ const getTime = (time) => {
 }
 
 export default function CelestialDoughnutChart({riseTime, setTime, celestialIcon, riseText, setText, highlightColor}) {
+    const [visible, setVisible] = useState(true);
     const grey = '#e1e1e1';
 
     const currentTime = new Date();
@@ -45,6 +46,10 @@ export default function CelestialDoughnutChart({riseTime, setTime, celestialIcon
     const angles = dataArray.map((hour,i) => (oneAngle * i)).reverse();
 
     const currentAngle = angles[currentHours - riseTime.getHours()];
+
+    if (currentAngle > 180) {
+        setVisible(false)
+    }
 
     const options = {
         plugins: {
@@ -156,7 +161,7 @@ export default function CelestialDoughnutChart({riseTime, setTime, celestialIcon
 
     return (
         <div>
-            <div id={`celestial-chart-${riseText}`}  width="300" height="300" className="max-h-[400px] mx-auto doughnut-chart">
+            <div id={`celestial-chart-${riseText}`}  width="300" height="300" className={`max-h-[400px] mx-auto doughnut-chart ${visible ? 'opacity-100' : 'opacity-25'}`}>
                 <Doughnut id={`celestial-chart-${riseText}`} type="doughnut" data={celestialData} options={options} plugins={[celestialPlugin]}/>
             </div>
         </div>
