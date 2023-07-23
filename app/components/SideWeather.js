@@ -104,7 +104,7 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
 
 
                         <InfoCard title="Air Quality Index" classes={cardClass} icon={<IconBxLeaf />} footer="Learn more at:" footerLogo="/icons/ic-logo-iq-air-blue.svg" footerUrl="https://www.iqair.com/us/usa/new-york/ossining" >
-                            <AirQuality air={airPollution}/>
+                            {airPollution.status !== 'fail' && <AirQuality air={airPollution}/>}
                         </InfoCard>
 
                         {current.uvi !== 0 && <InfoCard title="UV Index" classes={cardClass}  icon={<IconSun />}>

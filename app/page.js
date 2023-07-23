@@ -48,11 +48,22 @@ export default function Home() {
             const res = await fetch(`/api/coreData?real=${real}&source=${api}`)
             const data = await res.json();
 
-            setAirPollution(data.air.data);
+            setAirPollution(data?.air?.data);
             setData(data);
             setIsLoading(false);
         }
 
+
+    }
+
+    const updateApi = (newApi) => {
+
+        setApi(newApi);
+        if (api && newApi !== api) {
+            const searchParams = new URLSearchParams(window.location.search);
+            searchParams.set("api",newApi);
+            window.location.search = searchParams.toString();
+        }
 
     }
 
@@ -62,7 +73,7 @@ export default function Home() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const apiUrl = urlParams.get('api');
-        apiUrl ? setApi(apiUrl) : setApi('tomorrow');
+        apiUrl ? updateApi(apiUrl) : updateApi('tomorrow');
 
         async function fetchNoaaforecast() {
             try {
@@ -91,7 +102,7 @@ export default function Home() {
        // fetchData( apiUrl);
         fetchAlerts()
 
-    }, [api]);
+    }, []);
 
     useEffect( () => {
        fetchData(true);
@@ -121,8 +132,8 @@ export default function Home() {
           ) : (
               <main className="relative w-full flex md:min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
                   <div className="flex">
-                      <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border  hover:border-white rounded mr-4 ${api === 'tomorrow' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => setApi('tomorrow')}>Tomorrow.io</button>
-                      <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border border-slate-400 hover:border-white rounded ${api === 'open' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => setApi('open')}>OpenWeather</button>
+                      <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border  hover:border-white rounded mr-4 ${api === 'tomorrow' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => updateApi('tomorrow')}>Tomorrow.io</button>
+                      <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border border-slate-400 hover:border-white rounded ${api === 'open' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => updateApi('open')}>OpenWeather</button>
                   </div>
 
 

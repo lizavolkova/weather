@@ -68,7 +68,7 @@ const fetchData = async (lat, long, real) => {
 
         } catch (error) {
             const { code, type } = error;
-            console.error('THROWING ERROR FROM TOMORROW CALL',error);
+            console.error('THROWING ERROR FROM TOMORROW CALL',error.type);
             throw new Error(makeEnumerableCopy(error));
         }
     } else {
@@ -115,16 +115,13 @@ const getIcon = (iconCode, description) => {
 
 const parseData = async (tomorrowWeather, lat, long) => {
     const tomorrowHourly = tomorrowWeather.dailyHourly.timelines.hourly.slice(0,24);
+    const { weatherCodeFullDay, weatherCodeNight } = weatherCodes;
 
     // Get Today's date
     const date = new Date()
     const dt = Math.floor(date.getTime() / 1000);
 
-
-    // Get sunrise/set time
-
-    const { weatherCodeFullDay, weatherCodeNight } = weatherCodes;
-
+    // Get current date from API
     const dateCurrent = new Date(tomorrowWeather.current.data.time)
     const dateCurrentUnix = Math.floor(dateCurrent.getTime() / 1000);
     const {rise, set } = getRiseSet('Sun', lat, long, dateCurrent);
