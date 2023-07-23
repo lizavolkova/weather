@@ -69,6 +69,13 @@ const parseOpenData = async (data, lat, long) => {
         }
     })
 
+    console.log('OPEN WEATHER API')
+    console.log('TODAY', today)
+    console.log('RISE', rise)
+    console.log('SET', set)
+    console.log('ISNIGHT?', isNight(today, rise, set))
+
+
     const current = {
         ...data.current,
         pop: data.current.pop || 0,

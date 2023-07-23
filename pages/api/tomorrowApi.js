@@ -124,7 +124,7 @@ const parseData = async (tomorrowWeather, lat, long) => {
     // Get current date from API
     const dateCurrent = new Date(tomorrowWeather.current.data.time)
     const dateCurrentUnix = Math.floor(dateCurrent.getTime() / 1000);
-    const {rise, set } = getRiseSet('Sun', lat, long, dateCurrent);
+    const {rise, set } = getRiseSet('Sun', lat, long, date);
 
     const daily =  tomorrowWeather.dailyHourly.timelines.daily.map(weather => {
         const { values } = weather;
@@ -180,9 +180,14 @@ const parseData = async (tomorrowWeather, lat, long) => {
 
 
     const { values } = tomorrowWeather.current.data;
-
-    const iconCode = isNight(date, rise, set) ? values.weatherCode + '1' : values.weatherCode + '0';
-    const description = isNight(date, rise, set) ? weatherCodeNight[values.weatherCode + '1'] : weatherCodeFullDay[values.weatherCode];
+    const today = new Date();
+    const iconCode = isNight(today, rise, set) ? values.weatherCode + '1' : values.weatherCode + '0';
+    const description = isNight(today, rise, set) ? weatherCodeNight[values.weatherCode + '1'] : weatherCodeFullDay[values.weatherCode];
+    console.log('TOMORROW API')
+    console.log('TODAY', today)
+    console.log('RISE', rise)
+    console.log('SET', set)
+    console.log('ISNIGHT?', isNight(today, rise, set))
 
     const current = {
         dt: dateCurrentUnix,
@@ -194,7 +199,7 @@ const parseData = async (tomorrowWeather, lat, long) => {
         humidity: values.humidity,
         pressure: values.pressureSurfaceLevel,
         wind_speed: values.windSpeed,
-        isNight: isNight(date, rise, set),
+        isNight: isNight(today, rise, set),
         image: getImage(values.weatherCode),
         icon: getIcon(iconCode, description),
         weather: [
