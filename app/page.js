@@ -34,7 +34,7 @@ ChartJS.register(
 )
 
 export default function Home() {
-    const [api, setApi] = useState('tomorrow');
+    const [api, setApi] = useState();
     const [data, setData] = useState();
     const [airPollution, setAirPollution] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -43,19 +43,26 @@ export default function Home() {
     const [noaaData, setNoaaData] = useState([]);
 
     async function fetchData(real = false) {
-        setIsLoading(true);
-        const res = await fetch(`/api/coreData?real=${real}&source=${api}`)
-        const data = await res.json();
+        if (api) {
+            setIsLoading(true);
+            const res = await fetch(`/api/coreData?real=${real}&source=${api}`)
+            const data = await res.json();
 
-        setAirPollution(data.air.data);
-        setData(data);
-        setIsLoading(false);
+            setAirPollution(data.air.data);
+            setData(data);
+            setIsLoading(false);
+        }
+
 
     }
 
     useEffect ( ()=> {
         const lat = 41.18856;
         const long = -73.83745;
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const apiUrl = urlParams.get('api');
+        apiUrl ? setApi(apiUrl) : setApi('tomorrow');
 
         async function fetchNoaaforecast() {
             try {
@@ -81,13 +88,13 @@ export default function Home() {
 
        // fetchRealData();
         fetchNoaaforecast();
-        fetchData(true);
+       // fetchData( apiUrl);
         fetchAlerts()
 
-    }, []);
+    }, [api]);
 
     useEffect( () => {
-        fetchData(true);
+       fetchData(true);
     }, [api])
 
 
