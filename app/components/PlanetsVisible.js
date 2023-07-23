@@ -9,14 +9,18 @@ const getCompassDirection = (az) => {
      return ['N','NE', 'E','SE', 'S','SW', 'W','NW'][Math.floor(((az+22.5)%360)/45)]
 }
 
-const Planet = ({planet, rise, set, visible}) => {
+const Planet = ({planet, rise, set, visible, currentDir, altitude}) => {
     return (
-        <div className={`flex flex-1 py-4 ${visible ? 'text-white ' : 'opacity-40'}`}>
-            <div className="min-w-[90px]"><img className="pl-4 h-[25px] w-auto pr-3 mx-auto"  src={`/icons/planets/${planet}.svg`} alt=""/></div>
-            <div className="w-1/4">{planet}</div>
-            <div className="w-1/4 flex items-center"><IconArrowBarUp/><span className="pl-2">{rise} </span></div>
-            <div className="w-1/4 flex items-center "><IconArrowBarDown /><span className="pl-2">{set}</span></div>
+        <div className="py-4 ">
+            <div className={`flex flex-1 ${visible ? 'text-white ' : 'opacity-40'}`}>
+                <div className="min-w-[90px]"><img className="pl-4 h-[25px] w-auto pr-3 mx-auto"  src={`/icons/planets/${planet}.svg`} alt=""/></div>
+                <div className="w-1/4">{planet}</div>
+                <div className="w-1/4 flex items-center"><IconArrowBarUp/><span className="pl-2">{rise} </span></div>
+                <div className="w-1/4 flex items-center "><IconArrowBarDown /><span className="pl-2">{set}</span></div>
+            </div>
+            {visible && <div className="flex pl-[90px] text-sm">Current visible at {altitude}° above horizon in the {currentDir}</div>}
         </div>
+
     )
 }
 
@@ -50,13 +54,17 @@ export default function PlanetsVisible({data}) {
         const setEq = Equator(planet, set, observer, true, true);
         const setLocation = Horizon(set, observer, setEq.ra, setEq.dec, 'normal')
 
+        const currentEq = Equator(planet, date, observer, true, true);
+        const currentLocation = Horizon(date, observer, currentEq.ra, currentEq.dec, 'normal');
+
         return {
             planet,
             rise,
             set,
             visible,
             riseLocation,
-            setLocation
+            setLocation,
+            currentLocation
         }
     })
 
@@ -66,8 +74,9 @@ export default function PlanetsVisible({data}) {
                  {planetRiseSetTimes.map(planet => {
                      const riseDirection = getCompassDirection(planet.riseLocation.azimuth)
                      const setDirection = getCompassDirection(planet.setLocation.azimuth)
+                     const currentDirection = getCompassDirection(planet.currentLocation.azimuth)
 
-                    return <Planet key={planet.planet} planet={planet.planet} rise={`${getTime(planet.rise)} ${riseDirection}`} set={`${getTime(planet.set)} ${setDirection}`} visible={planet.visible}/>
+                    return <Planet key={planet.planet} planet={planet.planet} rise={`${getTime(planet.rise)} ${riseDirection}`} set={`${getTime(planet.set)} ${setDirection}`} visible={planet.visible} currentDir={currentDirection} altitude={Math.floor(planet.currentLocation.altitude)}/>
                  })}
              </div>
          </div>
