@@ -84,7 +84,7 @@ export default function DailyWeather({daily, noaaData}) {
                     const date = getDate(weather?.dt);
                     const time = `${date.getHours()}:00`;
                     const description = weather?.weather[0]?.main;
-                    const icon = getIcon(weather?.weather);
+                    const icon = weather?.icon;
 
                     return (
                         <div key={i} onClick={() => definaNoaaPairs(i)}>

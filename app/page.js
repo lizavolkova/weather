@@ -34,7 +34,7 @@ ChartJS.register(
 )
 
 export default function Home() {
-
+    const [api, setApi] = useState('tomorrow');
     const [data, setData] = useState();
     const [airPollution, setAirPollution] = useState();
     const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +42,16 @@ export default function Home() {
     const [alerts, setAlerts] = useState([]);
     const [noaaData, setNoaaData] = useState([]);
 
+    async function fetchData(real = false) {
+        setIsLoading(true);
+        const res = await fetch(`/api/coreData?real=${real}&source=${api}`)
+        const data = await res.json();
+
+        setAirPollution(data.air.data);
+        setData(data);
+        setIsLoading(false);
+
+    }
 
     useEffect ( ()=> {
         const lat = 41.18856;
@@ -63,17 +73,6 @@ export default function Home() {
             }
         }
 
-        async function fetchData(real = false) {
-
-            const res = await fetch(`/api/coreData?real=${real}`)
-            const data = await res.json();
-
-            setAirPollution(data.air.data);
-            setData(data);
-            setIsLoading(false);
-
-        }
-
         async function fetchAlerts() {
             const res = await fetch(`https://api.weather.gov/alerts/active?point=${lat},${long}`);
             const data = await res.json();
@@ -86,6 +85,10 @@ export default function Home() {
         fetchAlerts()
 
     }, []);
+
+    useEffect( () => {
+        fetchData(true);
+    }, [api])
 
 
     const timeOfDay = data?.current?.isNight ? 'n' : 'd';
@@ -105,18 +108,27 @@ export default function Home() {
 //  style={{backgroundImage: `url(${bgImage})`}}
   return (
 
-
       <>
           {isLoading ? (
              <div>LOADING</div>
           ) : (
               <main className="relative w-full flex md:min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
+                  <div className="flex">
+                      <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border  hover:border-white rounded mr-4 ${api === 'tomorrow' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => setApi('tomorrow')}>Tomorrow.io</button>
+                      <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border border-slate-400 hover:border-white rounded ${api === 'open' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => setApi('open')}>OpenWeather</button>
+                  </div>
+
+
                   <div className="flex w-full flex-col md:flex-row relative ">
+
                       <div className="w-full md:w-1/4 flex md:h-screen" id="test-class" >
+
                           {noaaData.length > 0 && <MainWeather current={data.current} hourly={data.hourly} daily={data.daily} alerts={alerts} noaaData={noaaData} />}
+
                       </div>
 
                       <div  className="w-full  flex h-screen md:w-3/4 md:overflow-auto md:absolute md:right-0 backdrop-blur-md">
+
                           <SideWeather current={data.current}
                                        daily={data.daily}
                                        hourly={data.hourly}

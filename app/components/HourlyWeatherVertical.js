@@ -13,7 +13,7 @@ export default function HourlyWeatherVertical({hourly}) {
                 {
                     hourly.map(weather => {
                         const description = weather.weather[0].description;
-                        const icon = getIcon(weather?.weather);
+                        const icon = weather?.icon;
 
                         return (
                             <li className="" key={weather.dt}>

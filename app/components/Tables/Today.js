@@ -14,7 +14,7 @@ export default function Today({current, hourly}) {
     const temp = weather.map(weather => Math.floor(weather.weather.temp));
     const pop = weather.map(weather => Math.floor(weather.weather.pop*100));
     const time = weather.map(weather => weather.time);
-    const icons = weather.map(weather => getIcon(weather.weather.weather))
+    const icons = weather.map(weather => weather.weather.icon)
 
     const onClick = (el) => {
         setDetails(el);

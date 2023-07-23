@@ -20,7 +20,7 @@ export default function Hourly({current, hourly}) {
     const temp = hourlyHalf.map(weather => Math.floor(weather.temp));
     const pop = hourlyHalf.map(weather => Math.floor(weather.pop*100));
     const time = hourlyHalf.map(weather => getTime(getDate(weather.dt)));
-    const icons = hourlyHalf.map(weather => getIcon(weather.weather))
+    const icons = hourlyHalf.map(weather => weather.icon)
 
     const onClick = (el) => {
         setDetails(el);

@@ -19,7 +19,7 @@ export default function DailyWeatherChart({daily, noaaData}) {
         const date =  getDate(weather.dt)
         return `${date.toLocaleString('en-US', {weekday: 'short'})} ${date.getDate()}`
     });
-    const icons = daily.map(weather => getIcon(weather.weather))
+    const icons = daily.map(weather => weather.icon)
     const minTemp = daily.map(weather => Math.floor(weather.temp.min));
 
     const onClick = (el) => {

@@ -83,7 +83,7 @@ export default function HourlyWeather({children, arr}) {
                 <Slider {...sliderSettings}>
                 {arr.map((weather,i) => {
                     const description = weather.weather[0].description;
-                    const icon = getIcon(weather?.weather);
+                    const icon = weather?.icon;
                     const day = getDate(weather.dt);
 
                     return (
