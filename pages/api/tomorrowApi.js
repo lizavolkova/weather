@@ -68,7 +68,9 @@ const fetchData = async (lat, long, real) => {
 
         } catch (error) {
             const { code, type } = error;
-            console.error('THROWING ERROR FROM TOMORROW CALL',error.type);
+            console.error('THROWING ERROR FROM TOMORROW CALL', {
+                error
+            });
             throw new Error(makeEnumerableCopy(error));
         }
     } else {
