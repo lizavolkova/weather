@@ -11,6 +11,7 @@ export default function Today({current, hourly}) {
     const [details, setDetails] = useState(0);
 
     const weather = getTimeWeather(current, hourly);
+    console.log(weather)
     const temp = weather.map(weather => Math.floor(weather.weather.temp));
     const pop = weather.map(weather => Math.floor(weather.weather.pop*100));
     const time = weather.map(weather => weather.time);

@@ -4,8 +4,8 @@ export const getTimeWeather = (current, hourly) => {
     const date = getDate(current.dt);
 
     const now = hourly[0];
-    const first = hourly[6];
-    const second = hourly[12];
+    const first = hourly[5];
+    const second = hourly[11];
     const third = hourly[18];
 
     const times = ["Morning", "Afternoon","Evening","Night","Tomorrow Morning","Tomorrow Afternoon"];
@@ -34,10 +34,11 @@ export const getTimeWeather = (current, hourly) => {
         count = [3,4,5,6]
     }
 
+
     return count.map((num,i) => {
         return {
             time: times[num],
-            weather: weather[i]
+            weather: weather[i] ? weather[i] : {weather: {}}
         }
     })
 }

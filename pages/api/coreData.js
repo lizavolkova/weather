@@ -5,6 +5,7 @@ import weatherCodes from './tomorrow-weather-codes.json';
 import { SearchRiseSet, Observer } from 'astronomy-engine';
 import {getTomorrowData} from "./tomorrowApi";
 import {getOpenWeatherData} from './openWeatherApi';
+import {getAccuweatherData} from "./accuweatherApi";
 import makeEnumerableCopy from './utils/makeEnum';
 
 
@@ -56,6 +57,8 @@ export default async function handler(req, res) {
 
         } else if (api === 'open') {
             ({hourly, current, daily} = await getOpenWeatherData(lat, long, fetchRealData));
+        } else if (api === 'accuweather') {
+            ({hourly, current, daily} = await getAccuweatherData(lat, long, fetchRealData));
         }
 
         res.status(200).json({air, hourly, daily, current})
