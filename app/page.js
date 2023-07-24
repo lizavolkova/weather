@@ -48,7 +48,7 @@ export default function Home() {
             const res = await fetch(`/api/coreData?real=${real}&source=${api}`)
             const data = await res.json();
 
-            setAirPollution(data?.air?.data);
+            setAirPollution(data.air);
             setData(data);
             setIsLoading(false);
         }
