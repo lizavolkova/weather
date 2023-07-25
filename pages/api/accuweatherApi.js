@@ -79,7 +79,8 @@ const getImage = (number) => {
 }
 
 const parseOpenData = async (data, lat, long) => {
-    const currentData = data.current[0];
+    const currentData = data;
+    console.log('currentData,', currentData)
     const hourlyData = data.hourly;
     const dailyData = data.daily.DailyForecasts;
     const today = new Date(currentData.EpochTime * 1000);

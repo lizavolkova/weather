@@ -194,7 +194,7 @@ const parseData = async (tomorrowWeather, lat, long) => {
         feels_like: values.temperatureApparent,
         temp: values.temperature,
         uvi: values.uvIndex,
-        pop: tomorrowWeather.dailyHourly.timelines.daily[0].values.precipitationProbabilityAvg,
+        pop: tomorrowWeather.dailyHourly.timelines.daily[0].values.precipitationProbabilityAvg / 10,
         clouds: values.cloudCover,
         humidity: values.humidity,
         pressure: values.pressureSurfaceLevel,
@@ -214,7 +214,7 @@ const parseData = async (tomorrowWeather, lat, long) => {
     };
 
     const hourly = tomorrowHourly.map(weather => {
-        const date = new Date(weather.startTime)
+        const date = new Date(weather.time)
         const timestamp = Math.floor(date.getTime() / 1000);
         const iconCode = weather.values.weatherCode + '0';
         const description = weatherCodeFullDay[weather.values.weatherCode];
