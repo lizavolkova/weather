@@ -6,6 +6,7 @@ import weatherCodes from "./tomorrow-weather-codes.json";
 import makeEnumerableCopy from './utils/makeEnum';
 import isNight from './utils/isNight';
 import getRiseSet from "./utils/getRiseSet";
+import {JsConfigPathsPlugin} from "next/dist/build/webpack/plugins/jsconfig-paths-plugin";
 
 const fetchData = async (lat, long, real) => {
     if (real == 'true') {
@@ -68,9 +69,7 @@ const fetchData = async (lat, long, real) => {
 
         } catch (error) {
             const { code, type } = error;
-            console.error('THROWING ERROR FROM TOMORROW CALL', {
-                error
-            });
+            console.error('THROWING ERROR FROM TOMORROW CALL', error );
             throw new Error(makeEnumerableCopy(error));
         }
     } else {
@@ -195,7 +194,7 @@ const parseData = async (tomorrowWeather, lat, long) => {
         feels_like: values.temperatureApparent,
         temp: values.temperature,
         uvi: values.uvIndex,
-        pop: values.precipitationProbability / 100,
+        pop: tomorrowWeather.dailyHourly.timelines.daily[0].values.precipitationProbabilityAvg,
         clouds: values.cloudCover,
         humidity: values.humidity,
         pressure: values.pressureSurfaceLevel,
