@@ -1,8 +1,8 @@
 import queryString from "query-string";
-import tomorrowDailyJson from "./tomorrowDaily.json";
-import tomorrowCurrent from "./tomorrowCurrent.json";
+import tomorrowDailyJson from "./data/tomorrowDaily.json";
+import tomorrowCurrent from "./data/tomorrowCurrent.json";
 import {Observer, SearchRiseSet} from "astronomy-engine";
-import weatherCodes from "./tomorrow-weather-codes.json";
+import weatherCodes from "./data/tomorrow-weather-codes.json";
 import makeEnumerableCopy from './utils/makeEnum';
 import isNight from './utils/isNight';
 import getRiseSet from "./utils/getRiseSet";

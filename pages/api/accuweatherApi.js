@@ -1,6 +1,6 @@
-import accuweatherData from './accuweatherData.json';
+import accuweatherData from './data/accuweatherData.json';
 import isNight from "./utils/isNight";
-import tomorrowCurrent from "./tomorrowCurrent.json";
+import tomorrowCurrent from "./data/tomorrowCurrent.json";
 import getRiseSet from "./utils/getRiseSet";
 
 const lat = 41.18856;

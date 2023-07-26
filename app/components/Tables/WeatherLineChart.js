@@ -20,13 +20,16 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
                 xAxis.ticks.forEach((value, index) => {
                     const icon = new Image();
                     icon.src = icons[index];
-                    icon.width = 35;
-                    icon.height = 35;
+                   // icon.width = 35;
+                   // icon.height = 35;
 
                     const x = xAxis.getPixelForTick(index);
 
                     icon.onload = function() {
-                        ctx.drawImage(icon, x - icon.width/2, yAxis.top + icon.height/2, icon.width, icon.height);
+                        const scale = 0.175;
+                        const scaledWidth = icon.width * scale;
+                        const scaledHeight = icon.height * scale;
+                        ctx.drawImage(icon, x - scaledWidth/2, yAxis.top +scaledHeight/2, scaledWidth, scaledHeight);
                     }
 
                 });
@@ -42,7 +45,7 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
                     const x = xAxis.getPixelForTick(index);
                     drop.onload = function() {
                         ctx.drawImage(drop, x - 30, yAxis.bottom - 25, drop.width, drop.height);
-                        ctx.font = "12px Arial";
+                        ctx.font = "14px Arial";
                         ctx.fillStyle = "white";
                         ctx.fillText(`${pop[index]}%`, x - 12, yAxis.bottom - 12)
                     }

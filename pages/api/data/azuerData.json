@@ -1,0 +1,4320 @@
+{
+  "current": {
+    "results": [
+      {
+        "dateTime": "2023-07-25T16:44:00-04:00",
+        "phrase": "Rain",
+        "iconCode": 18,
+        "hasPrecipitation": true,
+        "precipitationType": "Rain",
+        "isDayTime": true,
+        "temperature": {
+          "value": 19.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 18.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperatureShade": {
+          "value": 17.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "relativeHumidity": 95,
+        "dewPoint": {
+          "value": 18.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 293.0,
+            "localizedDescription": "WNW"
+          },
+          "speed": {
+            "value": 4.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 10.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "uvIndex": 1,
+        "uvIndexPhrase": "Low",
+        "visibility": {
+          "value": 11.3,
+          "unit": "km",
+          "unitType": 6
+        },
+        "obstructionsToVisibility": "R",
+        "cloudCover": 100,
+        "ceiling": {
+          "value": 3353.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "pressure": {
+          "value": 1016.9,
+          "unit": "mb",
+          "unitType": 14
+        },
+        "pressureTendency": {
+          "localizedDescription": "Rising",
+          "code": "R"
+        },
+        "past24HourTemperatureDeparture": {
+          "value": -9.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "apparentTemperature": {
+          "value": 20.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "windChillTemperature": {
+          "value": 19.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "precipitationSummary": {
+          "pastHour": {
+            "value": 3.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "past3Hours": {
+            "value": 36.6,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "past6Hours": {
+            "value": 36.6,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "past9Hours": {
+            "value": 36.6,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "past12Hours": {
+            "value": 36.6,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "past18Hours": {
+            "value": 36.6,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "past24Hours": {
+            "value": 36.6,
+            "unit": "mm",
+            "unitType": 3
+          }
+        },
+        "temperatureSummary": {
+          "past6Hours": {
+            "minimum": {
+              "value": 19.0,
+              "unit": "C",
+              "unitType": 17
+            },
+            "maximum": {
+              "value": 30.0,
+              "unit": "C",
+              "unitType": 17
+            }
+          },
+          "past12Hours": {
+            "minimum": {
+              "value": 19.0,
+              "unit": "C",
+              "unitType": 17
+            },
+            "maximum": {
+              "value": 30.0,
+              "unit": "C",
+              "unitType": 17
+            }
+          },
+          "past24Hours": {
+            "minimum": {
+              "value": 19.0,
+              "unit": "C",
+              "unitType": 17
+            },
+            "maximum": {
+              "value": 30.0,
+              "unit": "C",
+              "unitType": 17
+            }
+          }
+        }
+      }
+    ]
+  },
+  "daily": {
+    "summary": {
+      "startDate": "2023-07-25T14:00:00-04:00",
+      "endDate": "2023-07-25T23:00:00-04:00",
+      "severity": 2,
+      "phrase": "Thunderstorms, some heavy, this afternoon through early this evening",
+      "category": "thunderstorm"
+    },
+    "forecasts": [
+      {
+        "date": "2023-07-25T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 19.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 30.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 19.2,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 35.8,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 19.2,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 31.6,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 7.7,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 6.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 100,
+            "category": "Moderate",
+            "categoryValue": 2,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 2,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Mold",
+            "value": 9750,
+            "category": "Moderate",
+            "categoryValue": 2
+          },
+          {
+            "name": "Ragweed",
+            "value": 5,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 7,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 9,
+            "category": "Very High",
+            "categoryValue": 4
+          }
+        ],
+        "day": {
+          "iconCode": 17,
+          "iconPhrase": "Partly sunny w/ t-storms",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Heavy",
+          "shortPhrase": "Humid; heavy p.m. t-storms",
+          "longPhrase": "Humid with sun mixing with clouds; heavy p.m. t-storms; thunderstorms can bring flash flooding and localized damaging wind gusts",
+          "precipitationProbability": 94,
+          "thunderstormProbability": 56,
+          "rainProbability": 94,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 245.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 9.3,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 202.0,
+              "localizedDescription": "SSW"
+            },
+            "speed": {
+              "value": 27.8,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 35.5,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 35.5,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 3.5,
+          "hoursOfRain": 3.5,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 53
+        },
+        "night": {
+          "iconCode": 41,
+          "iconPhrase": "Partly cloudy w/ t-storms",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Moderate",
+          "shortPhrase": "Humid; an evening t-storm",
+          "longPhrase": "A thunderstorm early this evening; partly cloudy and humid",
+          "precipitationProbability": 55,
+          "thunderstormProbability": 33,
+          "rainProbability": 55,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 241.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 5.6,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 192.0,
+              "localizedDescription": "SSW"
+            },
+            "speed": {
+              "value": 13.0,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 1.3,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 1.3,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.5,
+          "hoursOfRain": 0.5,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 40
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-07-26T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 21.2,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 31.5,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 22.9,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 35.5,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 22.9,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 31.3,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 10.3,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 8.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 115,
+            "category": "Unhealthy (Sensitive)",
+            "categoryValue": 3,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Mold",
+            "value": 13163,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 3,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 4,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 10,
+            "category": "Very High",
+            "categoryValue": 4
+          }
+        ],
+        "day": {
+          "iconCode": 3,
+          "iconPhrase": "Partly sunny",
+          "hasPrecipitation": false,
+          "shortPhrase": "Partly sunny and very warm",
+          "longPhrase": "Partly sunny, very warm and humid",
+          "precipitationProbability": 1,
+          "thunderstormProbability": 0,
+          "rainProbability": 1,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 218.0,
+              "localizedDescription": "SW"
+            },
+            "speed": {
+              "value": 9.3,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 192.0,
+              "localizedDescription": "SSW"
+            },
+            "speed": {
+              "value": 20.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 28
+        },
+        "night": {
+          "iconCode": 34,
+          "iconPhrase": "Mostly clear",
+          "hasPrecipitation": false,
+          "shortPhrase": "Mainly clear and humid",
+          "longPhrase": "Mainly clear and humid",
+          "precipitationProbability": 6,
+          "thunderstormProbability": 0,
+          "rainProbability": 6,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 179.0,
+              "localizedDescription": "S"
+            },
+            "speed": {
+              "value": 7.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 176.0,
+              "localizedDescription": "S"
+            },
+            "speed": {
+              "value": 14.8,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 24
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-07-27T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 21.8,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 32.9,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 23.3,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 40.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 23.3,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 35.8,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 8.7,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 9.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 88,
+            "category": "Moderate",
+            "categoryValue": 2,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 5,
+            "category": "Moderate",
+            "categoryValue": 2
+          },
+          {
+            "name": "Mold",
+            "value": 23035,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 9,
+            "category": "Very High",
+            "categoryValue": 4
+          }
+        ],
+        "day": {
+          "iconCode": 17,
+          "iconPhrase": "Partly sunny w/ t-storms",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Heavy",
+          "shortPhrase": "A heavy t-storm in the p.m.",
+          "longPhrase": "Some sun; hot, humid, a heavy t-storm in the afternoon; thunderstorms can bring flooding downpours, hail and damaging wind gusts",
+          "precipitationProbability": 55,
+          "thunderstormProbability": 33,
+          "rainProbability": 55,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 214.0,
+              "localizedDescription": "SW"
+            },
+            "speed": {
+              "value": 13.0,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 226.0,
+              "localizedDescription": "SW"
+            },
+            "speed": {
+              "value": 31.5,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 3.8,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 3.8,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 1.0,
+          "hoursOfRain": 1.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 45
+        },
+        "night": {
+          "iconCode": 41,
+          "iconPhrase": "Partly cloudy w/ t-storms",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Heavy",
+          "shortPhrase": "Humid; a heavy t-storm early",
+          "longPhrase": "A heavy thunderstorm early; partly cloudy, humid; thunderstorms can bring flooding downpours, hail and damaging wind gusts",
+          "precipitationProbability": 55,
+          "thunderstormProbability": 33,
+          "rainProbability": 55,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 261.0,
+              "localizedDescription": "W"
+            },
+            "speed": {
+              "value": 7.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 246.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 16.7,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 3.8,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 3.8,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 1.0,
+          "hoursOfRain": 1.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 42
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-07-28T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 22.9,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 34.2,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 25.9,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 41.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 25.9,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 36.7,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 11.4,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 11.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 83,
+            "category": "Moderate",
+            "categoryValue": 2,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 68,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Mold",
+            "value": 31097,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 2,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 9,
+            "category": "Very High",
+            "categoryValue": 4
+          }
+        ],
+        "day": {
+          "iconCode": 2,
+          "iconPhrase": "Mostly sunny",
+          "hasPrecipitation": false,
+          "shortPhrase": "Mostly sunny, hot and humid",
+          "longPhrase": "Mostly sunny, hot and humid; danger of dehydration and heatstroke if outside for extended periods of time",
+          "precipitationProbability": 25,
+          "thunderstormProbability": 6,
+          "rainProbability": 25,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 271.0,
+              "localizedDescription": "W"
+            },
+            "speed": {
+              "value": 11.1,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 234.0,
+              "localizedDescription": "SW"
+            },
+            "speed": {
+              "value": 20.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 19
+        },
+        "night": {
+          "iconCode": 34,
+          "iconPhrase": "Mostly clear",
+          "hasPrecipitation": false,
+          "shortPhrase": "Mainly clear and humid",
+          "longPhrase": "Clear to partly cloudy and uncomfortably humid",
+          "precipitationProbability": 25,
+          "thunderstormProbability": 6,
+          "rainProbability": 25,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 142.0,
+              "localizedDescription": "SE"
+            },
+            "speed": {
+              "value": 7.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 164.0,
+              "localizedDescription": "SSE"
+            },
+            "speed": {
+              "value": 18.5,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 25
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-07-29T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 19.6,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 32.4,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 19.3,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 39.1,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 19.3,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 35.6,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 5.7,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 8.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 82,
+            "category": "Moderate",
+            "categoryValue": 2,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 67,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Mold",
+            "value": 32767,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 2,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 5,
+            "category": "Moderate",
+            "categoryValue": 2
+          }
+        ],
+        "day": {
+          "iconCode": 17,
+          "iconPhrase": "Partly sunny w/ t-storms",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Moderate",
+          "shortPhrase": "A shower and thunderstorm",
+          "longPhrase": "Hot and humid with times of clouds and sun; a couple of showers and a thunderstorm in the afternoon; thunderstorms can be severe",
+          "precipitationProbability": 66,
+          "thunderstormProbability": 40,
+          "rainProbability": 66,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 255.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 11.1,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 236.0,
+              "localizedDescription": "SW"
+            },
+            "speed": {
+              "value": 24.1,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 3.1,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 3.1,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 2.0,
+          "hoursOfRain": 2.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 64
+        },
+        "night": {
+          "iconCode": 34,
+          "iconPhrase": "Mostly clear",
+          "hasPrecipitation": false,
+          "shortPhrase": "Mainly clear and humid",
+          "longPhrase": "Mainly clear and humid",
+          "precipitationProbability": 14,
+          "thunderstormProbability": 3,
+          "rainProbability": 14,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 327.0,
+              "localizedDescription": "NNW"
+            },
+            "speed": {
+              "value": 9.3,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 302.0,
+              "localizedDescription": "WNW"
+            },
+            "speed": {
+              "value": 22.2,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 47
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-07-30T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 14.6,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 27.8,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 14.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 30.7,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 14.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 26.3,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 11.5,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 3.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 65,
+            "category": "Moderate",
+            "categoryValue": 2,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 67,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Mold",
+            "value": 32767,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 2,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 9,
+            "category": "Very High",
+            "categoryValue": 4
+          }
+        ],
+        "day": {
+          "iconCode": 2,
+          "iconPhrase": "Mostly sunny",
+          "hasPrecipitation": false,
+          "shortPhrase": "Mostly sunny and not as hot",
+          "longPhrase": "Mostly sunny and not as hot with lower humidity; relief from the heat and humidity",
+          "precipitationProbability": 10,
+          "thunderstormProbability": 0,
+          "rainProbability": 10,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 330.0,
+              "localizedDescription": "NNW"
+            },
+            "speed": {
+              "value": 11.1,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 326.0,
+              "localizedDescription": "NW"
+            },
+            "speed": {
+              "value": 31.5,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 24
+        },
+        "night": {
+          "iconCode": 33,
+          "iconPhrase": "Clear",
+          "hasPrecipitation": false,
+          "shortPhrase": "Clear",
+          "longPhrase": "Clear",
+          "precipitationProbability": 11,
+          "thunderstormProbability": 0,
+          "rainProbability": 11,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 323.0,
+              "localizedDescription": "NW"
+            },
+            "speed": {
+              "value": 7.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 316.0,
+              "localizedDescription": "NW"
+            },
+            "speed": {
+              "value": 22.2,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 4
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-07-31T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 16.3,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 28.2,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 16.8,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 29.9,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 16.8,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 26.7,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 12.2,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 4.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 64,
+            "category": "Moderate",
+            "categoryValue": 2,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 40,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Mold",
+            "value": 32767,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 0,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 9,
+            "category": "Very High",
+            "categoryValue": 4
+          }
+        ],
+        "day": {
+          "iconCode": 2,
+          "iconPhrase": "Mostly sunny",
+          "hasPrecipitation": false,
+          "shortPhrase": "Mostly sunny",
+          "longPhrase": "Mostly sunny",
+          "precipitationProbability": 8,
+          "thunderstormProbability": 1,
+          "rainProbability": 8,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 304.0,
+              "localizedDescription": "NW"
+            },
+            "speed": {
+              "value": 9.3,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 302.0,
+              "localizedDescription": "WNW"
+            },
+            "speed": {
+              "value": 25.9,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 18
+        },
+        "night": {
+          "iconCode": 33,
+          "iconPhrase": "Clear",
+          "hasPrecipitation": false,
+          "shortPhrase": "Clear",
+          "longPhrase": "Clear",
+          "precipitationProbability": 10,
+          "thunderstormProbability": 0,
+          "rainProbability": 10,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 354.0,
+              "localizedDescription": "N"
+            },
+            "speed": {
+              "value": 5.6,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 327.0,
+              "localizedDescription": "NNW"
+            },
+            "speed": {
+              "value": 13.0,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 4
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-08-01T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 17.2,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 24.7,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 17.1,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 27.6,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 17.1,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 23.8,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 7.3,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 3.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 48,
+            "category": "Good",
+            "categoryValue": 1,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 8,
+            "category": "Moderate",
+            "categoryValue": 2
+          },
+          {
+            "name": "Mold",
+            "value": 32767,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 4,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 0,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 6,
+            "category": "High",
+            "categoryValue": 3
+          }
+        ],
+        "day": {
+          "iconCode": 4,
+          "iconPhrase": "Intermittent clouds",
+          "hasPrecipitation": false,
+          "shortPhrase": "Humid with clouds and sun",
+          "longPhrase": "Humid with times of clouds and sun",
+          "precipitationProbability": 25,
+          "thunderstormProbability": 6,
+          "rainProbability": 25,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 249.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 5.6,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 245.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 7.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 49
+        },
+        "night": {
+          "iconCode": 36,
+          "iconPhrase": "Intermittent clouds",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Light",
+          "shortPhrase": "Humid; a t-storm around early",
+          "longPhrase": "A thunderstorm in spots in the evening; otherwise, partly cloudy and humid",
+          "precipitationProbability": 40,
+          "thunderstormProbability": 24,
+          "rainProbability": 40,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 244.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 5.6,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 195.0,
+              "localizedDescription": "SSW"
+            },
+            "speed": {
+              "value": 13.0,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 1.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 1.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.5,
+          "hoursOfRain": 0.5,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 62
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-08-02T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 17.7,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 25.2,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 17.7,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 23.9,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 17.7,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 23.7,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 3.7,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 3.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 0,
+            "category": "Good",
+            "categoryValue": 1,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 0,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Mold",
+            "value": 32767,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 0,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 0,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 3,
+            "category": "Moderate",
+            "categoryValue": 2
+          }
+        ],
+        "day": {
+          "iconCode": 6,
+          "iconPhrase": "Mostly cloudy",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Moderate",
+          "shortPhrase": "Humid with a thunderstorm",
+          "longPhrase": "Mostly cloudy and humid with a thunderstorm",
+          "precipitationProbability": 55,
+          "thunderstormProbability": 33,
+          "rainProbability": 55,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 158.0,
+              "localizedDescription": "SSE"
+            },
+            "speed": {
+              "value": 14.8,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 160.0,
+              "localizedDescription": "SSE"
+            },
+            "speed": {
+              "value": 33.3,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 2.8,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 2.8,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 1.5,
+          "hoursOfRain": 1.5,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 84
+        },
+        "night": {
+          "iconCode": 41,
+          "iconPhrase": "Partly cloudy w/ t-storms",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Moderate",
+          "shortPhrase": "A shower and t-storm early",
+          "longPhrase": "A couple of evening showers and a thunderstorm; otherwise, humid with clearing",
+          "precipitationProbability": 67,
+          "thunderstormProbability": 29,
+          "rainProbability": 67,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 241.0,
+              "localizedDescription": "WSW"
+            },
+            "speed": {
+              "value": 9.3,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 158.0,
+              "localizedDescription": "SSE"
+            },
+            "speed": {
+              "value": 29.6,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 3.9,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 3.9,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 2.0,
+          "hoursOfRain": 2.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 76
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      },
+      {
+        "date": "2023-08-03T07:00:00-04:00",
+        "temperature": {
+          "minimum": {
+            "value": 17.2,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 25.2,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperature": {
+          "minimum": {
+            "value": 17.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 30.2,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "realFeelTemperatureShade": {
+          "minimum": {
+            "value": 17.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "maximum": {
+            "value": 24.1,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "hoursOfSun": 9.5,
+        "degreeDaySummary": {
+          "heating": {
+            "value": 0.0,
+            "unit": "C",
+            "unitType": 17
+          },
+          "cooling": {
+            "value": 3.0,
+            "unit": "C",
+            "unitType": 17
+          }
+        },
+        "airAndPollen": [
+          {
+            "name": "AirQuality",
+            "value": 0,
+            "category": "Good",
+            "categoryValue": 1,
+            "type": "Ozone"
+          },
+          {
+            "name": "Grass",
+            "value": 1,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Mold",
+            "value": 32767,
+            "category": "High",
+            "categoryValue": 3
+          },
+          {
+            "name": "Ragweed",
+            "value": 3,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "Tree",
+            "value": 0,
+            "category": "Low",
+            "categoryValue": 1
+          },
+          {
+            "name": "UVIndex",
+            "value": 9,
+            "category": "Very High",
+            "categoryValue": 4
+          }
+        ],
+        "day": {
+          "iconCode": 17,
+          "iconPhrase": "Partly sunny w/ t-storms",
+          "hasPrecipitation": true,
+          "precipitationType": "Rain",
+          "precipitationIntensity": "Moderate",
+          "shortPhrase": "A shower and t-storm; humid",
+          "longPhrase": "Partly sunny and humid with a couple of showers and a thunderstorm",
+          "precipitationProbability": 60,
+          "thunderstormProbability": 36,
+          "rainProbability": 60,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 321.0,
+              "localizedDescription": "NW"
+            },
+            "speed": {
+              "value": 7.4,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 323.0,
+              "localizedDescription": "NW"
+            },
+            "speed": {
+              "value": 16.7,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 5.1,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 5.1,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 2.0,
+          "hoursOfRain": 2.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 26
+        },
+        "night": {
+          "iconCode": 34,
+          "iconPhrase": "Mostly clear",
+          "hasPrecipitation": false,
+          "shortPhrase": "Mainly clear and humid",
+          "longPhrase": "Mainly clear and humid",
+          "precipitationProbability": 20,
+          "thunderstormProbability": 2,
+          "rainProbability": 20,
+          "snowProbability": 0,
+          "iceProbability": 0,
+          "wind": {
+            "direction": {
+              "degrees": 65.0,
+              "localizedDescription": "ENE"
+            },
+            "speed": {
+              "value": 3.7,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "windGust": {
+            "direction": {
+              "degrees": 314.0,
+              "localizedDescription": "NW"
+            },
+            "speed": {
+              "value": 13.0,
+              "unit": "km/h",
+              "unitType": 7
+            }
+          },
+          "totalLiquid": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "rain": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "snow": {
+            "value": 0.0,
+            "unit": "cm",
+            "unitType": 4
+          },
+          "ice": {
+            "value": 0.0,
+            "unit": "mm",
+            "unitType": 3
+          },
+          "hoursOfPrecipitation": 0.0,
+          "hoursOfRain": 0.0,
+          "hoursOfSnow": 0.0,
+          "hoursOfIce": 0.0,
+          "cloudCover": 22
+        },
+        "sources": [
+          "AccuWeather"
+        ]
+      }
+    ]
+  },
+  "hourly": {
+    "forecasts": [
+      {
+        "date": "2023-07-25T17:00:00-04:00",
+        "iconCode": 15,
+        "iconPhrase": "Thunderstorms",
+        "hasPrecipitation": true,
+        "precipitationType": "Rain",
+        "precipitationIntensity": "Light",
+        "isDaylight": true,
+        "temperature": {
+          "value": 25.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 25.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 21.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 203.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 13.0,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 25.9,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 73,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 100,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 1,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 44,
+        "rainProbability": 44,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.2,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.2,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-25T18:00:00-04:00",
+        "iconCode": 4,
+        "iconPhrase": "Intermittent clouds",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 24.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 26.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 21.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 20.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 209.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 13.0,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 20.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 76,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 70,
+        "ceiling": {
+          "value": 8047.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 2,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 44,
+        "rainProbability": 44,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-25T19:00:00-04:00",
+        "iconCode": 4,
+        "iconPhrase": "Intermittent clouds",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 24.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 25.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 21.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 20.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 205.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 11.1,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 16.7,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 77,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 70,
+        "ceiling": {
+          "value": 6949.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 1,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 47,
+        "rainProbability": 47,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-25T20:00:00-04:00",
+        "iconCode": 17,
+        "iconPhrase": "Partly sunny w/ t-storms",
+        "hasPrecipitation": true,
+        "precipitationType": "Rain",
+        "precipitationIntensity": "Moderate",
+        "isDaylight": true,
+        "temperature": {
+          "value": 23.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 22.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 21.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 20.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 192.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 9.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 13.0,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 80,
+        "visibility": {
+          "value": 8.0,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 5822.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 51,
+        "rainProbability": 51,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 1.3,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 1.3,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-25T21:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 22.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 23.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 20.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 195.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 11.1,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 82,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 6949.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 47,
+        "rainProbability": 47,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-25T22:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 21.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 22.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 20.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 201.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 9.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 87,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 8047.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 40,
+        "rainProbability": 40,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-25T23:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 20.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 21.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 208.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 90,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 34,
+        "rainProbability": 34,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T00:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 20.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 21.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 222.0,
+            "localizedDescription": "SW"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 90,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 7590.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 34,
+        "rainProbability": 34,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T01:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 20.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 21.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 256.0,
+            "localizedDescription": "WSW"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 90,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 6035.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 23,
+        "rainProbability": 23,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T02:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 20.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 21.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 281.0,
+            "localizedDescription": "W"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 89,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 4481.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 1,
+        "rainProbability": 1,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T03:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 20.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 21.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 280.0,
+            "localizedDescription": "W"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 89,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 4481.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 1,
+        "rainProbability": 1,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T04:00:00-04:00",
+        "iconCode": 35,
+        "iconPhrase": "Partly cloudy",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 20.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 20.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 272.0,
+            "localizedDescription": "W"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 91,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 45,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 1,
+        "rainProbability": 1,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T05:00:00-04:00",
+        "iconCode": 34,
+        "iconPhrase": "Mostly clear",
+        "hasPrecipitation": false,
+        "isDaylight": false,
+        "temperature": {
+          "value": 19.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 19.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 268.0,
+            "localizedDescription": "W"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 96,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 1,
+        "rainProbability": 1,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T06:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 19.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 20.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 270.0,
+            "localizedDescription": "W"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 92,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 0,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 1,
+        "rainProbability": 1,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T07:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 20.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 22.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 19.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 272.0,
+            "localizedDescription": "W"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 92,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 1,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 1,
+        "rainProbability": 1,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T08:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 21.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 24.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 20.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 261.0,
+            "localizedDescription": "W"
+          },
+          "speed": {
+            "value": 5.6,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 86,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 2,
+        "uvIndexPhrase": "Low",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T09:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 23.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 27.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 21.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 243.0,
+            "localizedDescription": "WSW"
+          },
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 78,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 3,
+        "uvIndexPhrase": "Moderate",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T10:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 25.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 30.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 21.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 235.0,
+            "localizedDescription": "SW"
+          },
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 9.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 73,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 5,
+        "uvIndexPhrase": "Moderate",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T11:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 26.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 33.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 22.3,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 20.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 230.0,
+            "localizedDescription": "SW"
+          },
+          "speed": {
+            "value": 7.4,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 9.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 67,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 7,
+        "uvIndexPhrase": "High",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T12:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 28.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 35.0,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 22.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 228.0,
+            "localizedDescription": "SW"
+          },
+          "speed": {
+            "value": 9.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 11.1,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 60,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 9,
+        "uvIndexPhrase": "Very High",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T13:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 29.2,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 35.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 22.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 19.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 226.0,
+            "localizedDescription": "SW"
+          },
+          "speed": {
+            "value": 9.3,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 11.1,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 55,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 10,
+        "uvIndexPhrase": "Very High",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T14:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 30.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 35.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 22.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.9,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 221.0,
+            "localizedDescription": "SW"
+          },
+          "speed": {
+            "value": 11.1,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 13.0,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 51,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 9,
+        "uvIndexPhrase": "Very High",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T15:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 30.7,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 35.1,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 22.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 213.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 11.1,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 13.0,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 49,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 7,
+        "uvIndexPhrase": "High",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      },
+      {
+        "date": "2023-07-26T16:00:00-04:00",
+        "iconCode": 2,
+        "iconPhrase": "Mostly sunny",
+        "hasPrecipitation": false,
+        "isDaylight": true,
+        "temperature": {
+          "value": 31.5,
+          "unit": "C",
+          "unitType": 17
+        },
+        "realFeelTemperature": {
+          "value": 34.4,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wetBulbTemperature": {
+          "value": 22.6,
+          "unit": "C",
+          "unitType": 17
+        },
+        "dewPoint": {
+          "value": 18.8,
+          "unit": "C",
+          "unitType": 17
+        },
+        "wind": {
+          "direction": {
+            "degrees": 205.0,
+            "localizedDescription": "SSW"
+          },
+          "speed": {
+            "value": 11.1,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "windGust": {
+          "speed": {
+            "value": 16.7,
+            "unit": "km/h",
+            "unitType": 7
+          }
+        },
+        "relativeHumidity": 46,
+        "visibility": {
+          "value": 16.1,
+          "unit": "km",
+          "unitType": 6
+        },
+        "cloudCover": 26,
+        "ceiling": {
+          "value": 9144.0,
+          "unit": "m",
+          "unitType": 5
+        },
+        "uvIndex": 5,
+        "uvIndexPhrase": "Moderate",
+        "precipitationProbability": 0,
+        "rainProbability": 0,
+        "snowProbability": 0,
+        "iceProbability": 0,
+        "totalLiquid": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "rain": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        },
+        "snow": {
+          "value": 0.0,
+          "unit": "cm",
+          "unitType": 4
+        },
+        "ice": {
+          "value": 0.0,
+          "unit": "mm",
+          "unitType": 3
+        }
+      }
+    ]
+  }
+}

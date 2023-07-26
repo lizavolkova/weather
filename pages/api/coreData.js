@@ -1,11 +1,12 @@
 import queryString from 'query-string';
-import tomorrowDailyJson from './tomorrowDaily.json';
-import tomorrowCurrent from './tomorrowCurrent.json';
-import weatherCodes from './tomorrow-weather-codes.json';
+import tomorrowDailyJson from './data/tomorrowDaily.json';
+import tomorrowCurrent from './data/tomorrowCurrent.json';
+import weatherCodes from './data/tomorrow-weather-codes.json';
 import { SearchRiseSet, Observer } from 'astronomy-engine';
 import {getTomorrowData} from "./tomorrowApi";
 import {getOpenWeatherData} from './openWeatherApi';
 import {getAccuweatherData} from "./accuweatherApi";
+import {getAzureData} from "./azureApi";;
 import makeEnumerableCopy from './utils/makeEnum';
 
 
@@ -59,6 +60,8 @@ export default async function handler(req, res) {
             ({hourly, current, daily} = await getOpenWeatherData(lat, long, fetchRealData));
         } else if (api === 'accuweather') {
             ({hourly, current, daily} = await getAccuweatherData(lat, long, fetchRealData));
+        } else if (api === 'azure') {
+            ({hourly, current, daily} = await getAzureData(lat, long, fetchRealData));
         }
 
         res.status(200).json({air, hourly, daily, current})
