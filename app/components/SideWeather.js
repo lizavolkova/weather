@@ -30,6 +30,7 @@ import PlanetsVisible from "./PlanetsVisible";
 import IconPlanetOutline from "./icons/IconPlanetOutline";
 import IconWiMoonrise from "./icons/IconWiMoonrise";
 import IconMoonset from "./icons/IconMoonset";
+import WeatherToday from "./WeatherToday";
 
 const Card = ({title, icon, value, units, iconClass, range=[]}) => {
     let color;
@@ -86,6 +87,12 @@ export default function SideWeather({current, airPollution, hourly, daily, noaaD
         <>
             <div className="p-2 md:p-8 flex flex-col justify-between w-full">
                 <div className="flex flex-col md:pr-32">
+
+                    {daily[0].day && <div>
+                        <InfoCard classes={cardClass}>
+                            <WeatherToday daily={daily} />
+                        </InfoCard>
+                    </div>}
 
                     <div className="flex flex-wrap md:justify-between w-full " >
                         <InfoCard title="Feels like" classes={cardClass} icon={<IconThermometerHalf />}>

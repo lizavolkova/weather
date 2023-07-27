@@ -346,6 +346,18 @@ const parseData = async (azureWeather, lat, long) => {
             },
             icon: getIcon(day.iconCode),
             //uvi: values.uvIndexMax,
+            day: {
+                icon: getIcon(day.iconCode),
+                iconPhrase: day.iconPhrase,
+                shortPhrase: day.shortPhrase,
+                longPhrase: day.longPhrase,
+            },
+            night: {
+                icon: getIcon(night.iconCode),
+                iconPhrase: night.iconPhrase,
+                shortPhrase: night.shortPhrase,
+                longPhrase: night.longPhrase
+            },
             weather: [
                 {
                     id: 123,

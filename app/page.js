@@ -72,7 +72,7 @@ export default function Home() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const apiUrl = urlParams.get('api');
-        apiUrl ? updateApi(apiUrl) : updateApi('tomorrow');
+        apiUrl ? updateApi(apiUrl) : updateApi('azure');
 
         async function fetchNoaaforecast() {
             try {
@@ -104,7 +104,7 @@ export default function Home() {
     }, []);
 
     useEffect( () => {
-       fetchData(true);
+       fetchData();
     }, [api])
 
 
