@@ -11,11 +11,12 @@ export default function Today({current, hourly}) {
     const [details, setDetails] = useState(0);
 
     const weather = getTimeWeather(current, hourly);
-    console.log(weather)
+
     const temp = weather.map(weather => Math.floor(weather.weather.temp));
     const pop = weather.map(weather => Math.floor(weather.weather.pop*100));
     const time = weather.map(weather => weather.time);
     const icons = weather.map(weather => weather.weather.icon)
+    const descriptions = weather.map(weather => weather.weather.weather[0].description);
 
     const onClick = (el) => {
         setDetails(el);
@@ -25,7 +26,7 @@ export default function Today({current, hourly}) {
         <div className="flex flex-col py-6">
             {weather && <div id="daily-chart" className="chartWrapper overflow-x-scroll">
                 <div className="relative w-[800px] h-[350px] mx-auto">
-                    <WeatherLineChart temp={temp} pop={pop} time={time} icons={icons} clickedEl={onClick} id="today"/>
+                    <WeatherLineChart temp={temp} pop={pop} time={time} icons={icons} clickedEl={onClick} id="today" descriptions={descriptions}/>
                 </div>
             </div>}
             <div className="mt-4">

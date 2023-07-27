@@ -5,7 +5,7 @@ import { Line, getElementsAtEvent } from 'react-chartjs-2';
 import {Chart as ChartJS} from "chart.js";
 
 
-function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
+function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id, descriptions}) {
     const chartRef = useRef();
 
     const customPlugin = {
@@ -14,14 +14,15 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
             const ctx = chart.ctx;
             const xAxis = chart.scales['x3'];
             const xAxisTwo = chart.scales['x3'];
+            const xAxisTemp = chart.scales['x-temp'];
+            const xAxisDesc = chart.scales['xDesc'];
+
             const yAxis = chart.scales['y'];
 
             if (xAxis) {
                 xAxis.ticks.forEach((value, index) => {
                     const icon = new Image();
                     icon.src = icons[index];
-                   // icon.width = 35;
-                   // icon.height = 35;
 
                     const x = xAxis.getPixelForTick(index);
 
@@ -35,8 +36,22 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
                 });
             }
 
+            if (xAxisDesc && descriptions) {
+                xAxis.ticks.forEach((value, index) => {
+                    const desc = descriptions[index];
+                    const x = xAxis.getPixelForTick(index);
+                    ctx.textAlign = "center";
+                    ctx.font = "16px Arial";
+                    ctx.fillStyle = "white";
+                    ctx.fillText(desc, x, yAxis.top + 80);
+                    ctx.textAlign = "start";
+
+                });
+            }
+
             if (xAxisTwo) {
                 xAxisTwo.ticks.forEach((value, index) => {
+
                     const drop = new Image();
                     drop.src = '/icons/drop.png'
                     drop.width = 15;
@@ -44,10 +59,16 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
 
                     const x = xAxis.getPixelForTick(index);
                     drop.onload = function() {
+                        // Dim rain % if it's low
+                        if (pop[index] <= 10) {
+                            ctx.globalAlpha = 0.4;
+                        }
+
                         ctx.drawImage(drop, x - 30, yAxis.bottom - 25, drop.width, drop.height);
-                        ctx.font = "14px Arial";
+                        ctx.font = "16px Arial";
                         ctx.fillStyle = "white";
-                        ctx.fillText(`${pop[index]}%`, x - 12, yAxis.bottom - 12)
+                        ctx.fillText(`${pop[index]}%`, x - 12, yAxis.bottom - 12);
+                        ctx.globalAlpha = 1;
                     }
 
                 });
@@ -59,14 +80,15 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
 
 
     const max = Math.max(...temp);
+    const min = Math.max(...temp);
 
     const options = {
         responsive: true,
         maintainAspectRatio: false,
         layout: {
             padding: {
-                left: 50,
-                right: 50
+                left: 55,
+                right: 55
             }
         },
         plugins: {
@@ -74,6 +96,7 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
                 display: true,
                 color: '#fff',
                 align: 'top',
+                textAlign: 'center',
                 font: {
                     size: minTemp ? 18 : 28
                 },
@@ -118,7 +141,7 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
         scales: {
             y: {
                 display: false,
-                min: 0,
+                min: min/5,
                 max: max * 2
             },
             x2: {
@@ -164,6 +187,16 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
                     }
                 }
             },
+            xDesc: {
+                grid: {
+                    drawOnChartArea: false, // only want the grid lines for one axis to show up
+                    offset: true,
+                },
+                position: 'top',
+                ticks: {
+                    display: false
+                }
+            }
         }
 
     };
@@ -176,7 +209,7 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
                 fill: false,
                 label: 'Dataset 2',
                 data: temp,
-                borderColor: 'rgb(53, 162, 235)',
+                borderColor: '#fb923c',
                 backgroundColor: 'rgba(53, 162, 235, 0.5)',
                 tension: 0.5,
 
@@ -193,6 +226,13 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id}) {
                 label: 'Dataset 3',
                 data: icons,
                 xAxisID: 'x3',
+                hidden: true
+            },
+            {
+                fill: false,
+                label: 'Descriptions Data',
+                data: descriptions,
+                xAxisID: 'xDesc',
                 hidden: true
             }
         ]
