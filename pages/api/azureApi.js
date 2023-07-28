@@ -248,17 +248,18 @@ const fetchData = async (lat, long, real) => {
         return azureJson;
     }
 }
+
+const clearCodes = [1, 2, 33, 34];
+const cloudsPart = [3, 4, 35, 36];
+const cloudy = [6, 7, 8, 38];
+const mist = [5,11, 37];
+const drizzle = [12, 13,14];
+const rain = [18, 39, 40];
+const thunderstorm = [15, 16, 17, 41, 42];
+const snow = [19, 20, 21, 22, 23, 43, 44]
+
 const getImage = (number) => {
     const code = parseInt(number);
-    const clearCodes = [1, 2, 33, 34];
-    const cloudsPart = [3, 4, 35, 36];
-    const cloudy = [6, 7, 8, 38];
-    const mist = [5,11, 37];
-    const drizzle = [12, 13,14];
-    const rain = [18, 39, 40];
-    const thunderstorm = [15, 16, 17, 41, 42];
-    const snow = [19, 20, 21, 22, 23, 43, 44]
-
     switch(true) {
         case clearCodes.indexOf(code) >= 0:
             return 'clear'
@@ -274,6 +275,28 @@ const getImage = (number) => {
             return 'rain'
         case thunderstorm.indexOf(code) >= 0:
             return 'thunderstorm'
+        case snow.indexOf(code) >= 0:
+            return 'snow'
+    }
+}
+
+const getTheme= (number) => {
+    const code = parseInt(number);
+    switch(true) {
+        case clearCodes.indexOf(code) >= 0:
+            return 'clear'
+        case cloudsPart.indexOf(code) >= 0:
+            return 'clouds'
+        case cloudy.indexOf(code) >= 0:
+            return 'clouds'
+        case mist.indexOf(code) >= 0:
+            return 'rain'
+        case drizzle.indexOf(code) >= 0:
+            return 'rain'
+        case rain.indexOf(code) >= 0:
+            return 'rain'
+        case thunderstorm.indexOf(code) >= 0:
+            return 'rain'
         case snow.indexOf(code) >= 0:
             return 'snow'
     }
@@ -307,6 +330,7 @@ const parseData = async (azureWeather, lat, long) => {
         isNight: !currentData.isDayTime,
         image: getImage(currentData.iconCode),
         icon:  getIcon(currentData.iconCode),
+        theme: getTheme(currentData.iconCode),
         weather: [
             {
                 description: currentData.phrase,
