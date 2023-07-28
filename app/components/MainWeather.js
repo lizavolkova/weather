@@ -29,26 +29,29 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
     return (
         <div className=" flex flex-col justify-between p-2 md:p-6 bg-black bg-opacity-25 w-full" >
             <div>
-                <div className="text-right">{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`} | {`${day.getHours()}:${day.getMinutes()}`}</div>
-                <div className="text-right">Ossining, NY</div>
-            </div>
-
-
-            <div>
-                <div className="flex flex-col items-end mb-8">
+                <div className="flex flex-col items-end mt-18">
+                    <div className="text-right text-3xl mb-16">Ossining, NY</div>
                     <div className="flex flex-col">
                         <div className="self-end"><Image src={current?.icon} width="200" height="100" alt=""/></div>
                         <div className="text-9xl self-end"><Temperature temp={current.temp} /></div>
-                        <div className="text-4xl text-slate-200 self-end capitalize">{current?.weather[0]?.description}</div>
+                        <div className="text-4xl text-slate-200 self-end capitalize pt-6">{current?.weather[0]?.description}</div>
                         <div className="text-2xl text-slate-300 self-end capitalize">High: {Math.floor(daily[0].temp.max)}° | Low: {Math.floor(daily[0].temp.min)}° </div>
+                    </div>
+                    <div>
+                        <div className="text-right text-lg pt-6">{`${getDay(day).substring(0, 3)} ${getMonth(day)} ${day.getDate()}`} | {`${day.getHours()}:${day.getMinutes()}`}</div>
+
                     </div>
 
                 </div>
 
+
+            </div>
+
+
+            <div>
                 {uniqueAlerts && uniqueAlerts.map(alert => {
                     return <Alert alert={alert} key={alert.id}/>
                 })}
-
             </div>
 
 
