@@ -18,7 +18,7 @@ const bgColor = (severity) => {
 export default function Alert({alert}) {
     const [showAlertModal, setShowAlertModal] = useState(false);
     const {properties} = alert;
-    const endDate = new Date(alert.properties.ends);
+    const endDate = new Date(alert.properties.expires);
     const startDate = new Date(alert.properties.effective);
     const end = `${getDay(endDate)}, ${getMonth(endDate)} ${endDate.toLocaleTimeString()}`;
     const start = `${getDay(startDate)}, ${getMonth(startDate)} ${startDate.toLocaleTimeString()}`;

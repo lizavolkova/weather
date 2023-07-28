@@ -18,6 +18,13 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
     const importantAlerts = alerts.filter(alert => alert.properties.severity === "Severe" ||  alert.properties.severity === "Extreme");
     const otherAlerts     = alerts.filter(alert => alert.properties.severity != "Severe" &&  alert.properties.severity != "Extreme")
     const sortedAlerts = [...importantAlerts, ...otherAlerts];
+    const seen = new Set();
+    const uniqueAlerts = sortedAlerts.filter(alert => {
+        const duplicate = seen.has(alert.properties.parameters.AWIPSidentifier[0]);
+        seen.add(alert.properties.parameters.AWIPSidentifier[0]);
+        return !duplicate;
+    });
+
 
     return (
         <div className=" flex flex-col justify-between p-2 md:p-6 bg-black bg-opacity-25 w-full" >
@@ -36,11 +43,9 @@ export default function MainWeather({current, daily, alerts, noaaData}) {
                         <div className="text-2xl text-slate-300 self-end capitalize">High: {Math.floor(daily[0].temp.max)}° | Low: {Math.floor(daily[0].temp.min)}° </div>
                     </div>
 
-
-
                 </div>
 
-                {sortedAlerts && sortedAlerts.map(alert => {
+                {uniqueAlerts && uniqueAlerts.map(alert => {
                     return <Alert alert={alert} key={alert.id}/>
                 })}
 
