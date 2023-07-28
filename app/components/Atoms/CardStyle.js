@@ -4,11 +4,15 @@ import {ThemeContext} from "../../page";
 const getThemeColor = (theme) => {
     switch (true) {
         case theme === 'night':
-            return 'bg-violet-900'
+            return 'bg-slate-900'
         case theme === 'rain':
-            return 'bg-gray-600'
+            return 'bg-gray-700'
+        case theme === 'clouds':
+            return 'bg-gray-700'
         case theme === 'clear':
-            return 'bg-sky-800'
+            return 'bg-sky-900'
+        case theme === 'twilight':
+            return 'bg-rose-950'
         default:
             return 'bg-slate-800'
     }

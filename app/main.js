@@ -140,7 +140,7 @@ export default function Home() {
                 <div>LOADING</div>
             ) : (
                 <main className="relative w-full flex md:min-h-screen flex-col items-center p-0 bg-cover" style={{backgroundColor: bgColor, backgroundImage: `url(${bgImage})`}}>
-                    <div className="flex">
+                    <div className="flex flex-wrap">
                         <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border  hover:border-white rounded mr-4 ${api === 'tomorrow' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => updateApi('tomorrow')}>Tomorrow.io</button>
                         <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border border-slate-400 hover:border-white rounded mr-4 ${api === 'open' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => updateApi('open')}>OpenWeather</button>
                         <button className={`bg-transparent  font-semibold hover:text-white py-2 px-4 border border-slate-400 hover:border-white rounded mr-4 ${api === 'azure' ? 'border-white text-white' : 'border-slate-400 text-slate-400'}`} onClick={() => updateApi('azure')}>Azure</button>
