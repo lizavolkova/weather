@@ -302,8 +302,6 @@ const getTheme= (number) => {
     }
 }
 
-
-
 const getIcon = (iconCode) => {
     const icon = icons.filter(icon => icon.id === iconCode)[0].icon;
     return `/icons/weather/${icon}.png`

@@ -21,11 +21,14 @@ const DailyIconAttribute = ({icon, title, value}) => {
     )
 };
 
-export default function ForecastDetailsTable({humidity, wind, feels, pop, timeStamp, clouds, uvi}) {
+export default function ForecastDetailsTable({humidity, wind, feels, pop, timeStamp, clouds, uvi, children}) {
     return (
         <div
-            className="flex flex-col border rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
+            className="flex flex-col rounded-md w-full p-2 border-slate-400 text-sm text-slate-400">
             <div className="p-2 text-slate-200 text-base">{timeStamp}</div>
+
+            {children}
+
             <div className="flex p-3 flex-wrap">
 
                 {feels >= 0 && <DailyIconAttribute title="Feels like"
@@ -37,7 +40,7 @@ export default function ForecastDetailsTable({humidity, wind, feels, pop, timeSt
                                                  icon={<IconWiHumidity/>}/>}
 
                 {pop >= 0 && <DailyIconAttribute title="Chance of Rain"
-                                                 value={`${pop * 100}%`}
+                                                 value={`${Math.floor(pop * 100)}%`}
                                                  icon={<IconUmbrella/>}/>}
 
                 {uvi >=0 && <DailyIconAttribute title="UV Index"

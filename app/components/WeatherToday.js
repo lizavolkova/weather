@@ -1,22 +1,11 @@
-const Details = ({icon, title, longPhrase, temp}) => {
-    return (
-        <div className="w-1/2 p-2 md:p-6">
-            <div className="uppercase text-slate-400 text-xl">{title}</div>
-            <div className="flex py-4 md:items-center  md:flex-row">
-                <div className="text-4xl md:text-5xl pr-0 md:pr-4">{Math.floor(temp)}°</div>
-                <img className="w-[60px]" src={icon} />
-            </div>
-            <div className="text-sm text-slate-200">{longPhrase}</div>
-        </div>
-    )
-}
+import TimeWeatherDetails from './Atoms/TimeWeatherDetails'
 
 export default function WeatherToday({daily}) {
     const {day, night, temp } = daily[0];
     return (
         <div className="flex flex col w-full">
-            <Details icon={day.icon} title="Today" longPhrase={day.longPhrase} temp={temp.max}/>
-            <Details icon={night.icon} title="Overnight" longPhrase={night.longPhrase} temp={temp.min}/>
+            <TimeWeatherDetails icon={day.icon} title="Today" longPhrase={day.longPhrase} temp={temp.max}/>
+            <TimeWeatherDetails icon={night.icon} title="Overnight" longPhrase={night.longPhrase} temp={temp.min}/>
         </div>
     )
 }

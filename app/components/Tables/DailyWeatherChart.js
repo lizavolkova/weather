@@ -1,14 +1,9 @@
-import React, {useRef, useEffect, useState} from 'react';
-
-
-import { Line } from 'react-chartjs-2';
-import {getTime} from "../../utils/getTime";
+import React, { useState } from 'react';
 import {getDate} from "../../utils/getDate";
-
-import {getIcon} from "../../utils/getIcon";
-import {Chart as ChartJS} from "chart.js";
 import WeatherLineChart from "./WeatherLineChart";
 import ForecastDetailsTable from "../Atoms/ForecastDetailsTable";
+import TimeWeatherDetails from "../Atoms/TimeWeatherDetails";
+
 
 export default function DailyWeatherChart({daily, noaaData}) {
     const [details, setDetails] = useState(0);
@@ -26,6 +21,8 @@ export default function DailyWeatherChart({daily, noaaData}) {
         setDetails(el);
     }
 
+    const { day, night } = daily[details];
+
     return (
         <div>
             <div id="daily-chart" className="chartWrapper overflow-x-scroll py-6">
@@ -41,7 +38,12 @@ export default function DailyWeatherChart({daily, noaaData}) {
                     clouds={daily[details].clouds}
                     uvi={daily[details].uvi}
                     wind={daily[details].wind_speed}
-                    timeStamp={`${getDate(daily[details].dt).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: "long",})}`}/>
+                    timeStamp={`${getDate(daily[details].dt).toLocaleString('en-US', {weekday: 'long', day: 'numeric', month: "long",})}`}>
+                    <div className="flex w-full">
+                            <TimeWeatherDetails  icon={day.icon} title="Day" longPhrase={day.longPhrase} temp={daily[details].temp.max}/>
+                            <TimeWeatherDetails  icon={night.icon} title="Night" longPhrase={night.longPhrase} temp={daily[details].temp.min}/>
+                    </div>
+                </ForecastDetailsTable>
             </div>
         </div>
 
