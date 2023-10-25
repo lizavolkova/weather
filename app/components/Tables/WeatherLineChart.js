@@ -141,8 +141,8 @@ function WeatherLineChart({temp, pop, time, icons, minTemp, clickedEl, id, descr
         scales: {
             y: {
                 display: false,
-                min: min/5,
-                max: max * 2
+                min: min/20,
+                max: max * 1.75
             },
             x2: {
                 grid: {
